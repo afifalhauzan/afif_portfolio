@@ -1,101 +1,105 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
+import { useMouseMove, useValue, animate, withEase } from "react-ui-animate";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+import Navbar from '@/app/components/Navbar';
+import SwipeTransition from './swipeTransition';
+
+const CURSOR_SIZE = 100;
+const DELAY_TIME = 300;
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeInOut", delay: 0.5 } },
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [cursorVisible, setCursorVisible] = useState(false);
+  const [isSwiping, setIsSwiping] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const x = useValue(0);
+  const y = useValue(0);
+
+  useMouseMove(({ mouseX, mouseY }) => {
+    x.value = withEase(mouseX - CURSOR_SIZE / 2);
+    y.value = withEase(mouseY - CURSOR_SIZE / 2);
+
+    if (!cursorVisible) {
+      setTimeout(() => {
+        setCursorVisible(true);
+      }, DELAY_TIME); // Delay to show the cursor
+    }
+  });
+  return (
+    <SwipeTransition>
+      <div className="relative">
+        
+
+        {/* Only show the cursor when it starts moving */}
+        {cursorVisible && (
+          <animate.div
+            style={{
+              width: CURSOR_SIZE,
+              height: CURSOR_SIZE,
+              backgroundColor: "white",
+              borderRadius: "50%",
+              translateX: x.value,
+              translateY: y.value,
+              opacity: "45%",
+            }}
+            className="absolute pointer-events-none z-50 blur-3xl"
+          />
+        )}
+        <div className="min-h-screen flex flex-col font-jakarta bg-gray-50 dark:bg-bluedefault items-center justify-normal overflow-auto px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
+          <Navbar/>
+          <div className="w-full max-w-4xl mx-auto px-4 m-2">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              className=""
+            >
+              <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-gray-600 dark:text-white">
+                I'm Afiif Al Hauzaan Alfian,
+              </h1>
+              <p className="text-lg mt-4 text-left w-full md:text-xl text-bluetextdefault">
+                IT Education Student at Brawijaya University
+              </p>
+            </motion.div>
+
+            {/* Add delay to make these elements appear after the previous ones */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              className="mt-8 flex flex-col gap-2 items-start w-full"
+            >
+              <p className="text-base md:text-lg text-left w-full text-bluetextdefault">
+                Passionate about <strong className="font-bold">graphic design, videography, and creating visually engaging user experiences</strong>. By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
+              </p>
+              <p className="text-base md:text-lg text-left w-full text-bluetextdefault">
+                Currently, I'm sharpening my skills in <strong className="font-bold">UI/UX design </strong> and exploring <strong className="font-bold">front-end development</strong> to bring ideas to life.
+              </p>
+            </motion.div>
+
+            {/* Add another delay to the button */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              className="mt-8 flex items-center"
+            >
+              <Link href="/about" className="flex items-center gap-2 text-blue-500 text-lg font-medium">
+                <span>More about me</span>
+                <span className="text-2xl">→</span>
+              </Link>
+            </motion.div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </SwipeTransition>
   );
 }
