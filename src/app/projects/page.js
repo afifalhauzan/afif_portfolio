@@ -21,8 +21,11 @@ export default function Home() {
     const y = useValue(0);
 
     useMouseMove(({ mouseX, mouseY }) => {
+        const scrollY = window.scrollY || 0; // Get the vertical scroll offset
+
+        // Adjust mouse position by subtracting scroll offset
         x.value = withEase(mouseX - CURSOR_SIZE / 2);
-        y.value = withEase(mouseY - CURSOR_SIZE / 2);
+        y.value = withEase(mouseY - CURSOR_SIZE / 2 + scrollY);
 
         if (!cursorVisible) {
             setTimeout(() => {
@@ -48,7 +51,7 @@ export default function Home() {
                     />
                 )}
                 <div className="min-h-screen flex flex-col font-jakarta bg-gray-50 dark:bg-bluedefault items-center justify-normal overflow-auto px-10 space-y-14 pt-8  transition-all duration-500 ease-in-out">
-                    <Navbar/>
+                    <Navbar />
                     <div className="w-full max-w-4xl mx-auto px-4 m-2">
                         <motion.div
                             initial="hidden"

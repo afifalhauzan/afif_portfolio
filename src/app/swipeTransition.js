@@ -1,16 +1,37 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function SwipeTransition({ children }) {
+  const [isSwipeVisible, setIsSwipeVisible] = useState(true);
+
+  useEffect(() => {
+    const animationDuration = 1600; // Duration in milliseconds (same as transition)
+
+    // Disable scrolling when the animation is active
+    document.body.style.overflow = "hidden";
+
+    // Set a timeout to remove the swipe element after the animation finishes
+    const timeout = setTimeout(() => {
+      setIsSwipeVisible(false);
+      document.body.style.overflow = "auto"; // Re-enable scrolling after the animation finishes
+    }, animationDuration);
+
+    return () => {
+      clearTimeout(timeout); // Cleanup timeout on component unmount
+      document.body.style.overflow = "auto"; // Ensure scrolling is re-enabled on cleanup
+    };
+  }, []); // Run only once after the initial render
+
   return (
-    <div className="relative h-screen overflow-hidden bg-bluedefault">
+    <div className="relative h-screen bg-bluedefault">
       {/* Swipe Animation */}
-      {(
+      {isSwipeVisible && (
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-bluetextdefault z-50"
           initial={{ y: "-100%" }} // Start above the viewport
           animate={{ y: "100%" }} // Swipe down past the viewport
           exit={{ y: "100%" }} // Exits off-screen at the bottom
-          transition={{ duration: 0.8, type: 'spring', damping: 30 }} // Smooth timing and easing
+          transition={{ duration: 0.8, type: "spring", damping: 30 }} // Smooth timing and easing
         />
       )}
 

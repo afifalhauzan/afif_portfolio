@@ -36,8 +36,6 @@ export default function Home() {
   return (
     <SwipeTransition>
       <div className="relative">
-        
-
         {/* Only show the cursor when it starts moving */}
         {cursorVisible && (
           <animate.div
@@ -53,8 +51,8 @@ export default function Home() {
             className="absolute pointer-events-none z-50 blur-3xl"
           />
         )}
-        <div className="min-h-screen flex flex-col font-jakarta bg-gray-50 dark:bg-bluedefault items-center justify-normal overflow-auto px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
-          <Navbar/>
+        <div className="min-h-screen flex flex-col font-jakarta bg-gray-50 dark:bg-bluedefault items-center justify-normal overflow-auto px-8 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
+          <Navbar />
           <div className="w-full max-w-4xl mx-auto px-4 m-2">
             <motion.div
               initial="hidden"
@@ -62,9 +60,15 @@ export default function Home() {
               variants={fadeInUp}
               className=""
             >
-              <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-gray-600 dark:text-white">
-                I'm Afiif Al Hauzaan Alfian,
-              </h1>
+              <div className="flex items-center space-x-4">
+                <h1 className="text-5xl xl:text-6xl font-bold text-left text-white">
+                  I'm
+                </h1>
+                <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-gray-600 bg-gradient-to-r from-gray-50 via-blue-300 to-yellow-200 text-transparent bg-clip-text bg-300% animate-gradient">
+                  Afiif,
+                </h1>
+              </div>
+
               <p className="text-lg mt-4 text-left w-full md:text-xl text-bluetextdefault">
                 IT Education Student at Brawijaya University
               </p>
@@ -92,9 +96,22 @@ export default function Home() {
               variants={fadeInUp}
               className="mt-8 flex items-center"
             >
-              <Link href="/about" className="flex items-center gap-2 text-blue-500 text-lg font-medium">
+              <Link href="/about" className="flex items-center gap-2 space-x-2 text-blue-500 text-lg font-medium">
                 <span>More about me</span>
-                <span className="text-2xl">→</span>
+                <motion.span
+                  className="text-2xl"
+                  animate={{
+                    x: [0, 10, 0], // Moves the arrow from 0px to 10px to 0px
+                  }}
+                  transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                    repeat: Infinity, // Loops infinitely
+                    repeatDelay: 0.2, // Adds a small delay before the animation repeats
+                  }}
+                >
+                  →
+                </motion.span>
               </Link>
             </motion.div>
           </div>
