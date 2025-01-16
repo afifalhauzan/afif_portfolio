@@ -1,33 +1,20 @@
-"use client";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa"; // Importing the social icons
 
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
-
-export default function Navbar() {
+export default function Socials() {
   return (
-    <nav className="w-full max-w-6xl px-20 py-4 flex justify-between items-center">
-      {/* Left Section */}
-      <div className="text-lg font-semibold text-bluetextdefault dark:text-bluetextdefault">
-        <Link href="/">
-          @afifalhauzan
-        </Link>
+    <div>
+      {/* Social Media Icons */}
+      <div className="flex space-x-8 pt-8">
+        <a href="https://instagram.com/afifalhauzan._" target="_blank" rel="noopener noreferrer">
+          <FaInstagram className="text-xl text-gray-800 dark:text-bluetextdefault hover:text-blue-500" />
+        </a>
+        <a href="https://www.linkedin.com/in/afiif-al-hauzaan-alfian/" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="text-xl text-gray-800 dark:text-bluetextdefault hover:text-blue-700" />
+        </a>
+        <a href="https://github.com/afifalhauzan" target="_blank" rel="noopener noreferrer">
+          <FaGithub className="text-xl text-gray-800 dark:text-bluetextdefault hover:text-gray-600" />
+        </a>
       </div>
-
-      {/* Right Section */}
-      <div className="flex items-center space-x-6">
-        <div className="flex space-x-6">
-          <Link href="/about" className="text-md text-bluetextdefault hover:text-gray-200">
-            About
-          </Link>
-          <Link href="/projects" className="text-md text-bluetextdefault hover:text-gray-200">
-            Projects
-          </Link>
-          <Link href="/contact" className="text-md text-bluetextdefault hover:text-gray-200">
-            Contact
-          </Link>
-        </div>
-      </div>
-    </nav>
+    </div>
   );
 }

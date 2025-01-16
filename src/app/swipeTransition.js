@@ -23,7 +23,7 @@ export default function SwipeTransition({ children }) {
   }, []); // Run only once after the initial render
 
   return (
-    <div className="relative h-screen bg-bluedefault">
+    <div className="relative h-screen bg-gray-50 dark:bg-bluedefault">
       {/* Swipe Animation */}
       {isSwipeVisible && (
         <motion.div

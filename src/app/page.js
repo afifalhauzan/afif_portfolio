@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useMouseMove, useValue, animate, withEase } from "react-ui-animate";
 import { motion } from "framer-motion";
+import Socials from '@/app/components/Socials';
 import Link from "next/link";
 
 import Navbar from '@/app/components/Navbar';
@@ -113,6 +114,14 @@ export default function Home() {
                   →
                 </motion.span>
               </Link>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <Socials />
             </motion.div>
           </div>
         </div>

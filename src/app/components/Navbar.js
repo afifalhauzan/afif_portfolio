@@ -10,13 +10,18 @@ export default function Navbar() {
 
   // Apply dark mode on initial render
   useEffect(() => {
-    document.documentElement.classList.add("dark");
+    // Check localStorage for saved dark mode preference
+    const savedMode = localStorage.getItem("darkMode");
+    const isDark = savedMode === "true"; // Convert string to boolean
+    setIsDarkMode(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
   }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => {
       const newMode = !prev;
-      document.documentElement.classList.toggle("dark", newMode); // Toggle dark mode
+      localStorage.setItem("darkMode", newMode); // Save to localStorage
+      document.documentElement.classList.toggle("dark", newMode);
       return newMode;
     });
   };
@@ -72,9 +77,9 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-screen w-full bg-gray-800 text-white z-20 transform ${
+        className={`fixed top-0 right-0 h-screen w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-white z-20 transform ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
+        } transition-all duration-300 ease-in-out`}
       >
         <div className="flex flex-col justify-center items-center h-full space-y-6">
           <Link
@@ -101,9 +106,9 @@ export default function Navbar() {
           {/* Dark Mode Toggle */}
           <button onClick={toggleDarkMode} className="mt-6 p-3">
             {isDarkMode ? (
-              <SunIcon className="h-8 w-8 text-white" />
+              <SunIcon className="h-8 w-8 text-gray-800 dark:text-white" />
             ) : (
-              <MoonIcon className="h-8 w-8 text-white" />
+              <MoonIcon className="h-8 w-8text-gray-800 dark:text-white" />
             )}
           </button>
         </div>

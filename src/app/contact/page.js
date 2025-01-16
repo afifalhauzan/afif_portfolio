@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { FC } from 'react';
+import Image from "next/image";
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '@/utils/send-email';
 import { useMouseMove, useValue, animate, withEase } from "react-ui-animate";
 import { motion } from "framer-motion";
 import { ThreeDot } from 'react-loading-indicators'
 import toast, { Toaster } from 'react-hot-toast';
+import Socials from '@/app/components/Socials';
 
 import Link from "next/link";
 import Navbar from '../components/Navbar';
@@ -99,13 +101,29 @@ export default function Home() {
                         </motion.div>
                         <div className="flex flex-col md:flex-row justify-between">
                             <div>
-                                <div className="max-w-md justify-normal mx-auto my-8 md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
-                                    <h2 className="text-2xl font-bold text-white mb-2">Let's get in touch!</h2>
-                                    <h2 className="text-md text-white">Whether it's collaborating, work, or just wanna contact me, hit me up!</h2>
+                                <div className="max-w-md justify-normal mx-auto my-8 md:mx-0 md:text-left mb-4 md:mb-0 p-6 pb-2 bg-gray-800 rounded-lg shadow-lg">
+                                    <div className="flex flex-col items-center mb-6">
+                                        <h2 className="text-2xl font-bold text-white mb-6">Let's get in touch!</h2>
+                                        {/* Contact Icon */}
+                                        <div className="w-full h-full md:w-3/4 md:h-3/4 justify-center items-center mb-4">
+                                            <Image
+                                                src="/contact.svg" // Path to your SVG
+                                                alt="Contact Icon"
+                                                width={300}
+                                                height={300}
+                                                className="object-contain"
+                                            />
+                                        </div>
+
+                                        {/* Text Content */}
+
+                                        <h2 className="text-md mt-2 text-white text-center">Whether it's collaborating, work, or just wanna contact me, hit me up!</h2>
+                                        <Socials className="pb-0 mb-0 justify-center" />
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="w-full md:w-1/2 max-w-5xl mx-auto mt-2 md:ml-8 mb-12 bg-gray-800 p-6 rounded-lg shadow-lg">
+                            <div className="w-full md:w-1/2 max-w-5xl mx-auto mt-2 md:mt-8 md:ml-8 mb-12 bg-gray-800 p-6 rounded-lg shadow-lg">
                                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                                     {/* Full Name */}
                                     <div className="group focus-within:text-blue-200 transition duration-300">
