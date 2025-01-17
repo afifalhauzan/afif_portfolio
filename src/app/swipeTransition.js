@@ -2,10 +2,21 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function SwipeTransition({ children }) {
+  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
   const [isSwipeVisible, setIsSwipeVisible] = useState(true);
 
   useEffect(() => {
     const animationDuration = 1600; // Duration in milliseconds (same as transition)
+    const savedMode = localStorage.getItem("darkMode");
+
+    if (savedMode === null) {
+      // Default to dark mode if no preference exists
+      localStorage.setItem("darkMode", "true");
+      document.documentElement.classList.add("dark");
+    } else {
+      const isDark = savedMode === "true";
+      document.documentElement.classList.toggle("dark", isDark);
+    }
 
     // Disable scrolling when the animation is active
     document.body.style.overflow = "hidden";

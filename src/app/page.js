@@ -18,6 +18,7 @@ const fadeInUp = {
 };
 
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
   const [cursorVisible, setCursorVisible] = useState(false);
   const [isSwiping, setIsSwiping] = useState(false);
 
@@ -52,7 +53,7 @@ export default function Home() {
             className="absolute pointer-events-none z-50 blur-3xl"
           />
         )}
-        <div className="min-h-screen flex flex-col font-jakarta bg-gray-50 dark:bg-bluedefault items-center justify-normal overflow-auto px-8 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
+        <div className="min-h-screen flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-8 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
           <Navbar />
           <div className="w-full max-w-4xl mx-auto px-4 m-2">
             <motion.div
@@ -62,10 +63,10 @@ export default function Home() {
               className=""
             >
               <div className="flex items-center space-x-4">
-                <h1 className="text-5xl xl:text-6xl font-bold text-left text-white">
+                <h1 className="text-5xl xl:text-6xl font-bold text-left text-blue-900 dark:text-white">
                   I'm
                 </h1>
-                <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-gray-600 bg-gradient-to-r from-gray-50 via-blue-300 to-yellow-200 text-transparent bg-clip-text bg-300% animate-gradient">
+                <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-gray-600 bg-gradient-to-r from-cyan-700 via-blue-600 to-green-600 dark:from-gray-50 dark:via-blue-300 dark:to-yellow-200 text-transparent bg-clip-text bg-300% animate-gradient transition-all duration-800">
                   Afiif,
                 </h1>
               </div>

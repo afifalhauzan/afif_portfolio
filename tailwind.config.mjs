@@ -19,6 +19,7 @@ export default {
         foreground: "var(--foreground)",
         bluedefault: "#070F2B",
         bluetextdefault: "#8891C5",
+        backgroundlight : "#f2f6ff"
       },
       keyframes: {
         animatedgradient: {

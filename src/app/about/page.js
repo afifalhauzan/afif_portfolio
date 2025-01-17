@@ -52,7 +52,7 @@ export default function Home() {
                         className="absolute pointer-events-none z-50 blur-3xl"
                     />
                 )}
-                <div className="flex flex-col font-jakarta bg-gray-50 dark:bg-bluedefault items-center justify-normal overflow-auto px-10 space-y-14 pt-8  transition-all duration-500 ease-in-out">
+                <div className="flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-10 space-y-14 pt-8  transition-all duration-500 ease-in-out">
                     <Navbar />
                     <div className="w-full max-w-4xl mx-auto px-4 m-2">
                         <motion.div
