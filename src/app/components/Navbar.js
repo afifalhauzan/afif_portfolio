@@ -34,14 +34,14 @@ export default function Navbar() {
     <nav className="w-full max-w-6xl md:px-20 md:py-4 flex justify-between items-center">
       {/* Left Section */}
       <div className="text-lg font-semibold text-bluetextdefault dark:text-bluetextdefault">
-        <Link href="/">
-          @afifalhauzan
+        <Link href="/" className="font-poppins">
+          afifalhauzan
         </Link>
       </div>
 
       {/* Right Section */}
       <div className="hidden md:flex items-center space-x-6">
-        <div className="flex space-x-6">
+        <div className="flex space-x-6 font-poppins">
           <Link href="/about" className="text-md text-bluetextdefault hover:text-gray-200">
             About
           </Link>

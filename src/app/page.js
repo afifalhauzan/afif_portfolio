@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useMouseMove, useValue, animate, withEase } from "react-ui-animate";
 import { motion } from "framer-motion";
 import Socials from '@/app/components/Socials';
 import Link from "next/link";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 import Navbar from '@/app/components/Navbar';
 import SwipeTransition from './swipeTransition';
@@ -16,6 +17,7 @@ const fadeInUp = {
   hidden: { opacity: 0, y: 20, scale: 0.98 },
   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeInOut", delay: 0.5 } },
 };
+
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
@@ -62,7 +64,7 @@ export default function Home() {
               variants={fadeInUp}
               className=""
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 ">
                 <h1 className="text-5xl xl:text-6xl font-bold text-left text-blue-900 dark:text-white">
                   I'm
                 </h1>
@@ -71,7 +73,7 @@ export default function Home() {
                 </h1>
               </div>
 
-              <p className="text-lg mt-4 text-left w-full md:text-xl text-bluetextdefault">
+              <p className="text-lg mt-4 text-left w-full md:text-xl text-slate- dark:text-bluetextdefault">
                 IT Education Student at Brawijaya University
               </p>
             </motion.div>
@@ -83,10 +85,10 @@ export default function Home() {
               variants={fadeInUp}
               className="mt-8 flex flex-col gap-2 items-start w-full"
             >
-              <p className="text-base md:text-lg text-left w-full text-bluetextdefault">
+              <p className="text-base md:text-lg text-left w-full text-slate-500 dark:text-bluetextdefault">
                 Passionate about <strong className="font-bold">graphic design, videography, and creating visually engaging user experiences</strong>. By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
               </p>
-              <p className="text-base md:text-lg text-left w-full text-bluetextdefault">
+              <p className="text-base md:text-lg text-left w-full text-slate-500 dark:text-bluetextdefault">
                 Currently, I'm sharpening my skills in <strong className="font-bold">UI/UX design </strong> and exploring <strong className="font-bold">front-end development</strong> to bring ideas to life.
               </p>
             </motion.div>
@@ -98,10 +100,10 @@ export default function Home() {
               variants={fadeInUp}
               className="mt-8 flex items-center"
             >
-              <Link href="/about" className="flex items-center gap-2 space-x-2 text-blue-500 text-lg font-medium">
+              <Link href="/about" className="flex items-center gap-2 space-x-2 text-blue-500 text-lg font-bold">
                 <span>More about me</span>
                 <motion.span
-                  className="text-2xl"
+                  className="text-2xl "
                   animate={{
                     x: [0, 10, 0], // Moves the arrow from 0px to 10px to 0px
                   }}
@@ -112,7 +114,7 @@ export default function Home() {
                     repeatDelay: 0.2, // Adds a small delay before the animation repeats
                   }}
                 >
-                  →
+                  <FaArrowRightLong />
                 </motion.span>
               </Link>
             </motion.div>
