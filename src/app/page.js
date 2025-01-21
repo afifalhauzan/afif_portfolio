@@ -114,7 +114,7 @@ export default function Home() {
                     repeatDelay: 0.2, // Adds a small delay before the animation repeats
                   }}
                 >
-                  <FaArrowRightLong />
+                  <FaArrowRightLong className="mt-[4px]"/>
                 </motion.span>
               </Link>
             </motion.div>

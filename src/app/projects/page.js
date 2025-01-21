@@ -75,7 +75,7 @@ export default function Home() {
                                 <CategorySelector />
                             </div>
 
-                            <Link href="/contact" className="flex items-center gap-2 p-6 pl-0 pb-0 space-x-2 text-blue-500 text-lg font-medium">
+                            <Link href="/contact" className="flex items-center gap-2 p-6 pl-0 pb-0 space-x-2 text-blue-500 text-lg font-bold">
                                 <span>Contact me</span>
                                 <motion.span
                                     className="text-2xl"
@@ -89,7 +89,7 @@ export default function Home() {
                                         repeatDelay: 0.2, // Adds a small delay before the animation repeats
                                     }}
                                 >
-                                    <FaArrowRightLong />
+                                    <FaArrowRightLong className="mt-[4px]"/>
                                 </motion.span>
                             </Link>
                         </motion.div>

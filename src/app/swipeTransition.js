@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
 
 export default function SwipeTransition({ children }) {
+  const pathname = usePathname()
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
   const [isSwipeVisible, setIsSwipeVisible] = useState(true);
+
+  useEffect(() => {
+    // Show transition only if going to the Projects page
+    if (pathname == '/projects/1') {
+      setIsSwipeVisible(false)
+    } else {
+      setIsSwipeVisible(true)
+    }
+  }, [pathname])
 
   useEffect(() => {
     const animationDuration = 1600; // Duration in milliseconds (same as transition)

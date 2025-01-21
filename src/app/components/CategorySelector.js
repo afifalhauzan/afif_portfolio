@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+import { FaArrowRightLong } from "react-icons/fa6";
 
 // Project card data (hardcoded for simplicity)
 const projectData = {
@@ -10,12 +12,15 @@ const projectData = {
             title: "Greventure",
             description: "Description for UI/UX project 1.",
             video: "/greventure.mp4", // Image source for the project
+            story: true
         },
         {
             id: 2,
             title: "Mentorify",
             description: "Description for UI/UX project 2.",
             image: "/uiux2.jpg",
+            figma: "",
+            tags: "",
         },
         {
             id: 3,
@@ -169,13 +174,13 @@ const CategorySelector = () => {
                     {projectData[selectedCategory].map((project) => (
                         <div
                             key={project.id}
-                            className="w-full bg-white rounded-xl shadow-xl mb-4 md:mb-8"
+                            className="w-full h-full bg-white rounded-xl shadow-xl md:mb-0"
                         >
                             <div className="relative">
                                 {project.video ? (
                                     <video
-                                        width="350"
-                                        height="350"
+                                        width="400"
+                                        height="400"
                                         preload="auto"
                                         autoPlay
                                         muted
@@ -196,9 +201,21 @@ const CategorySelector = () => {
                                 )}
 
                                 {/* Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-600 to-50% rounded-xl flex flex-col justify-end p-4">
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-50% rounded-xl flex flex-col justify-end p-4">
                                     <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                                    <p className="text-md text-gray-300">{project.description}</p>
+                                    <p className="text-md text-gray-300 mb-2">{project.description}</p>
+                                    {project.story ? (
+                                        <Link href={`/projects/${project.id}`} className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold">
+                                            <span>The Story</span>
+                                            <FaArrowRightLong className="mt-[3px]" />
+                                        </Link>
+                                    ) : (
+                                        <div className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold">
+                                            <p>More</p>
+                                            <FaArrowRightLong className="mt-[3px]" />
+                                        </div>
+                                    )
+                                    }
                                 </div>
                             </div>
                         </div>
