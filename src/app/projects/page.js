@@ -8,6 +8,7 @@ import Link from "next/link";
 import SwipeTransition from "../swipeTransition";
 import CategorySelector from '@/app/components/CategorySelector';
 import { FaArrowRightLong } from "react-icons/fa6";
+import Socials from "../components/Socials";
 
 const CURSOR_SIZE = 100;
 const DELAY_TIME = 300;
@@ -74,7 +75,7 @@ export default function Home() {
                                 <CategorySelector />
                             </div>
 
-                            <Link href="/contact" className="flex items-center gap-2 p-6 pl-0 pb-12 space-x-2 text-blue-500 text-lg font-medium">
+                            <Link href="/contact" className="flex items-center gap-2 p-6 pl-0 pb-0 space-x-2 text-blue-500 text-lg font-medium">
                                 <span>Contact me</span>
                                 <motion.span
                                     className="text-2xl"
@@ -92,6 +93,10 @@ export default function Home() {
                                 </motion.span>
                             </Link>
                         </motion.div>
+
+                        <div className="mb-20">
+                            <Socials className="" />
+                        </div>
                     </div>
                 </div>
             </div>

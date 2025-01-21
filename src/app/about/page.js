@@ -18,6 +18,7 @@ import { SiAdobepremierepro } from "react-icons/si";
 import { SiAdobeillustrator } from "react-icons/si";
 import { SiAdobeaftereffects } from "react-icons/si";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Socials from "../components/Socials";
 
 const CURSOR_SIZE = 100;
 const DELAY_TIME = 300;
@@ -114,7 +115,7 @@ export default function Home() {
                             className=""
                         >
                             <div className="flex flex-col md:flex-row justify-between mt-4 space-y-4 md:space-y-0 md:space-x-12">
-                                <div className="w-full bg-blue-200 bg-opacity-50 rounded-full p-4 text-center text-slate-200 mt-6">
+                                <div className="w-full bg-blue-200 bg-opacity-50 rounded-full p-4 text-center text-slate-200 mt-16">
                                     <h3 className="text-2xl font-bold">Experiences</h3>
                                 </div>
                             </div>
@@ -127,13 +128,59 @@ export default function Home() {
                             variants={fadeInUpV2}
                             className=""
                         >
-                            <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-20">
+                            <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 ">
+                                {/* Image Section */}
+                                <div className="w-full h-[260px] text-left text-slate-200 relative order-1 ml-5 md:ml-0 md:order-2">
+                                    {/* First Image */}
+                                    <div className="absolute top-0 transform translate-y-10 shadow-lg">
+                                        <Image
+                                            src="/ddmhologi.jpg"
+                                            width={230}
+                                            height={230}
+                                            alt="Picture of the author"
+                                            className="rounded-xl"
+                                        />
+                                    </div>
+                                    {/* Second Image */}
+                                    <div className="absolute top-8 left-8 transform translate-x-24 md:translate-x-24 translate-y-16 shadow-lg">
+                                        <Image
+                                            src="/ddmhologi.jpg"
+                                            width={200}
+                                            height={200}
+                                            alt="Picture of the author"
+                                            className="rounded-xl"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Text Section */}
+                                <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
+                                    <div className="w-full p-4 text-left text-slate-200 md:mr-16">
+                                        <h3 className="text-2xl font-bold">Raion Community</h3>
+                                        <div className="flex space-x-3">
+                                            <h3 className="text-lg">Vice Head UI/UX Designer</h3>
+                                            <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
+                                        </div>
+
+                                        <p className="text-md text-slate-300">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div className="flex flex-col md:flex-row justify-between space-y-4 mt-6 md:mt:0 md:space-y-0 md:space-x-20">
                                 <div className="w-full p-4 text-left text-slate-200 mt-6">
-                                    <h3 className="text-2xl font-bold">Raion Community</h3>
-                                    <h3 className="text-lg mb-2">Vice Head UI/UX Designer</h3>
+                                    <h3 className="text-2xl font-bold">HOLOGY 7.0</h3>
+                                    <div className="flex space-x-3">
+                                        <h3 className="text-lg">Head of Creative Media</h3>
+                                        <h3 className="text-lg text-slate-400 mb-2">(2024)</h3>
+                                    </div>
                                     <p className="text-md text-slate-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                 </div>
-                                <div className="w-full h-[260px] text-left text-slate-200 mt-6 relative">
+                                <div className="w-full h-[250px] text-left text-slate-200 mt-0 md:mt-6 relative">
                                     {/* First Image */}
                                     <div className="absolute top-0 transform translate-y-10 shadow-lg">
                                         <Image
@@ -157,13 +204,16 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col md:flex-row justify-between space-y-4 mt-4 md:space-y-0 md:space-x-20">
+                            <div className="flex flex-col md:flex-row justify-between space-y-4 mt-6 md:mt:0 md:space-y-0 md:space-x-20">
                                 <div className="w-full p-4 text-left text-slate-200 mt-6">
-                                    <h3 className="text-2xl font-bold">HOLOGY 7.0</h3>
-                                    <h3 className="text-lg mb-2">Head of Creative Media</h3>
+                                    <h3 className="text-2xl font-bold">Practicum Assistant</h3>
+                                    <div className="flex space-x-3">
+                                        <h3 className="text-lg">FILKOM UB</h3>
+                                        <h3 className="text-lg text-slate-400 mb-2">(2024)</h3>
+                                    </div>
                                     <p className="text-md text-slate-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                 </div>
-                                <div className="w-full h-[300px] text-left text-slate-200 mt-6 relative">
+                                <div className="w-full h-[250px] text-left text-slate-200 mt-0 md:mt-6 relative">
                                     {/* First Image */}
                                     <div className="absolute top-0 transform translate-y-10 shadow-lg">
                                         <Image
@@ -198,7 +248,7 @@ export default function Home() {
                             className=""
                         >
                             <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-12">
-                                <div className="w-full bg-blue-200 bg-opacity-50 rounded-full p-4 text-center text-slate-200 mt-8 mb-6">
+                                <div className="w-full bg-blue-200 bg-opacity-50 rounded-full p-4 text-center text-slate-200 mt-20 mb-6">
                                     <h3 className="text-2xl font-bold">The Tools</h3>
                                 </div>
                             </div>
@@ -213,12 +263,12 @@ export default function Home() {
                         >
                             <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-12">
                                 <div>
-                                    <div className="max-w-md justify-center text-center mx-auto my-6 mb-0 md:mx-0 p-6 md:p-8">
+                                    <div className="flex max-w-md h-full justify-center text-center items-center mx-auto mb-0 md:mx-0 p-6 md:p-4">
                                         <h2 className="text-3xl font-semibold text-white">Tech Stack</h2>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 md:flex md:space-x-4">
-                                    <div className="flex flex-col items-center justify-center max-w-md text-center mx-auto my-4 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 rounded-lg shadow-lg">
+                                    <div className="flex flex-col items-center justify-center text-center mx-auto my-4 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 rounded-lg shadow-lg">
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <FaReact className="text-5xl text-center text-blue-400" />
                                         </div>
@@ -262,7 +312,7 @@ export default function Home() {
                             <div className="flex flex-col md:flex-row justify-between space-y-4 mt-2 md:mt-6 md:space-y-0 md:space-x-12">
                                 {/* Visual Stack */}
                                 <div className="order-1 md:order-2">
-                                    <div className="max-w-md justify-center text-center mx-auto my-8 mb-0 md:mx-0 p-6 md:p-8">
+                                    <div className="flex max-w-md h-full justify-center text-center items-center mx-auto mb-0 md:mx-0 p-6 md:p-4">
                                         <h2 className="text-3xl font-semibold text-white">Visual Stack</h2>
                                     </div>
                                 </div>
@@ -304,7 +354,7 @@ export default function Home() {
                         </motion.div>
 
 
-                        <Link href="/projects" className="flex items-center gap-2 p-6 pl-0 pb-12 space-x-2 text-blue-500 text-lg font-bold">
+                        <Link href="/projects" className="flex items-center gap-2 p-6 pl-0 pb-0 space-x-2 text-blue-500 text-lg font-bold">
                             <span>My projects</span>
                             <motion.span
                                 className="text-2xl"
@@ -321,6 +371,10 @@ export default function Home() {
                                 <FaArrowRightLong />
                             </motion.span>
                         </Link>
+
+                        <div className="mb-20">
+                            <Socials className="" />
+                        </div>
 
                     </div>
                 </div>

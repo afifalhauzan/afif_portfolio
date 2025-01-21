@@ -79,9 +79,11 @@ export default function Home() {
 
                 {/* Loading Overlay */}
                 {loading && (
-                    <div className="fixed inset-0 text-white bg-black bg-opacity-50 z-50 flex flex-col space-y-6 items-center justify-center backdrop-blur-sm">
-                        <ThreeDot color="#e4e6ff" size="medium" text="" textColor="" />
-                        <a className="text-[#e4e6ff]">Sending message...</a>
+                    <div className="fixed inset-0  text-white bg-black bg-opacity-50 z-50 flex flex-col space-y-6 items-center justify-center backdrop-blur-sm">
+                        <div className="animate-pulse flex flex-col space-y-6 items-center justify-center">
+                            <ThreeDot color="#e4e6ff" size="medium" text="" textColor="" />
+                            <a className="text-[#e4e6ff]">Sending message...</a>
+                        </div>
                     </div>
                 )}
 

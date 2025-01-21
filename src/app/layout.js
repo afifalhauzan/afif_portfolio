@@ -20,6 +20,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link
+        rel="icon"
+        href="/icon.png"
+        type="image/<generated>"
+        sizes="<generated>"
+      />
       <body
         className={`font-jakarta antialiased`}
       >
