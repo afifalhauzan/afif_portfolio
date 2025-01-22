@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import Socials from '@/app/components/Socials';
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaPenNib } from "react-icons/fa6";
+import { RiGlobalLine } from "react-icons/ri";
 
 import Navbar from '@/app/components/Navbar';
 import SwipeTransition from './swipeTransition';
@@ -55,9 +57,9 @@ export default function Home() {
             className="absolute pointer-events-none z-50 blur-3xl"
           />
         )}
-        <div className="min-h-screen flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-8 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
+        <div className="min-h-screen flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-6 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
           <Navbar />
-          <div className="w-full max-w-4xl mx-auto px-4 m-2">
+          <div className="w-full max-w-4xl mx-auto px-2 md:px-4 m-2">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -73,7 +75,7 @@ export default function Home() {
                 </h1>
               </div>
 
-              <p className="text-lg mt-4 text-left w-full md:text-xl text-slate- dark:text-bluetextdefault">
+              <p className="text-xl mt-4 text-left w-full md:text-xl text-slate-800 dark:text-bluetextdefault">
                 IT Education Student at Brawijaya University
               </p>
             </motion.div>
@@ -85,12 +87,17 @@ export default function Home() {
               variants={fadeInUp}
               className="mt-8 flex flex-col gap-2 items-start w-full"
             >
-              <p className="text-base md:text-lg text-left w-full text-slate-500 dark:text-bluetextdefault">
-                Passionate about <strong className="font-bold">graphic design, videography, and creating visually engaging user experiences</strong>. By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
+              <p className="text-base md:text-lg text-justify w-full text-slate-500 dark:text-bluetextdefault">
+                Passionate about <strong className="font-bold">graphic design, videography, and creating visually engaging user experiences</strong>. <br></br>By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
               </p>
-              <p className="text-base md:text-lg text-left w-full text-slate-500 dark:text-bluetextdefault">
-                Currently, I'm sharpening my skills in <strong className="font-bold">UI/UX design </strong> and exploring <strong className="font-bold">front-end development</strong> to bring ideas to life.
+              <p className="text-base md:text-lg text-justify w-full text-slate-500 dark:text-bluetextdefault">
+                Currently, I'm sharpening my skills in
+                <FaPenNib className="inline mx-[5px] ml-3 mb-[3px]" />
+                <strong className="font-bold">UI/UX design</strong> and exploring
+                <RiGlobalLine className="inline mx-[5px] ml-[9px] mb-[3px]" />
+                <strong className="font-bold">front-end development</strong> to bring ideas to life.
               </p>
+
             </motion.div>
 
             {/* Add another delay to the button */}
@@ -114,7 +121,7 @@ export default function Home() {
                     repeatDelay: 0.2, // Adds a small delay before the animation repeats
                   }}
                 >
-                  <FaArrowRightLong className="mt-[4px]"/>
+                  <FaArrowRightLong className="mt-[4px]" />
                 </motion.span>
               </Link>
             </motion.div>

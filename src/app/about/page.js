@@ -72,16 +72,17 @@ export default function Home() {
                         className="absolute pointer-events-none z-50 blur-3xl"
                     />
                 )}
-                <div className="flex flex-col font-jakarta z-20 bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-10 space-y-14 pt-8  transition-all duration-500 ease-in-out">
+                <div className="flex flex-col font-jakarta z-20 bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-6 md:px-10 space-y-14 pt-8  transition-all duration-500 ease-in-out">
                     <Navbar />
-                    <div className="w-full max-w-4xl mx-auto px-4 m-2">
+                    <div className="w-full max-w-4xl mx-auto px-2 md:px-4 m-2">
                         <motion.div
                             initial="hidden"
                             animate="visible"
                             variants={fadeInUp}
                             className=""
                         >
-                            <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-white ">
+                            <h1 className="text-5xl
+                             xl:text-6xl font-bold text-left w-full text-white ">
                                 About me
                             </h1>
 
@@ -124,9 +125,9 @@ export default function Home() {
                             </div>
 
                             <div className="space-y-6 mt-2 md:mt-0 md:space-x-0">
-                                <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 ">
+                                <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 ">
                                     {/* Image Section */}
-                                    <div className="w-full h-[240px] md:h-[260px] text-left text-slate-200 relative order-1 ml-5 md:ml-0 md:order-2">
+                                    <div className="w-4/6 h-[240px] md:h-[260px] text-left text-slate-200 relative order-1 ml-5 md:ml-0 md:order-2">
                                         {/* First Image */}
                                         <div className="absolute top-0 transform translate-y-10 shadow-lg">
                                             <Image
@@ -158,7 +159,7 @@ export default function Home() {
                                                 <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
                                             </div>
 
-                                            <p className="text-md text-slate-300">
+                                            <p className="text-md text-slate-300 text-justify">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                             </p>
                                         </div>
@@ -208,7 +209,7 @@ export default function Home() {
                                             <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
                                         </div>
 
-                                        <p className="text-md text-slate-300">
+                                        <p className="text-md text-slate-300 text-justify">
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                         </p>
                                     </div>
@@ -257,7 +258,7 @@ export default function Home() {
                                             <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
                                         </div>
 
-                                        <p className="text-md text-slate-300">
+                                        <p className="text-md text-slate-300 text-justify">
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                         </p>
                                     </div>
@@ -275,7 +276,7 @@ export default function Home() {
                             className=""
                         >
                             <div className="flex flex-col md:flex-row justify-between">
-                                <div className="w-full bg-gradient-to-r from-cyan-700 to-blue-400 bg-opacity-50 rounded-full p-4 text-center text-white mt-20 mb-6">
+                                <div className="w-full bg-gradient-to-r from-cyan-700 to-blue-400 bg-opacity-50 rounded-full p-4 text-center text-white mt-20 mb-2 md:mb-6">
                                     <h3 className="text-2xl font-bold">The Tools</h3>
                                 </div>
                             </div>
@@ -283,7 +284,7 @@ export default function Home() {
                             <div className="flex flex-col md:flex-row justify-between space-y-2 md:space-y-0 md:space-x-12">
                                 <div>
                                     <div className="flex max-w-md h-full justify-center text-center items-center mx-auto mb-0 md:mx-0 p-6 md:p-4">
-                                        <h2 className="text-3xl font-semibold text-white">Tech Stack</h2>
+                                        <h2 className="text-2xl font-semibold text-white">Tech Stack</h2>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 md:flex md:space-x-4">
@@ -342,7 +343,7 @@ export default function Home() {
                                 {/* Visual Stack */}
                                 <div className="order-1 md:order-2">
                                     <div className="flex max-w-md h-full justify-center text-center items-center mx-auto mb-4 md:mx-0 p-6 md:p-4">
-                                        <h2 className="text-3xl font-semibold text-white">Visual Stack</h2>
+                                        <h2 className="text-2xl font-semibold text-white">Visual Stack</h2>
                                     </div>
                                 </div>
 
@@ -357,7 +358,7 @@ export default function Home() {
                                                 alt="Contact Icon"
                                                 width={70}
                                                 height={70}
-                                                className="object-contain sm:w-60 sm:h-60 md:w-12 md:h-12"
+                                                className="object-contain sm:w-20 sm:h-20 md:w-12 md:h-12"
                                             />
                                         </div>
                                         <h2 className="text-lg md:text-md font-bold text-white">Sigma</h2>
@@ -403,32 +404,43 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="flex flex-col md:space-y-4">
-                                <div className="flex justify-between w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
-                                    <div className="flex flex-col pr-8">
-                                        <h2 className="text-2xl font-bold text-white mb-2">Photography</h2>
-                                        <h2 className="text-md text-white text-justify">
-                                            A collection of my favorite places and photos
-                                        </h2>
-                                    </div>
+                                <div className="flex flex-col md:flex-row justify-between items-center md:items-start w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
                                     <img
                                         src="/instagram.svg"
                                         alt="Instagram"
-                                        className="w-20 h-20"
+                                        className="w-24 h-24 md:w-20 md:h-20 mb-2 order-1 md:order-2"
                                     />
-                                </div>
-                                <div className="flex justify-between w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
-                                    <div className="flex flex-col pr-8">
-                                        <h2 className="text-2xl font-bold text-white mb-2">My Spotify playlist</h2>
-                                        <h2 className="text-md text-white text-justify">
-                                            Curated playlist for testing headphones
+                                    <div className="flex flex-col pr-4 md:pr-8 order-2 md:order-1">
+                                        <h2 className="text-2xl font-bold text-white mb-1">Photography</h2>
+                                        <h2 className="text-md text-white text-justify mb-2">
+                                            A collection of my favorite places and photos
                                         </h2>
+                                        <a href="https://www.instagram.com/stories/highlights/18076888111202035/" target="_blank" rel="noopener noreferrer">
+                                            <h3 className="text-md text-blue-400 font-bold text-justify hover:underline " >
+                                                Here
+                                            </h3>
+                                        </a>
                                     </div>
+                                </div>
+                                <div className="flex flex-col md:flex-row justify-between items-center md:items-start w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
                                     <img
                                         src="/spotify.svg"
-                                        alt="Instagram"
-                                        className="w-20 h-20"
+                                        alt="Spotify"
+                                        className="w-24 h-24 md:w-20 md:h-20 mb-2 order-1 md:order-2"
                                     />
+                                    <div className="flex flex-col pr-4 md:pr-8 order-2 md:order-1">
+                                        <h2 className="text-2xl font-bold text-white mb-1">My Spotify playlist</h2>
+                                        <h2 className="text-md text-white text-justify mb-2">
+                                            Curated playlist for testing headphones
+                                        </h2>
+                                        <a href="https://open.spotify.com/playlist/2m5NoKl0x1pJmfFkzZ3UNt?si=58c79403e5bd4324" target="_blank" rel="noopener noreferrer">
+                                            <h3 className="text-md text-blue-400 font-bold text-justify hover:underline">
+                                                Here
+                                            </h3>
+                                        </a>
+                                    </div>
                                 </div>
+
                             </div>
                         </motion.div>
 

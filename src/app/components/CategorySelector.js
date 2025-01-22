@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -34,6 +34,7 @@ const projectData = {
             title: "PetCare",
             description: "Description for UI/UX project 2.",
             image: "/uiux2.jpg",
+            story: true
         },
     ],
     "Graphic Design": [
@@ -50,13 +51,13 @@ const projectData = {
             image: "/graphicdesign2.jpg",
         },
         {
-            id: 6,
+            id: 7,
             title: "Rantau Ngalam Kuy",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
         },
         {
-            id: 6,
+            id: 8,
             title: "Rantau Ngalam Kuy",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
@@ -64,19 +65,19 @@ const projectData = {
     ],
     "Websites": [
         {
-            id: 7,
+            id: 9,
             title: "Xhiexplore",
             description: "Description for Website project 1.",
             image: "/website1.jpg",
         },
         {
-            id: 8,
+            id: 10,
             title: "Past Portofolio",
             description: "Description for Website project 2.",
             image: "/website2.jpg",
         },
         {
-            id: 9,
+            id: 11,
             title: "PortalMABA",
             description: "Description for Website project 2.",
             image: "/website2.jpg",
@@ -84,43 +85,43 @@ const projectData = {
     ],
     "Videography": [
         {
-            id: 10,
+            id: 12,
             title: "Eftychia",
             description: "Description for Videography project 1.",
             image: "/videography1.jpg",
         },
         {
-            id: 10,
+            id: 13,
             title: "HOLOGY 7.0 Trailer",
             description: "Description for Videography project 1.",
             image: "/videography1.jpg",
         },
         {
-            id: 11,
+            id: 14,
             title: "Makrab PTI 23",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 11,
+            id: 15,
             title: "Schotival",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 11,
+            id: 16,
             title: "Pusoko",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 11,
+            id: 17,
             title: "Synergy of Symphony",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 11,
+            id: 18,
             title: "Sebelah Mata",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
@@ -135,30 +136,54 @@ const transition = {
 
 const CategorySelector = () => {
     const [selectedCategory, setSelectedCategory] = useState("UI/UX");
+    const [underlineWidth, setUnderlineWidth] = useState(0);
+    const [underlineLeft, setUnderlineLeft] = useState(0);
+    const [isMoreOpen, setIsMoreOpen] = useState(false);
+    const [moreOpenId, setMoreOpenId] = useState(null);
+    const tabsRef = useRef([]);
 
     // Function to handle category selection
-    const handleCategoryClick = (category) => {
+    const handleCategoryClick = (category, index) => {
         setSelectedCategory(category);
+
+        const currentTab = tabsRef.current[index];
+        setUnderlineLeft(currentTab?.offsetLeft ?? 0);
+        setUnderlineWidth(currentTab?.clientWidth ?? 0);
     };
+
+    useEffect(() => {
+        // Initialize underline position for the default category
+        const defaultIndex = ["UI/UX", "Graphic Design", "Websites", "Videography"].indexOf(selectedCategory);
+        if (tabsRef.current[defaultIndex]) {
+            const currentTab = tabsRef.current[defaultIndex];
+            setUnderlineLeft(currentTab.offsetLeft);
+            setUnderlineWidth(currentTab.clientWidth);
+        }
+    }, []);
 
     return (
         <div className="flex flex-col justify-center md:items-center mt-4 overflow-x-auto overflow-y-hidden">
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 mt-6 p-2 rounded-2xl md:rounded-3xl overflow-x-auto">
-                <ul className="flex whitespace-nowrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-                    {["UI/UX", "Graphic Design", "Websites", "Videography"].map((category) => (
+            <div className="relative flex flex-col md:flex-row space-y-4 md:space-y-0 mt-6 p-2 rounded-2xl md:rounded-3xl overflow-x-auto">
+                <ul className="flex z-10 whitespace-nowrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+                    {["UI/UX", "Graphic Design", "Websites", "Videography"].map((category, index) => (
                         <li className="me-2" key={category}>
                             <button
+                                ref={(el) => (tabsRef.current[index] = el)}
                                 className={`inline-block px-4 py-3 rounded-full transition-all duration-300 ${selectedCategory === category
-                                    ? "text-white bg-blue-600"
-                                    : "hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                                    ? "text-white"
+                                    : "hover:text-gray-900 dark:hover:text-white"
                                     }`}
-                                onClick={() => handleCategoryClick(category)}
+                                onClick={() => handleCategoryClick(category, index)}
                             >
                                 {category}
                             </button>
                         </li>
                     ))}
                 </ul>
+                <span
+                    className="absolute left-0 h-[45px] transform -translate-y-[17px] md:translate-y-[0px] bg-blue-600 rounded-full transition-all duration-300"
+                    style={{ width: underlineWidth, left: underlineLeft }}
+                />
             </div>
 
             {/* Content area displaying the project cards */}
@@ -177,6 +202,29 @@ const CategorySelector = () => {
                             className="w-full h-full bg-white rounded-xl shadow-xl md:mb-0"
                         >
                             <div className="relative">
+                                {/* Full-screen overlay */}
+                                {moreOpenId === project.id && (
+                                    <div
+                                        className="fixed inset-0 bg-black/50 z-30 transition-all duration-300 ease-in-out"
+                                        onClick={() => setMoreOpenId(null)} // Close on click outside
+                                    >
+                                        <div
+                                            className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-start w-full sm:w-1/2 md:w-1/3 z-40 transition-transform duration-300 ease-in-out ${moreOpenId === project.id ? "translate-x-0" : "translate-x-full"
+                                                }`}
+                                            onClick={(e) => e.stopPropagation()} // Prevent click from closing the modal
+                                        >
+                                            <h3 className="text-2xl font-bold mb-4">More About {project.title}</h3>
+                                            <p>{project.description}</p>
+                                            <button
+                                                className="mt-4 text-white bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded"
+                                                onClick={() => setMoreOpenId(null)}
+                                            >
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+
                                 {project.video ? (
                                     <video
                                         width="400"
@@ -210,13 +258,18 @@ const CategorySelector = () => {
                                             <FaArrowRightLong className="mt-[3px]" />
                                         </Link>
                                     ) : (
-                                        <div className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold">
+                                        <div
+                                            className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold cursor-pointer"
+                                            onClick={() => setMoreOpenId(project.id)}
+                                        >
                                             <p>More</p>
                                             <FaArrowRightLong className="mt-[3px]" />
                                         </div>
                                     )
                                     }
                                 </div>
+
+
                             </div>
                         </div>
                     ))}

@@ -89,9 +89,9 @@ export default function Home() {
 
                 <Toaster />
 
-                <div className="flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal px-10 space-y-14 pt-8 transition-all duration-800 ease-in-out">
+                <div className="flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal px-6 md:px-10 space-y-14 pt-8 transition-all duration-800 ease-in-out">
                     <Navbar />
-                    <div className="w-full max-w-4xl mx-auto px-4 m-2">
+                    <div className="w-full max-w-4xl mx-auto px-2 md:px-4 m-2">
                         <motion.div
                             initial="hidden"
                             animate="visible"
