@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useMouseMove, useValue, animate, withEase } from "react-ui-animate";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -19,6 +19,8 @@ import { SiAdobeillustrator } from "react-icons/si";
 import { SiAdobeaftereffects } from "react-icons/si";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Socials from "../components/Socials";
+import ReactDOM from 'react-dom';
+import ReactSwipe from 'react-swipe';
 
 const CURSOR_SIZE = 100;
 const DELAY_TIME = 300;
@@ -37,6 +39,37 @@ const fadeInUpV2 = {
 
 export default function Home() {
     const [cursorVisible, setCursorVisible] = useState(false);
+    const reactSwipeEl1 = useRef(null);
+    const reactSwipeEl2 = useRef(null);
+    const reactSwipeEl3 = useRef(null);
+
+    useEffect(() => {
+        // Automatically trigger 'next' for each carousel every 3 seconds
+        const interval1 = setInterval(() => {
+            if (reactSwipeEl1.current) {
+                reactSwipeEl1.current.next();
+            }
+        }, 6000);
+
+        const interval2 = setInterval(() => {
+            if (reactSwipeEl2.current) {
+                reactSwipeEl2.current.next();
+            }
+        }, 5500);
+
+        const interval3 = setInterval(() => {
+            if (reactSwipeEl3.current) {
+                reactSwipeEl3.current.next();
+            }
+        }, 7000);
+
+        // Cleanup intervals on component unmount
+        return () => {
+            clearInterval(interval1);
+            clearInterval(interval2);
+            clearInterval(interval3);
+        };
+    }, []);
 
     const x = useValue(0);
     const y = useValue(0);
@@ -118,37 +151,63 @@ export default function Home() {
                             variants={fadeInUpV2}
                             className=""
                         >
-                            <div className="flex flex-col md:flex-row justify-between mt-4 space-y-4 md:space-y-0 md:space-x-12">
+                            <div className="flex flex-col md:flex-row justify-between my-6 md:my-4 space-y-4 md:space-y-0 md:space-x-12">
                                 <div className="w-full bg-gradient-to-r from-blue-300 to-cyan-800 bg-opacity-50 rounded-full p-4 text-center text-white mt-16">
                                     <h3 className="text-2xl font-bold">Experiences</h3>
                                 </div>
                             </div>
 
                             <div className="space-y-6 mt-2 md:mt-0 md:space-x-0">
-                                <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 ">
+                                <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 ">
                                     {/* Image Section */}
-                                    <div className="w-4/6 h-[240px] md:h-[260px] text-left text-slate-200 relative order-1 ml-5 md:ml-0 md:order-2">
-                                        {/* First Image */}
-                                        <div className="absolute top-0 transform translate-y-10 shadow-lg">
-                                            <Image
-                                                src="/ddmhologi.jpg"
-                                                width={230}
-                                                height={230}
-                                                alt="Picture of the author"
-                                                className="rounded-xl"
-                                            />
-                                        </div>
-                                        {/* Second Image */}
-                                        <div className="absolute top-8 left-8 transform translate-x-14 md:translate-x-24 translate-y-16 shadow-lg">
-                                            <Image
-                                                src="/ddmhologi.jpg"
-                                                width={200}
-                                                height={200}
-                                                alt="Picture of the author"
-                                                className="rounded-xl"
-                                            />
-                                        </div>
+                                    <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-0 md:order-2">
+                                        {/* ReactSwipe Carousel */}
+                                        <ReactSwipe
+                                            className="carousel"
+                                            swipeOptions={{ continuous: true }}
+                                            ref={reactSwipeEl1}
+                                        >
+                                            {/* First Image */}
+                                            <div className="flex justify-center py-2">
+                                                <div className="flex-shrink-0 shadow-lg">
+                                                    <Image
+                                                        src="/ddmhologi.jpg"
+                                                        width={230}
+                                                        height={230}
+                                                        alt="Picture of the author"
+                                                        className="rounded-xl"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            {/* Second Image */}
+                                            <div className="flex justify-center py-2">
+                                                <div className="flex-shrink-0 shadow-lg">
+                                                    <Image
+                                                        src="/ddmhologi.jpg"
+                                                        width={230}
+                                                        height={230}
+                                                        alt="Picture of the author"
+                                                        className="rounded-xl"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            {/* Third Image */}
+                                            <div className="flex justify-center py-2">
+                                                <div className="flex-shrink-0 shadow-lg">
+                                                    <Image
+                                                        src="/ddmhologi.jpg"
+                                                        width={230}
+                                                        height={230}
+                                                        alt="Picture of the author"
+                                                        className="rounded-xl"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </ReactSwipe>
                                     </div>
+
 
                                     {/* Text Section */}
                                     <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
@@ -175,30 +234,56 @@ export default function Home() {
                             variants={fadeInUpV2}
                             className=""
                         >
-                            <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 ">
+                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 mt-6 md:mt-2">
                                 {/* Image Section */}
-                                <div className="w-full h-[240px] md:h-[260px] text-left text-slate-200 relative order-1 ml-5 md:ml-0 md:order-2">
-                                    {/* First Image */}
-                                    <div className="absolute top-0 transform translate-y-10 shadow-lg">
-                                        <Image
-                                            src="/ddmhologi.jpg"
-                                            width={230}
-                                            height={230}
-                                            alt="Picture of the author"
-                                            className="rounded-xl"
-                                        />
-                                    </div>
-                                    {/* Second Image */}
-                                    <div className="absolute top-8 left-8 transform translate-x-14 md:translate-x-24 translate-y-16 shadow-lg">
-                                        <Image
-                                            src="/ddmhologi.jpg"
-                                            width={200}
-                                            height={200}
-                                            alt="Picture of the author"
-                                            className="rounded-xl"
-                                        />
-                                    </div>
+                                <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-0 md:order-2">
+                                    {/* ReactSwipe Carousel */}
+                                    <ReactSwipe
+                                        className="carousel"
+                                        swipeOptions={{ continuous: true }}
+                                        ref={reactSwipeEl2}
+                                    >
+                                        {/* First Image */}
+                                        <div className="flex justify-center py-2">
+                                            <div className="flex-shrink-0 shadow-lg">
+                                                <Image
+                                                    src="/ddmhologi.jpg"
+                                                    width={230}
+                                                    height={230}
+                                                    alt="Picture of the author"
+                                                    className="rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Second Image */}
+                                        <div className="flex justify-center py-2">
+                                            <div className="flex-shrink-0 shadow-lg">
+                                                <Image
+                                                    src="/ddmhologi.jpg"
+                                                    width={230}
+                                                    height={230}
+                                                    alt="Picture of the author"
+                                                    className="rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Third Image */}
+                                        <div className="flex justify-center py-2">
+                                            <div className="flex-shrink-0 shadow-lg">
+                                                <Image
+                                                    src="/ddmhologi.jpg"
+                                                    width={230}
+                                                    height={230}
+                                                    alt="Picture of the author"
+                                                    className="rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+                                    </ReactSwipe>
                                 </div>
+
 
                                 {/* Text Section */}
                                 <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
@@ -224,30 +309,56 @@ export default function Home() {
                             variants={fadeInUpV2}
                             className=""
                         >
-                            <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 ">
+                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 mt-6 md:mt-2">
                                 {/* Image Section */}
-                                <div className="w-full h-[240px] md:h-[260px] text-left text-slate-200 relative order-1 ml-5 md:ml-0 md:order-2">
-                                    {/* First Image */}
-                                    <div className="absolute top-0 transform translate-y-10 shadow-lg">
-                                        <Image
-                                            src="/ddmhologi.jpg"
-                                            width={230}
-                                            height={230}
-                                            alt="Picture of the author"
-                                            className="rounded-xl"
-                                        />
-                                    </div>
-                                    {/* Second Image */}
-                                    <div className="absolute top-8 left-8 transform translate-x-14 md:translate-x-24 translate-y-16 shadow-lg">
-                                        <Image
-                                            src="/ddmhologi.jpg"
-                                            width={200}
-                                            height={200}
-                                            alt="Picture of the author"
-                                            className="rounded-xl"
-                                        />
-                                    </div>
+                                <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-0 md:order-2">
+                                    {/* ReactSwipe Carousel */}
+                                    <ReactSwipe
+                                        className="carousel"
+                                        swipeOptions={{ continuous: true }}
+                                        ref={reactSwipeEl3}
+                                    >
+                                        {/* First Image */}
+                                        <div className="flex justify-center py-2">
+                                            <div className="flex-shrink-0 shadow-lg">
+                                                <Image
+                                                    src="/ddmhologi.jpg"
+                                                    width={230}
+                                                    height={230}
+                                                    alt="Picture of the author"
+                                                    className="rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Second Image */}
+                                        <div className="flex justify-center py-2">
+                                            <div className="flex-shrink-0 shadow-lg">
+                                                <Image
+                                                    src="/ddmhologi.jpg"
+                                                    width={230}
+                                                    height={230}
+                                                    alt="Picture of the author"
+                                                    className="rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Third Image */}
+                                        <div className="flex justify-center py-2">
+                                            <div className="flex-shrink-0 shadow-lg">
+                                                <Image
+                                                    src="/ddmhologi.jpg"
+                                                    width={230}
+                                                    height={230}
+                                                    alt="Picture of the author"
+                                                    className="rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+                                    </ReactSwipe>
                                 </div>
+
 
                                 {/* Text Section */}
                                 <div className="flex items-center justify-center max-w-lg order-2 md:order-1">

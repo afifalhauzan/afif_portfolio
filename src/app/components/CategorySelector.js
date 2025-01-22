@@ -16,7 +16,7 @@ const projectData = {
         },
         {
             id: 2,
-            title: "Mentorify",
+            title: "EcoWardrobe",
             description: "Description for UI/UX project 2.",
             image: "/uiux2.jpg",
             figma: "",
@@ -24,13 +24,21 @@ const projectData = {
         },
         {
             id: 3,
+            title: "Mentorify",
+            description: "Description for UI/UX project 2.",
+            image: "/uiux2.jpg",
+            figma: "",
+            tags: "",
+        },
+        {
+            id: 4,
             title: "EchoSleep",
             description: "Description for UI/UX project 1.",
             image: "/uiux1.jpg", // Image source for the project
             video: "/greventure.mp4", // Image source for the project
         },
         {
-            id: 4,
+            id: 5,
             title: "PetCare",
             description: "Description for UI/UX project 2.",
             image: "/uiux2.jpg",
@@ -39,20 +47,14 @@ const projectData = {
     ],
     "Graphic Design": [
         {
-            id: 5,
+            id: 6,
             title: "HOLOGY 7.0 Poster",
             description: "Description for Graphic Design project 1.",
             image: "/graphicdesign1.jpg",
         },
         {
-            id: 6,
-            title: "MPLS",
-            description: "Description for Graphic Design project 2.",
-            image: "/graphicdesign2.jpg",
-        },
-        {
             id: 7,
-            title: "Rantau Ngalam Kuy",
+            title: "MPLS",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
         },
@@ -62,22 +64,28 @@ const projectData = {
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
         },
+        {
+            id: 9,
+            title: "Rantau Ngalam Kuy",
+            description: "Description for Graphic Design project 2.",
+            image: "/graphicdesign2.jpg",
+        },
     ],
     "Websites": [
         {
-            id: 9,
+            id: 10,
             title: "Xhiexplore",
             description: "Description for Website project 1.",
             image: "/website1.jpg",
         },
         {
-            id: 10,
+            id: 11,
             title: "Past Portofolio",
             description: "Description for Website project 2.",
             image: "/website2.jpg",
         },
         {
-            id: 11,
+            id: 12,
             title: "PortalMABA",
             description: "Description for Website project 2.",
             image: "/website2.jpg",
@@ -85,43 +93,43 @@ const projectData = {
     ],
     "Videography": [
         {
-            id: 12,
+            id: 13,
             title: "Eftychia",
             description: "Description for Videography project 1.",
             image: "/videography1.jpg",
         },
         {
-            id: 13,
+            id: 14,
             title: "HOLOGY 7.0 Trailer",
             description: "Description for Videography project 1.",
             image: "/videography1.jpg",
         },
         {
-            id: 14,
+            id: 15,
             title: "Makrab PTI 23",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 15,
+            id: 16,
             title: "Schotival",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 16,
+            id: 17,
             title: "Pusoko",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 17,
+            id: 18,
             title: "Synergy of Symphony",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
         },
         {
-            id: 18,
+            id: 19,
             title: "Sebelah Mata",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",

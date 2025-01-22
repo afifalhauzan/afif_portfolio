@@ -11,7 +11,7 @@ export default {
 			boxShadow: {
 				'xl': '0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)',
 				'xlLogo': '0 0 10px rgb(0 0 0 / 0.1), 0 0 10px rgb(0 0 0 / 0.05)',
-
+				'inset-custom': 'inset 0 0 8px 8px rgb(255 255 255 / 1)',
 			},
 			fontFamily: {
 				barlow: [
@@ -81,6 +81,10 @@ export default {
 					'0%, 100%': { borderColor: 'rgba(0, 0, 0, 0.1)' },
 					'50%': { borderColor: 'rgba(200, 200, 200, 0.4)' },
 				},
+				scroll: {
+					'0%': { transform: 'translateX(100%)' },
+					'100%': { transform: 'translateX(-100%)' },
+				},
 				animatedgradient: {
 					'0%': {
 						backgroundPosition: '0% 50%'
@@ -100,6 +104,7 @@ export default {
 			animation: {
 				gradient: 'animatedgradient 6s ease infinite alternate',
 				'border-pulse': 'border-pulse 4s infinite ease-in-out',
+				scroll: 'scroll 20s linear infinite',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
