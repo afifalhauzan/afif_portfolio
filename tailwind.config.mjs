@@ -95,8 +95,23 @@ export default {
 					'100%': {
 						backgroundPosition: '0% 50%'
 					}
-				}
-
+				},
+				slideIn: {
+					'0%': {
+						transform: 'translateX(100%)', // Start off-screen
+					},
+					'100%': {
+						transform: 'translateX(0%)', // Move to its natural position
+					},
+				},
+				slideOut: {
+					'0%': {
+						transform: 'translateX(0%)', // Start from its natural position
+					},
+					'100%': {
+						transform: 'translateX(100%)', // Move off-screen
+					},
+				},
 			},
 			backgroundSize: {
 				'300%': '300%'
@@ -105,6 +120,8 @@ export default {
 				gradient: 'animatedgradient 6s ease infinite alternate',
 				'border-pulse': 'border-pulse 4s infinite ease-in-out',
 				scroll: 'scroll 20s linear infinite',
+				'slide-in': 'slideIn 0.5s ease-in-out',
+				'slide-out': 'slideOut 0.5s ease-in-out',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

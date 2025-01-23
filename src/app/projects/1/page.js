@@ -15,6 +15,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Link from "next/link";
 import Navbar from '@/app/components/Navbar';
 import SwipeTransition from "@/app/swipeTransition";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const CURSOR_SIZE = 100;
 const DELAY_TIME = 300;
@@ -85,16 +86,27 @@ export default function Home() {
                         variants={fadeInUp}
                         className=""
                     >
-                        <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-white">
-                            Contact
+                        {/* Back to Project Link */}
+                        <div className="mb-4">
+                            <Link
+                                href="/projects"
+                                className="flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white transition duration-300"
+                            >
+                                <FaArrowLeftLong/>
+                                <a>Back to Project</a>
+                            </Link>
+                        </div>
+
+                        <h1 className="text-4xl xl:text-5xl font-bold text-left w-full text-white">
+                            Greventure
                         </h1>
                         <div className="flex flex-col md:flex-row justify-between">
                             <div>
-                                <div className="max-w-md justify-normal mx-auto my-8 md:mx-0 md:text-left mb-4 md:mb-0 p-6 pb-2">
-                                    <div className="flex flex-col items-center mb-6">
+                                <div className="max-w-md justify-normal mx-auto my-8 md:mx-0 md:text-left mb-4 md:mb-0 pb-2">
+                                    <div className="flex flex-col mb-6">
                                         <h2 className="text-2xl font-bold text-white mb-6">Let's get in touch!</h2>
 
-                                        <h2 className="text-md mt-2 text-white text-center">Whether it's collaborating, work, or just wanna contact me, hit me up!</h2>
+                                        <h2 className="text-md mt-2 text-white">Whether it's collaborating, work, or just wanna contact me, hit me up!</h2>
                                         <Socials className="pb-0 mb-0 justify-center" />
                                     </div>
                                 </div>

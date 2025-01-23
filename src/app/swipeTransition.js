@@ -9,7 +9,7 @@ export default function SwipeTransition({ children }) {
 
   useEffect(() => {
     // Show transition only if going to the Projects page
-    if (pathname == '/projects/1') {
+    if ((pathname == '/projects/1') || (pathname == '/')) {
       setIsSwipeVisible(false)
     } else {
       setIsSwipeVisible(true)

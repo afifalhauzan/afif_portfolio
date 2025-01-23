@@ -44,32 +44,46 @@ export default function Home() {
     const reactSwipeEl3 = useRef(null);
 
     useEffect(() => {
-        // Automatically trigger 'next' for each carousel every 3 seconds
-        const interval1 = setInterval(() => {
-            if (reactSwipeEl1.current) {
-                reactSwipeEl1.current.next();
-            }
-        }, 6000);
+        // Delayed start for each carousel
+        const delay1 = setTimeout(() => {
+            const interval1 = setInterval(() => {
+                if (reactSwipeEl1.current) {
+                    reactSwipeEl1.current.next();
+                }
+            }, 5500);
+            // Store interval for cleanup
+            reactSwipeEl1.current.interval = interval1;
+        }, 0); // Delay for the first carousel
 
-        const interval2 = setInterval(() => {
-            if (reactSwipeEl2.current) {
-                reactSwipeEl2.current.next();
-            }
-        }, 5500);
+        const delay2 = setTimeout(() => {
+            const interval2 = setInterval(() => {
+                if (reactSwipeEl2.current) {
+                    reactSwipeEl2.current.next();
+                }
+            }, 7000);
+            reactSwipeEl2.current.interval = interval2;
+        }, 500); // Delay for the second carousel
 
-        const interval3 = setInterval(() => {
-            if (reactSwipeEl3.current) {
-                reactSwipeEl3.current.next();
-            }
-        }, 7000);
+        const delay3 = setTimeout(() => {
+            const interval3 = setInterval(() => {
+                if (reactSwipeEl3.current) {
+                    reactSwipeEl3.current.next();
+                }
+            }, 5000);
+            reactSwipeEl3.current.interval = interval3;
+        }, 3000); // Delay for the third carousel
 
-        // Cleanup intervals on component unmount
+        // Cleanup timeouts and intervals on component unmount
         return () => {
-            clearInterval(interval1);
-            clearInterval(interval2);
-            clearInterval(interval3);
+            clearTimeout(delay1);
+            clearTimeout(delay2);
+            clearTimeout(delay3);
+            if (reactSwipeEl1.current?.interval) clearInterval(reactSwipeEl1.current.interval);
+            if (reactSwipeEl2.current?.interval) clearInterval(reactSwipeEl2.current.interval);
+            if (reactSwipeEl3.current?.interval) clearInterval(reactSwipeEl3.current.interval);
         };
     }, []);
+
 
     const x = useValue(0);
     const y = useValue(0);
@@ -219,7 +233,7 @@ export default function Home() {
                                             </div>
 
                                             <p className="text-md text-slate-300 text-justify">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                Developed a UI/UX curriculum focusing on design principles, systems, and thinking. Contributed to workshops and fostered a collaborative learning environment.
                                             </p>
                                         </div>
                                     </div>
@@ -248,7 +262,7 @@ export default function Home() {
                                             <div className="flex-shrink-0 shadow-lg">
                                                 <Image
                                                     src="/ddmhologi.jpg"
-                                                    width={230}
+                                                    width={250}
                                                     height={230}
                                                     alt="Picture of the author"
                                                     className="rounded-xl"
@@ -257,25 +271,12 @@ export default function Home() {
                                         </div>
 
                                         {/* Second Image */}
-                                        <div className="flex justify-center py-2">
+                                        <div className="flex justify-center py-2 items-center">
                                             <div className="flex-shrink-0 shadow-lg">
                                                 <Image
-                                                    src="/ddmhologi.jpg"
-                                                    width={230}
-                                                    height={230}
-                                                    alt="Picture of the author"
-                                                    className="rounded-xl"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Third Image */}
-                                        <div className="flex justify-center py-2">
-                                            <div className="flex-shrink-0 shadow-lg">
-                                                <Image
-                                                    src="/ddmhologi.jpg"
-                                                    width={230}
-                                                    height={230}
+                                                    src="/ddmhologi2.jpg"
+                                                    width={280}
+                                                    height={300}
                                                     alt="Picture of the author"
                                                     className="rounded-xl"
                                                 />
@@ -288,15 +289,14 @@ export default function Home() {
                                 {/* Text Section */}
                                 <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
                                     <div className="w-full p-4 text-left text-slate-200 md:mr-16">
-                                        <h3 className="text-2xl font-bold">Raion Community</h3>
+                                        <h3 className="text-2xl font-bold">HOLOGY 7.0</h3>
                                         <div className="flex space-x-3 mb-2">
-                                            <h3 className="text-lg">Vice Head UI/UX Designer</h3>
-                                            <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
+                                            <h3 className="text-lg">Head of Creative Media</h3>
+                                            <h3 className="text-lg text-slate-400 mb-2">(2024)</h3>
                                         </div>
 
                                         <p className="text-md text-slate-300 text-justify">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
+                                            Lead a team of 13 people in brainstorming graphic designs and directing videography content. Ensure all visual content aligns with our event's objectives and branding as an IT Seminar & Competition event, enhancing the overall aesthetic.</p>
                                     </div>
                                 </div>
                             </div>
@@ -322,7 +322,7 @@ export default function Home() {
                                         <div className="flex justify-center py-2">
                                             <div className="flex-shrink-0 shadow-lg">
                                                 <Image
-                                                    src="/ddmhologi.jpg"
+                                                    src="/asprak.png"
                                                     width={230}
                                                     height={230}
                                                     alt="Picture of the author"
@@ -363,15 +363,14 @@ export default function Home() {
                                 {/* Text Section */}
                                 <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
                                     <div className="w-full p-4 text-left text-slate-200 md:mr-16">
-                                        <h3 className="text-2xl font-bold">Raion Community</h3>
+                                        <h3 className="text-2xl font-bold">FILKOM UB</h3>
                                         <div className="flex space-x-3 mb-2">
-                                            <h3 className="text-lg">Vice Head UI/UX Designer</h3>
-                                            <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
+                                            <h3 className="text-lg">Practicum Assistant</h3>
+                                            <h3 className="text-lg text-slate-400 mb-2">(2024)</h3>
                                         </div>
 
                                         <p className="text-md text-slate-300 text-justify">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
+                                            Guided 29 students in Java programming, covering topics such as Basic I/O, Conditions, Loops, Methods, and Arrays in one semester. Created interactive quizzes on HackerRank to enhance hands-on learning.</p>
                                     </div>
                                 </div>
                             </div>

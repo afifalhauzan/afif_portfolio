@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Transition } from "react-transition-group";
+import ReactDOM from "react-dom";
 
 // Project card data (hardcoded for simplicity)
 const projectData = {
@@ -54,19 +56,19 @@ const projectData = {
         },
         {
             id: 7,
-            title: "MPLS",
+            title: "Rantau Ngalam Kuy",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
         },
         {
             id: 8,
-            title: "Rantau Ngalam Kuy",
+            title: "Infographic",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
         },
         {
             id: 9,
-            title: "Rantau Ngalam Kuy",
+            title: "MPLS",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
         },
@@ -138,8 +140,8 @@ const projectData = {
 };
 
 const transition = {
-    duration: 0.6,
-    ease: [0, 0.2, 0.5, 1.01],
+    duration: 0.4,
+    ease: [0, 0.5, 0.8, 1.01],
 }
 
 const CategorySelector = () => {
@@ -149,6 +151,24 @@ const CategorySelector = () => {
     const [isMoreOpen, setIsMoreOpen] = useState(false);
     const [moreOpenId, setMoreOpenId] = useState(null);
     const tabsRef = useRef([]);
+    const nodeRef = useRef([]); // Create a unique ref for each project
+
+    const duration = 400; // Animation duration in ms
+
+    const defaultStyle = {
+        transition: `transform ${duration}ms ease-in-out`,
+        transform: "translateX(100%)",
+    };
+
+    const transitionStyles = {
+        entering: { transform: "translateX(0)" },
+        entered: { transform: "translateX(0)" },
+        exiting: { transform: "translateX(100%)" },
+        exited: { transform: "translateX(100%)" },
+    };
+
+    const handleOpen = (id) => setMoreOpenId(id);
+    const handleClose = () => setMoreOpenId(null);
 
     // Function to handle category selection
     const handleCategoryClick = (category, index) => {
@@ -210,29 +230,6 @@ const CategorySelector = () => {
                             className="w-full h-full bg-white rounded-xl shadow-xl md:mb-0"
                         >
                             <div className="relative">
-                                {/* Full-screen overlay */}
-                                {moreOpenId === project.id && (
-                                    <div
-                                        className="fixed inset-0 bg-black/50 z-30 transition-all duration-300 ease-in-out"
-                                        onClick={() => setMoreOpenId(null)} // Close on click outside
-                                    >
-                                        <div
-                                            className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-start w-full sm:w-1/2 md:w-1/3 z-40 transition-transform duration-300 ease-in-out ${moreOpenId === project.id ? "translate-x-0" : "translate-x-full"
-                                                }`}
-                                            onClick={(e) => e.stopPropagation()} // Prevent click from closing the modal
-                                        >
-                                            <h3 className="text-2xl font-bold mb-4">More About {project.title}</h3>
-                                            <p>{project.description}</p>
-                                            <button
-                                                className="mt-4 text-white bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded"
-                                                onClick={() => setMoreOpenId(null)}
-                                            >
-                                                Close
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
-
                                 {project.video ? (
                                     <video
                                         width="400"
@@ -268,7 +265,7 @@ const CategorySelector = () => {
                                     ) : (
                                         <div
                                             className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold cursor-pointer"
-                                            onClick={() => setMoreOpenId(project.id)}
+                                            onClick={() => handleOpen(project.id)}
                                         >
                                             <p>More</p>
                                             <FaArrowRightLong className="mt-[3px]" />
@@ -276,9 +273,37 @@ const CategorySelector = () => {
                                     )
                                     }
                                 </div>
-
-
                             </div>
+
+                            <Transition in={moreOpenId === project.id} timeout={duration} key={project.id} nodeRef={nodeRef}>
+                                {(state) => (
+                                    <>
+                                        {moreOpenId === project.id && (
+                                            <div
+                                                className="fixed inset-0 bg-black/10 z-30"
+                                                onClick={handleClose} // Close when clicking outside
+                                            ></div>
+                                        )}
+                                        <div
+                                            ref={nodeRef} // Attach the nodeRef here
+                                            className="fixed top-0 right-0 h-full bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-start w-full sm:w-1/2 md:w-1/3 z-40"
+                                            style={{
+                                                ...defaultStyle,
+                                                ...transitionStyles[state], // Apply dynamic styles based on animation state
+                                            }}
+                                        >
+                                            <h3 className="text-2xl font-bold mb-4">More About {project.title}</h3>
+                                            <p>{project.description}</p>
+                                            <button
+                                                className="mt-4 text-white bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded"
+                                                onClick={handleClose}
+                                            >
+                                                Close
+                                            </button>
+                                        </div>
+                                    </>
+                                )}
+                            </Transition>
                         </div>
                     ))}
                 </motion.div>
