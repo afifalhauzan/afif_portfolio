@@ -117,7 +117,7 @@ export default function Home() {
 
                                             {/* Text Content */}
 
-                                            <h2 className="text-md mt-2 text-white text-center">Whether it's collaborating, work, or just wanna contact me, hit me up!</h2>
+                                            <h2 className="text-md mt-2 text-white text-center">Whether you're up for a collaboration, have a project in mind, or just want to say hi, feel free to reach out!</h2>
                                             <Socials className="pb-0 mb-0 justify-center" />
                                         </div>
                                     </div>

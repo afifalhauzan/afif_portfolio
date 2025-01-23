@@ -91,7 +91,7 @@ export default function Home() {
                 Passionate about <strong className="font-bold">graphic design, videography, and creating visually engaging user experiences</strong>. <br></br>By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
               </p>
               <p className="text-base md:text-lg text-justify w-full text-slate-500 dark:text-bluetextdefault">
-                Currently, I'm sharpening my skills in
+                I'm sharpening my skills in
                 <FaPenNib className="inline mx-[5px] ml-3 mb-[3px]" />
                 <strong className="font-bold">UI/UX design</strong> and exploring
                 <RiGlobalLine className="inline mx-[5px] ml-[9px] mb-[3px]" />

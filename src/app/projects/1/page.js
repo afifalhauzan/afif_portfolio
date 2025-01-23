@@ -77,7 +77,7 @@ export default function Home() {
                 />
             )}
 
-            <div className="flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal px-6 md:px-10 space-y-14 pt-8 transition-all duration-800 ease-in-out">
+            <div className="flex flex-col font-jakarta min-h-screen bg-backgroundlight dark:bg-bluedefault items-center justify-normal px-6 md:px-10 space-y-14 pt-8 transition-all duration-800 ease-in-out">
                 <Navbar />
                 <div className="w-full max-w-4xl mx-auto px-2 md:px-4 m-2">
                     <motion.div
@@ -92,7 +92,7 @@ export default function Home() {
                                 href="/projects"
                                 className="flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white transition duration-300"
                             >
-                                <FaArrowLeftLong/>
+                                <FaArrowLeftLong />
                                 <a>Back to Project</a>
                             </Link>
                         </div>
@@ -102,11 +102,15 @@ export default function Home() {
                         </h1>
                         <div className="flex flex-col md:flex-row justify-between">
                             <div>
-                                <div className="max-w-md justify-normal mx-auto my-8 md:mx-0 md:text-left mb-4 md:mb-0 pb-2">
+                                <div className="max-w-xl justify-normal mx-auto my-8 md:mx-0 md:text-left mb-4 md:mb-0 pb-2">
                                     <div className="flex flex-col mb-6">
-                                        <h2 className="text-2xl font-bold text-white mb-6">Let's get in touch!</h2>
+                                        <h2 className="text-2xl font-bold text-white mb-2">Description</h2>
 
-                                        <h2 className="text-md mt-2 text-white">Whether it's collaborating, work, or just wanna contact me, hit me up!</h2>
+                                        <h2 className="text-md mt-2 text-white text-justify mb-2">A map-based social media platform designed to reconnect people with their surroundings. It helps users discover local places and activities, especially those related to urban sustainability. Greventure encourages young people to bring their cities to life digitally while fostering connections with the environment and promoting efforts to care for it",
+                                        </h2>
+
+                                        <h2 className="text-md mt-2 text-white text-justify">Case study coming soon...
+                                        </h2>
                                         <Socials className="pb-0 mb-0 justify-center" />
                                     </div>
                                 </div>
