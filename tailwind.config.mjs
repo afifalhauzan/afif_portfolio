@@ -112,6 +112,10 @@ export default {
 						transform: 'translateX(100%)', // Move off-screen
 					},
 				},
+				fadeInOut: {
+					'0%': { opacity: '1' },
+					'100%': { opacity: '0' },
+				},
 			},
 			backgroundSize: {
 				'300%': '300%'
@@ -122,6 +126,7 @@ export default {
 				scroll: 'scroll 20s linear infinite',
 				'slide-in': 'slideIn 0.5s ease-in-out',
 				'slide-out': 'slideOut 0.5s ease-in-out',
+				'fade-in-out': 'fadeInOut 1s ease-in-out',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

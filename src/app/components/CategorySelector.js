@@ -5,6 +5,10 @@ import Link from 'next/link';
 import { FaArrowRightLong } from "react-icons/fa6";
 import ReactDOM from "react-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { RiGlobalLine } from "react-icons/ri";
+import { FaPenNib } from "react-icons/fa6";
 
 // Project card data (hardcoded for simplicity)
 const projectData = {
@@ -57,28 +61,32 @@ const projectData = {
             title: "HOLOGY 7.0",
             description: "Description for Graphic Design project 1.",
             image: "/graphicdesign1.jpg",
-            tags: ["Technology", "Poster", "Designs"]
+            tags: ["Technology", "Poster", "Designs"],
+            design: "https://www.instagram.com/hology_ub/",
         },
         {
             id: 7,
             title: "Rantau Ngalam Kuy",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
-            tags: ["Campus Expo", "Designs"]
+            tags: ["Campus Expo", "Designs"],
+            design: "",
         },
         {
             id: 8,
             title: "Mobile JKN",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
-            tags: ["Infographic", "Health", "Designs"]
+            tags: ["Infographic", "Health", "Designs"],
+            design: "",
         },
         {
             id: 9,
             title: "MPLS",
             description: "Description for Graphic Design project 2.",
             image: "/graphicdesign2.jpg",
-            tags: ["Poster", "Designs"]
+            tags: ["Poster", "Designs"],
+            design: "",
         },
     ],
     "Websites": [
@@ -87,72 +95,90 @@ const projectData = {
             title: "Xhiexplore",
             description: "Description for Website project 1.",
             image: "/website1.jpg",
-            tags: ["3D Museum", "Bootstrap", "Unity"]
+            tags: ["3D Museum", "Bootstrap", "Unity"],
+            website: "https://afifalhauzan.github.io/xhiexplore-site/",
         },
         {
             id: 11,
             title: "Past Portofolio",
             description: "Description for Website project 2.",
             image: "/website2.jpg",
-            tags: ["Framer", "Website"]
+            tags: ["Framer", "Website"],
+            website: "https://afifalhauzan.framer.website/",
         },
         {
             id: 12,
             title: "PortalMABA",
             description: "Description for Website project 2.",
             image: "/website2.jpg",
-            tags: ["Lavavel", "MySQL", "Tailwind"]
+            tags: ["Lavavel", "MySQL", "Tailwind"],
+            github: "https://github.com/afifalhauzan/pkkmb_admin_pweb",
+        },
+        {
+            id: 13,
+            title: "Simple Blog Site",
+            description: "Description for Website project 2.",
+            image: "/website2.jpg",
+            tags: ["Lavavel", "MySQL", "Tailwind"],
+            github: "https://github.com/afifalhauzan/Blog-Beginner-group-7",
         },
     ],
     "Videography": [
         {
-            id: 13,
+            id: 14,
             title: "Eftychia",
             description: "Description for Videography project 1.",
             image: "/videography1.jpg",
-            tags: ["School", "Aftermovie"]
-        },
-        {
-            id: 14,
-            title: "HOLOGY 7.0 Trailer",
-            description: "Description for Videography project 1.",
-            image: "/videography1.jpg",
-            tags: ["Technology", "Visual Effects"]
+            tags: ["School", "Aftermovie"],
+            videoLink: "https://www.instagram.com/p/C81OsVYsLfu/",
         },
         {
             id: 15,
-            title: "Makrab PTI 23",
-            description: "Description for Videography project 2.",
-            image: "/videography2.jpg",
-            tags: ["Aftermovie"]
+            title: "HOLOGY 7.0 Trailer",
+            description: "Description for Videography project 1.",
+            image: "/videography1.jpg",
+            tags: ["Technology", "Visual Effects"],
+            videoLink: "https://www.instagram.com/reel/C99lsqzyDS-/",
         },
         {
             id: 16,
-            title: "Schotival",
+            title: "Makrab PTI 23",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
-            tags: ["Motion Graphics", "Aftermovie"]
+            tags: ["Aftermovie"],
+            videoLink: "https://www.instagram.com/reel/C58SGYlSDS-/",
         },
         {
             id: 17,
-            title: "Pusoko",
+            title: "Schotival",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
-            tags: ["Short Film", "Theatre", "Visual Effects"]
+            tags: ["Motion Graphics", "Aftermovie"],
+            videoLink: "https://www.instagram.com/reel/DECg9FSyb8w/",
         },
         {
             id: 18,
-            title: "Synergy of Symphony",
+            title: "Pusoko",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
-            tags: ["Aftermovie"]
+            tags: ["Short Film", "Theatre", "Visual Effects"],
+            videoLink: "https://www.instagram.com/p/CSs6HZ_h7Yu/",
         },
         {
             id: 19,
+            title: "Synergy of Symphony",
+            description: "Description for Videography project 2.",
+            image: "/videography2.jpg",
+            tags: ["Aftermovie"],
+            videoLink: "https://www.instagram.com/p/DDd9cPLprQi/",
+        },
+        {
+            id: 20,
             title: "Sebelah Mata",
             description: "Description for Videography project 2.",
             image: "/videography2.jpg",
-            tags: ["Short Film"]
+            tags: ["Short Film"],
+            videoLink: "https://youtu.be/8ZS_ld4OwLY?si=IIym9qrw3XhNa7pD",
         },
     ],
 };
@@ -178,11 +204,15 @@ const CategorySelector = () => {
 
     // Function to handle category selection
     const handleCategoryClick = (category, index) => {
-        setSelectedCategory(category);
+        handleClose(); // Call the second function
 
-        const currentTab = tabsRef.current[index];
-        setUnderlineLeft(currentTab?.offsetLeft ?? 0);
-        setUnderlineWidth(currentTab?.clientWidth ?? 0);
+        setTimeout(() => {
+            setSelectedCategory(category);
+
+            const currentTab = tabsRef.current[index];
+            setUnderlineLeft(currentTab?.offsetLeft ?? 0);
+            setUnderlineWidth(currentTab?.clientWidth ?? 0);
+        }, 0); // Delay ensures state changes propagate properly
     };
 
     useEffect(() => {
@@ -207,7 +237,9 @@ const CategorySelector = () => {
                                     ? "text-white"
                                     : "hover:text-gray-900 dark:hover:text-white"
                                     }`}
-                                onClick={() => handleCategoryClick(category, index)}
+                                onClick={() => {
+                                    handleCategoryClick(category, index); // Call the first function
+                                }}
                             >
                                 {category}
                             </button>
@@ -226,7 +258,7 @@ const CategorySelector = () => {
                     }`}
             >
                 {activeProjectId && (
-                    <div className="p-10 pt-16 md:pt-12">
+                    <div className="p-10 pt-16 md:pt-12 transition-all duration-300">
                         <div
                             className="flex items-center pb-6 space-x-4 text-md font-medium text-gray-300 hover:text-white transition-all duration-300"
                             onClick={handleClose}
@@ -255,24 +287,89 @@ const CategorySelector = () => {
                         </p>
 
                         {activeProjectId && activeProject.figma ? (
-                            <div className="flex flex-row justify-center items-center p-2 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-2">
-                                <div className="flex w-1/6 justify-center items-center">
-                                    <Image
-                                        src="/sigma.svg"
-                                        alt="Figma Logo"
-                                        width={40}
-                                        height={40}
-                                        className="object-contain"
-                                    />
+                            <a href={activeProject.figma}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <div className="flex flex-row justify-center items-center p-2 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                    <div className="flex w-1/8 justify-center items-center">
+                                        <Image
+                                            src="/sigma.svg"
+                                            alt="Figma Logo"
+                                            width={40}
+                                            height={40}
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                    <p
+                                        className="flex items-center justify-center text-center text-md md:text-lg">
+                                        Check out the Prototype!
+                                    </p>
                                 </div>
-                                <a
-                                    href={activeProject.figma}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center text-center text-md md:text-lg">
-                                    Check out the Prototype!
-                                </a>
-                            </div>
+                            </a>
+                        ) : null}
+
+                        {activeProjectId && activeProject.videoLink ? (
+                            <a href={activeProject.videoLink}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                    <div className="flex w-1/7 justify-center items-center ">
+                                        <FaYoutube className="text-3xl" />
+                                    </div>
+                                    <p
+                                        className="flex items-center justify-start text-left text-md md:text-lg">
+                                        Watch the video!
+                                    </p>
+                                </div>
+                            </a>
+                        ) : null}
+
+                        {activeProjectId && activeProject.website ? (
+                            <a href={activeProject.website}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                    <div className="flex w-1/8 justify-center items-center">
+                                        <RiGlobalLine className="text-3xl" />
+                                    </div>
+                                    <p
+                                        className="flex items-center justify-center text-center text-md md:text-lg">
+                                        Visit the website!
+                                    </p>
+                                </div>
+                            </a>
+                        ) : null}
+
+                        {activeProjectId && activeProject.github ? (
+                            <a href={activeProject.github}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                    <div className="flex w-1/8 justify-center items-center">
+                                        <FaGithub className="text-3xl" />
+                                    </div>
+                                    <p
+                                        className="flex items-center justify-center text-center text-md md:text-lg">
+                                        The Repository
+                                    </p>
+                                </div>
+                            </a>
+                        ) : null}
+
+                        {activeProjectId && activeProject.design ? (
+                            <a href={activeProject.design}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                    <div className="flex w-1/8 justify-center items-center">
+                                        <FaPenNib className="text-3xl" />
+                                    </div>
+                                    <p
+                                        className="flex items-center justify-center text-center text-md md:text-lg">
+                                        Check out the Designs!
+                                    </p>
+                                </div>
+                            </a>
                         ) : null}
                     </div>
                 )}
