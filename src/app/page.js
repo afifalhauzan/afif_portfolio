@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaPenNib } from "react-icons/fa6";
 import { RiGlobalLine } from "react-icons/ri";
+import useClientSideLocalStorage from "./useClientSideLocalStorage";
 
 import Navbar from '@/app/components/Navbar';
 import SwipeTransition from './swipeTransition';
@@ -20,40 +21,45 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeInOut", delay: 0.5 } },
 };
 
-
 export default function Home() {
   const [showOverlay, setShowOverlay] = useState(false); // Track the overlay state
   const [isDarkMode, setIsDarkMode] = useState(false); // Default to dark mode
   const [cursorVisible, setCursorVisible] = useState(false);
   const [isSwiping, setIsSwiping] = useState(false);
 
-  useEffect(() => {
-    // Check if the user has already seen the overlay
-    const hasSeenOverlay = localStorage.getItem("hasSeenOverlay");
+  // useEffect(() => {
+  //   // Ensure this code runs only in the browser
+  //   if (typeof window !== 'undefined' && window.localStorage) {
+  //     // Check if the user has already seen the overlay
+  //     const hasSeenOverlay = window.localStorage.getItem("hasSeenOverlay");
 
-    if (!hasSeenOverlay) {
-      // If not, show the overlay
-      setShowOverlay(true);
+  //     if (!hasSeenOverlay) {
+  //       // If not, show the overlay
+  //       setShowOverlay(true);
 
-      // Set "hasSeenOverlay" in localStorage to true
-      localStorage.setItem("hasSeenOverlay", "true");
+  //       // Set "hasSeenOverlay" in localStorage to true
+  //       localStorage.setItem("hasSeenOverlay", "true");
 
-      // Hide the overlay after 100ms (you can change this timeout duration)
-      setTimeout(() => {
-        setShowOverlay(false);
-      }, 900);
+  //       // Hide the overlay after 900ms
+  //       setTimeout(() => {
+  //         setShowOverlay(false);
+  //       }, 900);
+  //     }
+  //   }
+  // }, []);
+
+
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const savedMode = localStorage.getItem("darkMode");
+
+    if (savedMode === null) {
+      // Default to dark mode if no preference exists
+      localStorage.setItem("darkMode", "true");
+      document.documentElement.classList.add("dark");
+    } else {
+      const isDark = savedMode === "true";
+      document.documentElement.classList.toggle("dark", isDark);
     }
-  }, []);
-
-  const savedMode = localStorage.getItem("darkMode");
-
-  if (savedMode === null) {
-    // Default to dark mode if no preference exists
-    localStorage.setItem("darkMode", "true");
-    document.documentElement.classList.add("dark");
-  } else {
-    const isDark = savedMode === "true";
-    document.documentElement.classList.toggle("dark", isDark);
   }
 
   const x = useValue(0);
@@ -72,14 +78,14 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       {/* Full-screen blue overlay */}
-      {showOverlay && (
+      {/* {showOverlay && (
         <div
           className={`absolute inset-0 bg-gray-50 z-50 ${showOverlay ? 'animate-fade-in-out' : ''}`}
           style={{
             backgroundColor: showOverlay ? "white" : "rgb(37, 99, 235)", // bg-blue-800 in RGB format
           }}
         ></div>
-      )}
+      )} */}
 
       {/* SwipeTransition and other content */}
       <SwipeTransition>
@@ -99,7 +105,7 @@ export default function Home() {
               className="absolute pointer-events-none z-50 blur-3xl"
             />
           )}
-          <div className="min-h-screen flex flex-col font-jakarta g-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-6 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
+          <div className="min-h-screen flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-6 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
             <Navbar />
             <div className="w-full max-w-4xl mx-auto px-2 md:px-4 m-2">
               <motion.div

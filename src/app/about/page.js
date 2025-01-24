@@ -141,6 +141,7 @@ export default function Home() {
                                         height={300}
                                         alt="Picture of the author"
                                         className="rounded-3xl"
+                                        priority
                                     />
                                 </div>
                                 <div>

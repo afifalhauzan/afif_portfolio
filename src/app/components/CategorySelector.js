@@ -9,179 +9,8 @@ import { FaYoutube } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { RiGlobalLine } from "react-icons/ri";
 import { FaPenNib } from "react-icons/fa6";
-
-// Project card data (hardcoded for simplicity)
-const projectData = {
-    "UI/UX": [
-        {
-            id: 1,
-            title: "Greventure",
-            description: "A map-based social media platform designed to reconnect people with their surroundings. It helps users discover local places and activities, especially those related to urban sustainability. Greventure encourages young people to bring their cities to life digitally while fostering connections with the environment and promoting efforts to care for it",
-            video: "/greventure.mp4",
-            figma: "https://www.figma.com/proto/ww5UapdbwQnvEVFzYDkgUC/Ada-hackjam-coy?page-id=28%3A277&node-id=88-5212&p=f&viewport=-1517%2C-568%2C0.14&t=cLRxyw3YDLlOFzkW-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=88%3A5203&show-proto-sidebar=1",
-            tags: ["SDGs 11", "UI/UX"]
-        },
-        {
-            id: 2,
-            title: "EcoWardrobe",
-            description: "An app for tackling fast fashion waste by enabling users to sell, buy, and donate pre-loved clothes, while promoting sustainable fashion through innovative features like a camera scanning tool to personalize shopping experiences",
-            image: "/uiux2.jpg",
-            figma: "https://www.figma.com/proto/45cnPOFNzEJimDPg5cOMfY/The-Ace-Undip---Semoga-Ga-NT?page-id=1%3A2&node-id=486-1301&p=f&viewport=321%2C175%2C0.06&t=MmtC3HoBqNWuuBxq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=486%3A1289&show-proto-sidebar=1",
-            tags: ["SDGs 12", "UI/UX"]
-        },
-        {
-            id: 3,
-            title: "Mentorify",
-            description: "Mentorify is a mobile-based application that provides essential information about tutors and additional resources in the education field. With Mentorify, users can find tutors that match their specific needs and learning styles, making the learning process more effective and enjoyable. The app also offers features that make it easier to search for and access details about tutor schedules and experience, helping users select the best match for their educational goals.",
-            image: "/uiux2.jpg",
-            figma: "https://www.figma.com/proto/ArGcCKH35t6GndJnMZvmrc/kelompok-les-lesgooooooooo?page-id=0%3A1&node-id=21-64&p=f&viewport=20%2C264%2C0.05&t=phPHRzuSl9ksaj7Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=21%3A64&show-proto-sidebar=1",
-            tags: ["SDGs 4", "UI/UX"]
-        },
-        {
-            id: 4,
-            title: "EchoSleep",
-            description: "An app designed to enhance your sleep quality by providing real-time sleep monitoring, personalized tips, and insightful statistics. EchoSleep helps track your sleep patterns, identifies disturbances, and offers tailored recommendations for a more restful night. Whether you're dealing with sleep apnea or simply struggling to get better rest, the app connects you with sleep specialists for consultations. With EchoSleep, you can take control of your sleep health, improve your overall well-being, and wake up refreshed every day.",
-            image: "/uiux1.jpg", // Image source for the project
-            video: "/greventure.mp4", // Image source for the project
-            figma: "https://www.figma.com/proto/TXwj2drey3LphUHEepd4L4/EchoSleep?page-id=25%3A3822&node-id=150-11929&p=f&viewport=62%2C-5670%2C0.24&t=PT4MrPsii8SRYYKy-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=150%3A11970&show-proto-sidebar=1",
-            tags: ["SDGs 3", "UI/UX"]
-        },
-        {
-            id: 5,
-            title: "PetCare",
-            description: "An app designed to help pet owners, particularly those with dogs and cats, manage the health and well-being of their pets. It provides comprehensive solutions, including information on pet care and online consultations with veterinarians at affordable prices. Users can share experiences and receive support, fostering a community that cares for animal health. With PetCare, pet owners can easily maintain the health of their pets while ensuring their safety, addressing issues such as rabies, infections, parasites, and metabolic disorders.",
-            image: "/uiux2.jpg",
-            figma: "https://www.figma.com/proto/mpqfDaaHlyY9r00eHOREhO/PetCare?page-id=5%3A92&node-id=174-2311&p=f&viewport=356%2C230%2C0.09&t=dhdw33BseK85QWNN-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=174%3A2311&show-proto-sidebar=1",
-            tags: ["SDGs 3", "UI/UX"]
-        },
-    ],
-    "Graphic Design": [
-        {
-            id: 6,
-            title: "HOLOGY 7.0",
-            description: "Description for Graphic Design project 1.",
-            image: "/graphicdesign1.jpg",
-            tags: ["Technology", "Poster", "Designs"],
-            design: "https://www.instagram.com/hology_ub/",
-        },
-        {
-            id: 7,
-            title: "Rantau Ngalam Kuy",
-            description: "Description for Graphic Design project 2.",
-            image: "/graphicdesign2.jpg",
-            tags: ["Campus Expo", "Designs"],
-            design: "",
-        },
-        {
-            id: 8,
-            title: "Mobile JKN",
-            description: "Description for Graphic Design project 2.",
-            image: "/graphicdesign2.jpg",
-            tags: ["Infographic", "Health", "Designs"],
-            design: "",
-        },
-        {
-            id: 9,
-            title: "MPLS",
-            description: "Description for Graphic Design project 2.",
-            image: "/graphicdesign2.jpg",
-            tags: ["Poster", "Designs"],
-            design: "",
-        },
-    ],
-    "Websites": [
-        {
-            id: 10,
-            title: "Xhiexplore",
-            description: "Description for Website project 1.",
-            image: "/website1.jpg",
-            tags: ["3D Museum", "Bootstrap", "Unity"],
-            website: "https://afifalhauzan.github.io/xhiexplore-site/",
-        },
-        {
-            id: 11,
-            title: "Past Portofolio",
-            description: "Description for Website project 2.",
-            image: "/website2.jpg",
-            tags: ["Framer", "Website"],
-            website: "https://afifalhauzan.framer.website/",
-        },
-        {
-            id: 12,
-            title: "PortalMABA",
-            description: "Description for Website project 2.",
-            image: "/website2.jpg",
-            tags: ["Lavavel", "MySQL", "Tailwind"],
-            github: "https://github.com/afifalhauzan/pkkmb_admin_pweb",
-        },
-        {
-            id: 13,
-            title: "Simple Blog Site",
-            description: "Description for Website project 2.",
-            image: "/website2.jpg",
-            tags: ["Lavavel", "MySQL", "Tailwind"],
-            github: "https://github.com/afifalhauzan/Blog-Beginner-group-7",
-        },
-    ],
-    "Videography": [
-        {
-            id: 14,
-            title: "Eftychia",
-            description: "Description for Videography project 1.",
-            image: "/videography1.jpg",
-            tags: ["School", "Aftermovie"],
-            videoLink: "https://www.instagram.com/p/C81OsVYsLfu/",
-        },
-        {
-            id: 15,
-            title: "HOLOGY 7.0 Trailer",
-            description: "Description for Videography project 1.",
-            image: "/videography1.jpg",
-            tags: ["Technology", "Visual Effects"],
-            videoLink: "https://www.instagram.com/reel/C99lsqzyDS-/",
-        },
-        {
-            id: 16,
-            title: "Makrab PTI 23",
-            description: "Description for Videography project 2.",
-            image: "/videography2.jpg",
-            tags: ["Aftermovie"],
-            videoLink: "https://www.instagram.com/reel/C58SGYlSDS-/",
-        },
-        {
-            id: 17,
-            title: "Schotival",
-            description: "Description for Videography project 2.",
-            image: "/videography2.jpg",
-            tags: ["Motion Graphics", "Aftermovie"],
-            videoLink: "https://www.instagram.com/reel/DECg9FSyb8w/",
-        },
-        {
-            id: 18,
-            title: "Pusoko",
-            description: "Description for Videography project 2.",
-            image: "/videography2.jpg",
-            tags: ["Short Film", "Theatre", "Visual Effects"],
-            videoLink: "https://www.instagram.com/p/CSs6HZ_h7Yu/",
-        },
-        {
-            id: 19,
-            title: "Synergy of Symphony",
-            description: "Description for Videography project 2.",
-            image: "/videography2.jpg",
-            tags: ["Aftermovie"],
-            videoLink: "https://www.instagram.com/p/DDd9cPLprQi/",
-        },
-        {
-            id: 20,
-            title: "Sebelah Mata",
-            description: "Description for Videography project 2.",
-            image: "/videography2.jpg",
-            tags: ["Short Film"],
-            videoLink: "https://youtu.be/8ZS_ld4OwLY?si=IIym9qrw3XhNa7pD",
-        },
-    ],
-};
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { projectData } from "@/app/components/projectData";
 
 const transition = {
     duration: 0.4,
@@ -199,8 +28,8 @@ const CategorySelector = () => {
     const [activeProjectId, setActiveProjectId] = useState(null); // Tracks which project is active
     const activeProject = projectData[selectedCategory].find((p) => p.id === activeProjectId);
 
-    const handleOpen = (id) => setActiveProjectId(id); // Open sliding tab
     const handleClose = () => setActiveProjectId(null); // Close sliding tab
+    const handleOpen = (id) => setActiveProjectId(id); // Open sliding tab
 
     // Function to handle category selection
     const handleCategoryClick = (category, index) => {
@@ -272,19 +101,30 @@ const CategorySelector = () => {
 
                         {activeProjectId && activeProject.tags ? (
                             <div className="flex flex-wrap justify-start gap-2 mb-4">
-                                {projectData[selectedCategory].find((p) => p.id === activeProjectId)?.tags.map((tag, index) => (
+                                {activeProject.tags.map((tag, index) => (
                                     <span
                                         key={index}
-                                        className="px-3 py-2 text-sm font-semibold text-white bg-gray-700 rounded-xl">
+                                        className="px-3 py-[4px] text-sm font-semibold text-white bg-gray-700 rounded-xl">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
                         ) : null}
 
-                        <p>
+                        <p className="text-sm text-justify">
                             {activeProject.description}
                         </p>
+
+                        {activeProjectId && activeProject.team ? (
+                            <div>
+                                <div className="border border-gray-600 mt-4">
+                                </div>
+                                <h3 className="text-xl font-bold mt-4 mb-2">The Team</h3>
+                                <p className="text-sm text-white rounded-xl">
+                                    {activeProject.team.join(", ")}
+                                </p>
+                            </div>
+                        ) : null}
 
                         {activeProjectId && activeProject.figma ? (
                             <a href={activeProject.figma}
@@ -379,61 +219,80 @@ const CategorySelector = () => {
             <div className="mt-4">
                 <motion.div
                     key={selectedCategory} // Triggers reanimation when category changes
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"
                     initial={{ opacity: 0, y: 40, scale: 0.95 }} // Initial state: hidden and slightly down
                     animate={{ opacity: 1, y: 0, scale: 1 }} // Final state: fully visible and in normal position
                     exit={{ opacity: 0, y: -50 }} // Exit state: hidden and slightly up
                     transition={transition}
                 >
+                    <ResponsiveMasonry
+                        columnsCountBreakPoints={{ 350: 1, 750: 2 }}
+                    >
+                        <Masonry gutter="10px">
+                            {projectData[selectedCategory].map((project) => (
+                                <div
+                                    key={project.id}
+                                    className="relative"
+                                >
+                                    <div className="relative flex-1">
+                                        {project.video ? (
+                                            <video
+                                                width="400"
+                                                height="400"
+                                                preload="auto"
+                                                autoPlay
+                                                muted
+                                                loop
+                                                className="rounded-xl"
+                                            >
+                                                <source src={`/videos/${project.video}`} type="video/mp4" />
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        ) : (
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
+                                                quality={20}
+                                                priority={project.isFeatured}
+                                                layout="responsive" // Makes the image responsive to container width
+                                                width={1000} // Adjust this to fit the general size you want
+                                                height={300} // Adjust this based on the aspect ratio of your images
+                                                className="rounded-xl object-cover" // Ensures the image covers the area without distortion
+                                            />
+                                        )}
+
+                                        {/* Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-50% rounded-xl flex flex-col justify-end p-4">
+                                            <h3 className="text-2xl font-semibold text-white pb-1">{project.title}</h3>
+                                            {/* <p className="text-md text-gray-300 mb-2">{project.description}</p> */}
+                                            {project.story ? (
+                                                <Link href={`/projects/${project.id}`} className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold">
+                                                    <span>The Story</span>
+                                                    <FaArrowRightLong className="mt-[3px]" />
+                                                </Link>
+                                            ) : (
+                                                <div
+                                                    className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold cursor-pointer"
+                                                    onClick={() => handleOpen(project.id)}
+                                                >
+                                                    <p>More</p>
+                                                    <FaArrowRightLong className="mt-[3px]" />
+                                                </div>
+                                            )
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </Masonry>
+                    </ResponsiveMasonry>
+
                     {projectData[selectedCategory].map((project) => (
                         <div
                             key={project.id}
-                            className="w-full h-full bg-white rounded-xl shadow-xl md:mb-0"
+                            className="w-[750px] bg-white rounded-xl shadow-xl md:mb-0 flex flex-col"
                         >
-                            <div className="relative">
-                                {project.video ? (
-                                    <video
-                                        width="400"
-                                        height="400"
-                                        preload="auto"
-                                        autoPlay
-                                        muted
-                                        loop
-                                        className="rounded-xl"
-                                    >
-                                        <source src={`/videos/${project.video}`} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
-                                ) : (
-                                    <Image
-                                        src={project.image} // Dynamic image source based on project
-                                        width={300}
-                                        height={250}
-                                        alt={project.title} // Alt text from project title
-                                        className="rounded-xl"
-                                    />
-                                )}
+                            <div className="relative flex-1">
 
-                                {/* Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-50% rounded-xl flex flex-col justify-end p-4">
-                                    <h3 className="text-2xl font-semibold text-white pb-1">{project.title}</h3>
-                                    {/* <p className="text-md text-gray-300 mb-2">{project.description}</p> */}
-                                    {project.story ? (
-                                        <Link href={`/projects/${project.id}`} className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold">
-                                            <span>The Story</span>
-                                            <FaArrowRightLong className="mt-[3px]" />
-                                        </Link>
-                                    ) : (
-                                        <div
-                                            className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold cursor-pointer"
-                                            onClick={() => handleOpen(project.id)}
-                                        >
-                                            <p>More</p>
-                                            <FaArrowRightLong className="mt-[3px]" />
-                                        </div>
-                                    )
-                                    }
-                                </div>
                             </div>
                         </div>
                     ))}
