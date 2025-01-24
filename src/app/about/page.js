@@ -172,13 +172,13 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            <div className="space-y-6 mt-2 md:mt-0 md:space-x-0">
+                            <div className="space-y-6 mt-4 md:mt-0 md:space-x-0">
                                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 ">
                                     {/* Image Section */}
                                     <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-0 md:order-2">
                                         {/* ReactSwipe Carousel */}
                                         <ReactSwipe
-                                            className="carousel"
+                                            className="carousel "
                                             swipeOptions={{ continuous: true }}
                                             ref={reactSwipeEl1}
                                         >
@@ -186,9 +186,10 @@ export default function Home() {
                                             <div className="flex justify-center py-2">
                                                 <div className="flex-shrink-0 shadow-lg">
                                                     <Image
-                                                        src="/ddmhologi.jpg"
+                                                        src="/raion1.jpg"
                                                         width={230}
                                                         height={230}
+                                                        quality={100}
                                                         alt="Picture of the author"
                                                         className="rounded-xl"
                                                     />
@@ -199,11 +200,12 @@ export default function Home() {
                                             <div className="flex justify-center py-2">
                                                 <div className="flex-shrink-0 shadow-lg">
                                                     <Image
-                                                        src="/ddmhologi.jpg"
-                                                        width={230}
-                                                        height={230}
+                                                        src="/raion2.jpg"
+                                                        quality={100}
+                                                        width={280}
+                                                        height={250}
                                                         alt="Picture of the author"
-                                                        className="rounded-xl"
+                                                        className="rounded-xl mt-4"
                                                     />
                                                 </div>
                                             </div>
@@ -212,11 +214,12 @@ export default function Home() {
                                             <div className="flex justify-center py-2">
                                                 <div className="flex-shrink-0 shadow-lg">
                                                     <Image
-                                                        src="/ddmhologi.jpg"
-                                                        width={230}
-                                                        height={230}
+                                                        src="/raion3.jpg"
+                                                        quality={100}
+                                                        width={260}
+                                                        height={250}
                                                         alt="Picture of the author"
-                                                        className="rounded-xl"
+                                                        className="rounded-xl mt-4"
                                                     />
                                                 </div>
                                             </div>
@@ -249,7 +252,7 @@ export default function Home() {
                             variants={fadeInUpV2}
                             className=""
                         >
-                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 mt-6 md:mt-2">
+                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 mt-8 md:mt-2">
                                 {/* Image Section */}
                                 <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-0 md:order-2">
                                     {/* ReactSwipe Carousel */}
@@ -279,7 +282,20 @@ export default function Home() {
                                                     width={280}
                                                     height={300}
                                                     alt="Picture of the author"
-                                                    className="rounded-xl"
+                                                    className="rounded-xl mt-2"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Third Image */}
+                                        <div className="flex justify-center py-2 items-center">
+                                            <div className="flex-shrink-0 shadow-lg">
+                                                <Image
+                                                    src="/ddmhol3.jpg"
+                                                    width={280}
+                                                    height={300}
+                                                    alt="Picture of the author"
+                                                    className="rounded-xl mt-2"
                                                 />
                                             </div>
                                         </div>
@@ -310,7 +326,7 @@ export default function Home() {
                             variants={fadeInUpV2}
                             className=""
                         >
-                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 mt-6 md:mt-2">
+                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 mt-8 md:mt-2">
                                 {/* Image Section */}
                                 <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-0 md:order-2">
                                     {/* ReactSwipe Carousel */}
@@ -324,8 +340,8 @@ export default function Home() {
                                             <div className="flex-shrink-0 shadow-lg">
                                                 <Image
                                                     src="/asprak.png"
-                                                    width={230}
-                                                    height={230}
+                                                    width={280}
+                                                    height={250}
                                                     alt="Picture of the author"
                                                     className="rounded-xl"
                                                 />
@@ -336,21 +352,8 @@ export default function Home() {
                                         <div className="flex justify-center py-2">
                                             <div className="flex-shrink-0 shadow-lg">
                                                 <Image
-                                                    src="/ddmhologi.jpg"
-                                                    width={230}
-                                                    height={230}
-                                                    alt="Picture of the author"
-                                                    className="rounded-xl"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Third Image */}
-                                        <div className="flex justify-center py-2">
-                                            <div className="flex-shrink-0 shadow-lg">
-                                                <Image
-                                                    src="/ddmhologi.jpg"
-                                                    width={230}
+                                                    src="/asprak2.png"
+                                                    width={260}
                                                     height={230}
                                                     alt="Picture of the author"
                                                     className="rounded-xl"
