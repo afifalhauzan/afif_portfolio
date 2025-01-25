@@ -116,8 +116,10 @@ export const projectData = {
             id: 13,
             title: "Simple Blog Site",
             description: "A Technology Blog website for learning Laravel + Blade + Tailwind.",
+            team: ["Afiif Al Hauzaan (me)", "Yusuf Whisnu T. W.", "Zahwa Naurah P."],
             image: "/blog.png",
             tags: ["Lavavel", "MySQL", "Tailwind"],
+            
             github: "https://github.com/afifalhauzan/Blog-Beginner-group-7",
         },
     ],
