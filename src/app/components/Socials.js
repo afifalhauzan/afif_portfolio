@@ -6,13 +6,13 @@ export default function Socials() {
       {/* Social Media Icons */}
       <div className="flex space-x-8 pt-8 transition-all duration-800 ease-in-out">
         <a href="https://instagram.com/afifalhauzan._" target="_blank" rel="noopener noreferrer">
-          <FaInstagram className="text-xl text-gray-800 dark:text-bluetextdefault hover:text-blue-500" />
+          <FaInstagram className="text-xl text-slate-500 dark:text-bluetextdefault hover:text-blue-500" />
         </a>
         <a href="https://www.linkedin.com/in/afiif-al-hauzaan-alfian/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="text-xl text-gray-800 dark:text-bluetextdefault hover:text-blue-700" />
+          <FaLinkedin className="text-xl text-slate-500 dark:text-bluetextdefault hover:text-blue-700" />
         </a>
         <a href="https://github.com/afifalhauzan" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="text-xl text-gray-800 dark:text-bluetextdefault hover:text-gray-600" />
+          <FaGithub className="text-xl text-slate-500 dark:text-bluetextdefault hover:text-gray-600" />
         </a>
       </div>
     </div>

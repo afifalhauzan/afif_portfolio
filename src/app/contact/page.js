@@ -98,14 +98,14 @@ export default function Home() {
                             variants={fadeInUp}
                             className=""
                         >
-                            <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-white">
+                            <h1 className="text-5xl xl:text-6xl font-bold text-left w-full text-slate-700 dark:text-white">
                                 Contact
                             </h1>
                             <div className="flex flex-col md:flex-row justify-between">
                                 <div>
-                                    <div className="max-w-md justify-normal mx-auto my-8 md:mx-0 md:text-left mb-4 md:mb-0 p-6 pb-2 bg-gray-800 rounded-lg shadow-lg">
+                                    <div className="max-w-md justify-normal mx-auto my-8 md:mx-0 md:text-left mb-4 md:mb-0 p-6 pb-2 bg-slate-100 dark:bg-gray-800 rounded-lg shadow-lg">
                                         <div className="flex flex-col items-center mb-6">
-                                            <h2 className="text-2xl font-bold text-white mb-6">Let's get in touch!</h2>
+                                            <h2 className="text-2xl font-bold text-slate-700 dark:text-white mb-6">Let's get in touch!</h2>
                                             {/* Contact Icon */}
                                             <div className="w-[370px] h-[180px] md:w-full md:h-full justify-center items-center mb-2">
                                                 <DotLottieReact
@@ -117,60 +117,60 @@ export default function Home() {
 
                                             {/* Text Content */}
 
-                                            <h2 className="text-md mt-2 text-white text-center">Whether you're up for a collaboration, have a project in mind, or just want to say hi, feel free to reach out!</h2>
+                                            <h2 className="text-md mt-2 text-slate-600 dark:text-white text-center">Whether you're up for a collaboration, have a project in mind, or just want to say hi, feel free to reach out!</h2>
                                             <Socials className="pb-0 mb-0 justify-center" />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="w-full md:w-1/2 max-w-5xl mx-auto mt-2 md:mt-8 md:ml-8 mb-12 bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <div className="w-full md:w-1/2 max-w-5xl mx-auto mt-2 md:mt-8 md:ml-8 mb-12 bg-slate-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                                     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                                         {/* Full Name */}
-                                        <div className="group focus-within:text-blue-200 transition duration-300">
+                                        <div className="group focus-within:text-blue-600 transition duration-300">
                                             <label
                                                 htmlFor="name"
-                                                className="block text-md font-medium pb-1 text-gray-800 dark:text-white group-focus-within:text-blue-200 transition duration-300"
+                                                className="block text-md font-medium pb-1 text-gray-800 dark:text-white group-focus-within:text-blue-600 dark:group-focus-within:text-blue-300 transition duration-300"
                                             >
                                                 Name
                                             </label>
                                             <input
                                                 type="text"
                                                 id="name"
-                                                className="text-sm mt-2 w-full bg-gray-800 border-b-2 pb-2 border-gray-300 focus:outline-none focus:border-blue-200 text-white focus:text-blue-200 transition duration-300"
+                                                className="text-sm mt-2 w-full bg-slate-100 dark:bg-gray-800 border-b-2 pb-2 border-gray-300 focus:outline-none focus:border-blue-600 dark:focus:border-blue-300 focus:text-blue-600 dark:focus:text-blue-300 transition duration-300"
                                                 placeholder="What's your name?"
                                                 {...register('name', { required: true })}
                                             />
                                         </div>
 
                                         {/* Email */}
-                                        <div className="group focus-within:text-blue-200 transition duration-300">
+                                        <div className="group focus-within:text-blue-600 transition duration-300">
                                             <label
                                                 htmlFor="email"
-                                                className="block text-md font-medium pb-1 text-gray-800 dark:text-white group-focus-within:text-blue-200 focus:text-blue-200 transition duration-300"
+                                                className="block text-md font-medium pb-1 text-gray-800 dark:text-white group-focus-within:text-blue-600 dark:group-focus-within:text-blue-300 transition duration-300"
                                             >
                                                 Email
                                             </label>
                                             <input
                                                 type="email"
                                                 id="email"
-                                                className="text-sm mt-2 w-full bg-gray-800 border-b-2 pb-2 border-gray-300 focus:outline-none focus:border-blue-200 text-white focus:text-blue-200 transition duration-300"
+                                                className="text-sm mt-2 w-full bg-slate-100 dark:bg-gray-800 border-b-2 pb-2 border-gray-300 focus:outline-none focus:border-blue-600 dark:focus:border-blue-300 focus:text-blue-600 dark:focus:text-blue-300 transition duration-300"
                                                 placeholder="Enter your email"
                                                 {...register('email', { required: true })}
                                             />
                                         </div>
 
                                         {/* Message */}
-                                        <div className="group focus-within:text-blue-200 transition duration-300">
+                                        <div className="group focus-within:text-blue-600 transition duration-300">
                                             <label
                                                 htmlFor="message"
-                                                className="block text-md font-medium pb-1 text-gray-800 dark:text-white group-focus-within:text-blue-200 focus:text-blue-200 transition duration-300"
+                                                className="block text-md font-medium pb-1 text-gray-800 dark:text-white group-focus-within:text-blue-600 dark:group-focus-within:text-blue-300 transition duration-300"
                                             >
                                                 Message
                                             </label>
                                             <textarea
                                                 id="message"
                                                 rows="5"
-                                                className="text-sm mt-2 w-full bg-gray-800 border-b-2 pb-2 border-gray-300 focus:outline-none focus:border-blue-200 text-white focus:text-blue-200 transition duration-300"
+                                                className="text-sm mt-2 w-full bg-slate-100 dark:bg-gray-800 border-b-2 pb-2 border-gray-300 focus:outline-none focus:border-blue-600 dark:focus:border-blue-300 focus:text-blue-600 dark:focus:text-blue-300 transition duration-300"
                                                 placeholder="Enter your message"
                                                 {...register('message', { required: true })}
                                             ></textarea>
@@ -186,6 +186,7 @@ export default function Home() {
                                             </button>
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </motion.div>

@@ -123,7 +123,7 @@ export default function Home() {
                   </h1>
                 </div>
 
-                <p className="text-xl mt-4 text-left w-full md:text-xl text-slate-800 dark:text-bluetextdefault">
+                <p className="text-xl mt-4 text-left w-full md:text-xl text-slate-500 dark:text-bluetextdefault">
                   IT Education Student at Brawijaya University
                 </p>
               </motion.div>

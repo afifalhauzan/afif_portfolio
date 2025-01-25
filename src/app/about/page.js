@@ -129,7 +129,7 @@ export default function Home() {
                             className=""
                         >
                             <h1 className="text-5xl
-                             xl:text-6xl font-bold text-left w-full text-white ">
+                             xl:text-6xl font-bold text-left w-full text-slate-700 dark:text-white ">
                                 About me
                             </h1>
 
@@ -145,13 +145,13 @@ export default function Home() {
                                     />
                                 </div>
                                 <div>
-                                    <div className="max-w-lg justify-normal mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
-                                        <h2 className="text-2xl font-bold text-white mb-1">Afiif Al Hauzaan Alfian</h2>
-                                        <h2 className="text-lg italic text-slate-300 mb-4">/pip/</h2>
-                                        <h2 className="text-md text-white text-justify">
+                                    <div className="max-w-lg justify-normal mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-slate-100 dark:bg-gray-800 rounded-lg shadow-md shadow-slate-200 dark:shadow-lg">
+                                        <h2 className="text-2xl font-bold text-slate-700 dark:text-white mb-1">Afiif Al Hauzaan Alfian</h2>
+                                        <h2 className="text-lg italic text-slate-600 dark:text-slate-300 mb-4">/pip/</h2>
+                                        <h2 className="text-md text-slate-700 dark:text-white text-justify">
                                             I've been interested at Visual, Multimedia, and IT field for the past 4 years
                                         </h2>
-                                        <h2 className="text-md text-white text-justify">
+                                        <h2 className="text-md text-slate-700 dark:text-white text-justify">
                                             I believe that great products are built on the foundation of thoughtful design, where user experience meets innovation. Through my work, I aim to bring ideas to life with clarity, creativity, and impact.
                                         </h2>
                                     </div>
@@ -229,14 +229,14 @@ export default function Home() {
 
                                     {/* Text Section */}
                                     <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
-                                        <div className="w-full p-4 text-left text-slate-200 md:mr-16">
+                                        <div className="w-full p-4 text-left text-slate-700 dark:text-slate-200 md:mr-16">
                                             <h3 className="text-2xl font-bold">Raion Community</h3>
                                             <div className="flex space-x-3 mb-2">
                                                 <h3 className="text-lg">Vice Head UI/UX Designer</h3>
                                                 <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
                                             </div>
 
-                                            <p className="text-md text-slate-300 text-justify">
+                                            <p className="text-md text-slate-600 dark:text-slate-300 text-justify">
                                                 Developed a UI/UX curriculum focusing on design principles, systems, and thinking. Contributed to workshops and fostered a collaborative learning environment.
                                             </p>
                                         </div>
@@ -305,14 +305,14 @@ export default function Home() {
 
                                 {/* Text Section */}
                                 <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
-                                    <div className="w-full p-4 text-left text-slate-200 md:mr-16">
+                                    <div className="w-full p-4 text-left text-slate-700 dark:text-slate-200 md:mr-16">
                                         <h3 className="text-2xl font-bold">HOLOGY 7.0</h3>
                                         <div className="flex space-x-3 mb-2">
                                             <h3 className="text-lg">Head of Creative Media</h3>
                                             <h3 className="text-lg text-slate-400 mb-2">(2024)</h3>
                                         </div>
 
-                                        <p className="text-md text-slate-300 text-justify">
+                                        <p className="text-md text-slate-600 dark:text-slate-300 text-justify">
                                             Lead a team of 13 people in brainstorming graphic designs and directing videography content. Ensure all visual content aligns with our event's objectives and branding as an IT Seminar & Competition event, enhancing the overall aesthetic.</p>
                                     </div>
                                 </div>
@@ -366,14 +366,14 @@ export default function Home() {
 
                                 {/* Text Section */}
                                 <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
-                                    <div className="w-full p-4 text-left text-slate-200 md:mr-16">
+                                    <div className="w-full p-4 text-left text-slate-700 dark:text-slate-200 md:mr-16">
                                         <h3 className="text-2xl font-bold">FILKOM UB</h3>
                                         <div className="flex space-x-3 mb-2">
                                             <h3 className="text-lg">Practicum Assistant</h3>
                                             <h3 className="text-lg text-slate-400 mb-2">(2024)</h3>
                                         </div>
 
-                                        <p className="text-md text-slate-300 text-justify">
+                                        <p className="text-md text-slate-600 dark:text-slate-300 text-justify">
                                             Guided 29 students in Java programming, covering topics such as Basic I/O, Conditions, Loops, Methods, and Arrays in one semester. Created interactive quizzes on HackerRank to enhance hands-on learning.</p>
                                     </div>
                                 </div>
@@ -398,49 +398,49 @@ export default function Home() {
                             <div className="flex flex-col md:flex-row justify-between space-y-2 md:space-y-0 md:space-x-12">
                                 <div>
                                     <div className="flex max-w-md h-full justify-center text-center items-center mx-auto mb-0 md:mx-0 p-6 md:p-4">
-                                        <h2 className="text-2xl font-semibold text-white">Tech Stack</h2>
+                                        <h2 className="text-2xl font-semibold text-slate-800 dark:text-white">Tech Stack</h2>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 md:flex md:space-x-4">
-                                    <div className="flex w-10/12 flex-col items-center justify-center text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '0s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <FaReact className="text-6xl md:text-5xl text-center text-blue-400" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-white">React</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-700 dark:text-white">React</h2>
                                     </div>
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '0.4s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <RiTailwindCssFill className="text-6xl md:text-5xl text-center text-blue-300" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-white">Tailwind</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-700 dark:text-white">Tailwind</h2>
                                     </div>
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '0.8s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
-                                            <RiNextjsFill className="text-6xl md:text-5xl text-center text-gray-200" />
+                                            <RiNextjsFill className="text-6xl md:text-5xl text-center text-slate-800 dark:text-gray-200" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-white">Next.js</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-700 dark:text-white">Next.js</h2>
                                     </div>
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '1.2s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <FaLaravel className="text-6xl md:text-5xl text-center text-red-500" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-white">Laravel</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-700 dark:text-white">Laravel</h2>
                                     </div>
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-2 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '1.6s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <GrMysql className="text-6xl md:text-5xl text-center text-blue-600" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-white">MySQL</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-700 dark:text-white">MySQL</h2>
                                     </div>
                                 </div>
                             </div>
@@ -457,13 +457,13 @@ export default function Home() {
                                 {/* Visual Stack */}
                                 <div className="order-1 md:order-2">
                                     <div className="flex max-w-md h-full justify-center text-center items-center mx-auto mb-4 md:mx-0 p-6 md:p-4">
-                                        <h2 className="text-2xl font-semibold text-white">Visual Stack</h2>
+                                        <h2 className="text-2xl font-semibold text-slate-800 dark:text-white">Visual Stack</h2>
                                     </div>
                                 </div>
 
                                 {/* Icons */}
                                 <div className="grid grid-cols-2 md:flex md:space-x-4 order-2 md:order-1">
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-0 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-0 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '1.6s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2 px-1">
@@ -475,31 +475,31 @@ export default function Home() {
                                                 className="object-contain sm:w-20 sm:h-20 md:w-12 md:h-12"
                                             />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-white">Sigma</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-800 dark:text-gray-200">Sigma</h2>
                                     </div>
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-0 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-0 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '1.2s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <SiAdobeillustrator className="text-6xl md:text-5xl text-center text-orange-400" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-white">Illustrator</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-800 dark:text-gray-200">Illustrator</h2>
                                     </div>
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-4 md:my-0 md:mx-0 md:text-left md:mb-0 p-4 py-10 md:py-4 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-4 md:my-0 md:mx-0 md:text-left md:mb-0 p-4 py-10 md:py-4 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '0.8s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <SiAdobepremierepro className="text-6xl md:text-5xl text-center text-indigo-600" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-center text-white">Premiere Pro</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-center text-slate-800 dark:text-gray-200">Premiere Pro</h2>
                                     </div>
-                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-4 md:my-0 md:mx-0 md:text-left md:mb-0 p-4 py-10 md:py-4 bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
+                                    <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-4 md:my-0 md:mx-0 md:text-left md:mb-0 p-4 py-10 md:py-4 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '0.4s' }}
                                     >
                                         <div className="flex justify-center items-center w-full mb-2">
                                             <SiAdobeaftereffects className="text-6xl md:text-5xl text-center text-indigo-400" />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-center text-white">After Effects</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-center text-slate-800 dark:text-gray-200">After Effects</h2>
                                     </div>
                                 </div>
                             </div>
@@ -518,15 +518,15 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="flex flex-col md:space-y-4">
-                                <div className="flex flex-col md:flex-row justify-between items-center md:items-start w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
+                                <div className="flex flex-col md:flex-row justify-between items-center md:items-start w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-slate-100 dark:bg-gray-800 rounded-lg shadow-lg">
                                     <img
                                         src="/instagram.svg"
                                         alt="Instagram"
                                         className="w-24 h-24 md:w-20 md:h-20 mb-2 order-1 md:order-2"
                                     />
                                     <div className="flex flex-col pr-4 md:pr-8 order-2 md:order-1">
-                                        <h2 className="text-2xl font-bold text-white mb-1">Photography</h2>
-                                        <h2 className="text-md text-white text-justify mb-2">
+                                        <h2 className="text-2xl font-bold text-slate-700 dark:text-white mb-1">Photography</h2>
+                                        <h2 className="text-md text-slate-600 dark:text-white text-justify mb-2">
                                             A collection of my favorite places and photos
                                         </h2>
                                         <a href="https://www.instagram.com/stories/highlights/18076888111202035/" target="_blank" rel="noopener noreferrer">
@@ -536,15 +536,15 @@ export default function Home() {
                                         </a>
                                     </div>
                                 </div>
-                                <div className="flex flex-col md:flex-row justify-between items-center md:items-start w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-gray-800 rounded-lg shadow-lg">
+                                <div className="flex flex-col md:flex-row justify-between items-center md:items-start w-full mx-auto md:mx-0 md:text-left mb-6 md:mb-0 p-6 bg-slate-100 dark:bg-gray-800 rounded-lg shadow-lg">
                                     <img
                                         src="/spotify.svg"
                                         alt="Spotify"
                                         className="w-24 h-24 md:w-20 md:h-20 mb-2 order-1 md:order-2"
                                     />
                                     <div className="flex flex-col pr-4 md:pr-8 order-2 md:order-1">
-                                        <h2 className="text-2xl font-bold text-white mb-1">My Spotify playlist</h2>
-                                        <h2 className="text-md text-white text-justify mb-2">
+                                        <h2 className="text-2xl font-bold text-slate-700 dark:text-white mb-1">My Spotify playlist</h2>
+                                        <h2 className="text-md text-slate-600 dark:text-white text-justify mb-2">
                                             Curated playlist for testing headphones
                                         </h2>
                                         <a href="https://open.spotify.com/playlist/2m5NoKl0x1pJmfFkzZ3UNt?si=58c79403e5bd4324" target="_blank" rel="noopener noreferrer">

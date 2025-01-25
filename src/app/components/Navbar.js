@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <nav className="w-full max-w-6xl md:px-20 md:py-4 flex justify-between items-center">
       {/* Left Section */}
-      <div className="text-lg font-semibold text-bluetextdefault dark:text-bluetextdefault">
+      <div className="text-lg font-semibold text-slate-500 dark:text-bluetextdefault">
         <Link href="/" className="font-poppins">
           afifalhauzan
         </Link>
@@ -69,9 +69,9 @@ export default function Navbar() {
         className="md:hidden z-50 p-2 dark:text-gray-200"
       >
         {isMobileMenuOpen ? (
-          <XMarkIcon className="h-6 w-6 text-bluetextdefault" />
+          <XMarkIcon className="h-6 w-6 text-slate-500" />
         ) : (
-          <Bars3Icon className="h-6 w-6 text-bluetextdefault" />
+          <Bars3Icon className="h-6 w-6 text-slate-500" />
         )}
       </button>
 

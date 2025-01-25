@@ -83,19 +83,19 @@ const CategorySelector = () => {
 
             {/* Sliding Tab */}
             <div
-                className={`fixed top-0 right-0 w-full sm:w-2/3 md:w-1/3 h-full bg-white dark:bg-gray-800 shadow-xl z-50 transform transition-transform duration-300 ${activeProjectId ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 w-full sm:w-2/3 md:w-1/3 h-full bg-slate-100 dark:bg-gray-800 shadow-xl z-50 transform transition-transform duration-300 ${activeProjectId ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 {activeProjectId && (
                     <div className="p-10 pt-16 md:pt-12 transition-all duration-300">
                         <div
-                            className="flex items-center pb-6 space-x-4 text-md font-medium text-gray-300 hover:text-white transition-all duration-300"
+                            className="flex items-center pb-6 space-x-4 text-md font-medium text-slate-700 dark:text-gray-300 hover:text-slate-400 dark:hover:text-white transition-all duration-300"
                             onClick={handleClose}
                         >
                             <FaArrowLeftLong />
                             <a>Back to Project</a>
                         </div>
-                        <h3 className="text-3xl font-bold mb-3">
+                        <h3 className="text-3xl text-slate-800 dark:text-white font-bold mb-3">
                             {activeProject.title}
                         </h3>
 
@@ -104,23 +104,23 @@ const CategorySelector = () => {
                                 {activeProject.tags.map((tag, index) => (
                                     <span
                                         key={index}
-                                        className="px-3 py-[4px] text-sm font-semibold text-white bg-gray-700 rounded-xl">
+                                        className="px-3 py-[4px] text-sm font-semibold text-slate-500 dark:text-white bg-slate-200 dark:bg-gray-700 rounded-xl">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
                         ) : null}
 
-                        <p className="text-sm text-justify">
+                        <p className="text-sm text-slate-800 dark:text-white text-justify">
                             {activeProject.description}
                         </p>
 
                         {activeProjectId && activeProject.team ? (
                             <div>
-                                <div className="border border-gray-600 mt-4">
+                                <div className="border border-slate-300 dark:border-gray-600 mt-4">
                                 </div>
                                 <h3 className="text-xl font-bold mt-4 mb-2">The Team</h3>
-                                <p className="text-sm text-white rounded-xl">
+                                <p className="text-sm text-slate-700 dark:text-white rounded-xl">
                                     {activeProject.team.join(", ")}
                                 </p>
                             </div>
@@ -130,7 +130,7 @@ const CategorySelector = () => {
                             <a href={activeProject.figma}
                                 target="_blank"
                                 rel="noopener noreferrer">
-                                <div className="flex flex-row justify-center items-center p-2 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                <div className="flex flex-row justify-center items-center p-2 mt-6 font-bold w-full bg-slate-200 dark:bg-slate-700 rounded-xl border-2 border-slate-400 dark:border-slate-500 hover:bg-slate-300 dark:hover:bg-bluedefault transition-all duration-200 space-x-4">
                                     <div className="flex w-1/8 justify-center items-center">
                                         <Image
                                             src="/sigma.svg"
@@ -152,7 +152,7 @@ const CategorySelector = () => {
                             <a href={activeProject.videoLink}
                                 target="_blank"
                                 rel="noopener noreferrer">
-                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-200 dark:bg-slate-700 rounded-xl border-2 border-slate-400 dark:border-slate-500 hover:bg-slate-300 dark:hover:bg-bluedefault transition-all duration-200 space-x-4">
                                     <div className="flex w-1/7 justify-center items-center ">
                                         <FaYoutube className="text-3xl" />
                                     </div>
@@ -168,7 +168,7 @@ const CategorySelector = () => {
                             <a href={activeProject.website}
                                 target="_blank"
                                 rel="noopener noreferrer">
-                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-200 dark:bg-slate-700 rounded-xl border-2 border-slate-400 dark:border-slate-500 hover:bg-slate-300 dark:hover:bg-bluedefault transition-all duration-200 space-x-4">
                                     <div className="flex w-1/8 justify-center items-center">
                                         <RiGlobalLine className="text-3xl" />
                                     </div>
@@ -184,7 +184,7 @@ const CategorySelector = () => {
                             <a href={activeProject.github}
                                 target="_blank"
                                 rel="noopener noreferrer">
-                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-200 dark:bg-slate-700 rounded-xl border-2 border-slate-400 dark:border-slate-500 hover:bg-slate-300 dark:hover:bg-bluedefault transition-all duration-200 space-x-4">
                                     <div className="flex w-1/8 justify-center items-center">
                                         <FaGithub className="text-3xl" />
                                     </div>
@@ -200,7 +200,7 @@ const CategorySelector = () => {
                             <a href={activeProject.design}
                                 target="_blank"
                                 rel="noopener noreferrer">
-                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-700 rounded-xl border-2 border-slate-500 hover:bg-bluedefault transition-all duration-200 space-x-4">
+                                <div className="flex flex-row justify-center items-center p-3 mt-6 font-bold w-full bg-slate-200 dark:bg-slate-700 rounded-xl border-2 border-slate-400 dark:border-slate-500 hover:bg-slate-300 dark:hover:bg-bluedefault transition-all duration-200 space-x-4">
                                     <div className="flex w-1/8 justify-center items-center">
                                         <FaPenNib className="text-3xl" />
                                     </div>
@@ -232,6 +232,7 @@ const CategorySelector = () => {
                                 <div
                                     key={project.id}
                                     className="relative"
+                                    onClick={() => handleOpen(project.id)}
                                 >
                                     <div className="relative flex-1">
                                         {project.video ? (
