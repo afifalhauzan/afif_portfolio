@@ -475,7 +475,7 @@ export default function Home() {
                                                 className="object-contain sm:w-20 sm:h-20 md:w-12 md:h-12"
                                             />
                                         </div>
-                                        <h2 className="text-lg md:text-md font-bold text-slate-800 dark:text-gray-200">Sigma</h2>
+                                        <h2 className="text-lg md:text-md font-bold text-slate-800 dark:text-gray-200">Figma</h2>
                                     </div>
                                     <div className="flex w-10/12 flex-col items-center justify-center max-w-md text-center mx-auto my-0 md:mx-0 md:text-left md:mb-0 p-8 md:p-6 bg-blue-100 dark:bg-gray-800 border-2 animate-border-pulse rounded-lg shadow-lg"
                                         style={{ animationDelay: '1.2s' }}
