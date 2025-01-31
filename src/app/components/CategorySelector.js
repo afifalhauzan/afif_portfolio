@@ -31,6 +31,17 @@ const CategorySelector = () => {
     const handleClose = () => setActiveProjectId(null); // Close sliding tab
     const handleOpen = (id) => setActiveProjectId(id); // Open sliding tab
 
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true); // Set loading when category changes
+        // Randomly choose a loading delay from the array [150, 200, 300]
+        const randomDelay = [100, 200, 300, 350][Math.floor(Math.random() * 4)];
+        const timeout = setTimeout(() => setLoading(false), randomDelay); // Simulate loading delay with random value
+
+        return () => clearTimeout(timeout);
+    }, [selectedCategory]); // Runs whenever selectedCategory changes
+
     // Function to handle category selection
     const handleCategoryClick = (category, index) => {
         handleClose(); // Call the second function
@@ -217,87 +228,94 @@ const CategorySelector = () => {
 
             {/* Content area displaying the project cards */}
             <div className="mt-4">
-                <motion.div
-                    key={selectedCategory} // Triggers reanimation when category changes
-                    initial={{ opacity: 0, y: 40, scale: 0.95 }} // Initial state: hidden and slightly down
-                    animate={{ opacity: 1, y: 0, scale: 1 }} // Final state: fully visible and in normal position
-                    exit={{ opacity: 0, y: -50 }} // Exit state: hidden and slightly up
-                    transition={transition}
-                >
-                    <ResponsiveMasonry
-                        columnsCountBreakPoints={{ 350: 1, 750: 2 }}
+                {loading ? (
+                    <div className="flex justify-center items-center h-60">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-slate-400"></div>
+                    </div>
+                ) : (
+                    <motion.div
+                        key={selectedCategory} // Triggers reanimation when category changes
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }} // Initial state: hidden and slightly down
+                        animate={{ opacity: 1, y: 0, scale: 1 }} // Final state: fully visible and in normal position
+                        exit={{ opacity: 0, y: -50 }} // Exit state: hidden and slightly up
+                        transition={transition}
                     >
-                        <Masonry gutter="10px">
-                            {projectData[selectedCategory].map((project) => (
-                                <div
-                                    key={project.id}
-                                    className="relative"
-                                    onClick={() => handleOpen(project.id)}
-                                >
-                                    <div className="relative flex-1">
-                                        {project.video ? (
-                                            <video
-                                                width="400"
-                                                height="400"
-                                                preload="auto"
-                                                autoPlay
-                                                muted
-                                                loop
-                                                className="rounded-xl"
-                                            >
-                                                <source src={`/videos/${project.video}`} type="video/mp4" />
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        ) : (
-                                            <Image
-                                                src={project.image}
-                                                alt={project.title}
-                                                quality={20}
-                                                priority={project.isFeatured}
-                                                layout="responsive" // Makes the image responsive to container width
-                                                width={1000} // Adjust this to fit the general size you want
-                                                height={300} // Adjust this based on the aspect ratio of your images
-                                                className="rounded-xl object-cover" // Ensures the image covers the area without distortion
-                                            />
-                                        )}
-
-                                        {/* Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-50% rounded-xl flex flex-col justify-end p-4">
-                                            <h3 className="text-2xl font-semibold text-white pb-1">{project.title}</h3>
-                                            {/* <p className="text-md text-gray-300 mb-2">{project.description}</p> */}
-                                            {project.story ? (
-                                                <Link href={`/projects/${project.id}`} className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold">
-                                                    <span>The Story</span>
-                                                    <FaArrowRightLong className="mt-[3px]" />
-                                                </Link>
-                                            ) : (
-                                                <div
-                                                    className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold cursor-pointer"
-                                                    onClick={() => handleOpen(project.id)}
+                        <ResponsiveMasonry
+                            columnsCountBreakPoints={{ 350: 1, 750: 2 }}
+                        >
+                            <Masonry gutter="10px">
+                                {projectData[selectedCategory].map((project) => (
+                                    <div
+                                        key={project.id}
+                                        className="relative"
+                                        onClick={() => handleOpen(project.id)}
+                                    >
+                                        <div className="relative flex-1">
+                                            {project.video ? (
+                                                <video
+                                                    width="400"
+                                                    height="400"
+                                                    preload="auto"
+                                                    autoPlay
+                                                    muted
+                                                    loop
+                                                    className="rounded-xl"
                                                 >
-                                                    <p>More</p>
-                                                    <FaArrowRightLong className="mt-[3px]" />
-                                                </div>
-                                            )
-                                            }
+                                                    <source src={`/videos/${project.video}`} type="video/mp4" />
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            ) : (
+                                                <Image
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    quality={20}
+                                                    priority={project.isFeatured}
+                                                    layout="responsive" // Makes the image responsive to container width
+                                                    width={1000} // Adjust this to fit the general size you want
+                                                    height={300} // Adjust this based on the aspect ratio of your images
+                                                    className="rounded-xl object-cover" // Ensures the image covers the area without distortion
+                                                />
+                                            )}
+
+                                            {/* Overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-50% rounded-xl flex flex-col justify-end p-4">
+                                                <h3 className="text-2xl font-semibold text-white pb-1">{project.title}</h3>
+                                                {/* <p className="text-md text-gray-300 mb-2">{project.description}</p> */}
+                                                {project.story ? (
+                                                    <Link href={`/projects/${project.id}`} className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold">
+                                                        <span>The Story</span>
+                                                        <FaArrowRightLong className="mt-[3px]" />
+                                                    </Link>
+                                                ) : (
+                                                    <div
+                                                        className="flex items-center gap-2 space-x-1 text-blue-300 text-md font-bold cursor-pointer"
+                                                        onClick={() => handleOpen(project.id)}
+                                                    >
+                                                        <p>More</p>
+                                                        <FaArrowRightLong className="mt-[3px]" />
+                                                    </div>
+                                                )
+                                                }
+                                            </div>
                                         </div>
                                     </div>
+                                ))}
+                            </Masonry>
+                        </ResponsiveMasonry>
+
+                        {projectData[selectedCategory].map((project) => (
+                            <div
+                                key={project.id}
+                                className="w-[750px] bg-white rounded-xl shadow-xl md:mb-0 flex flex-col"
+                            >
+                                <div className="relative flex-1">
+
                                 </div>
-                            ))}
-                        </Masonry>
-                    </ResponsiveMasonry>
-
-                    {projectData[selectedCategory].map((project) => (
-                        <div
-                            key={project.id}
-                            className="w-[750px] bg-white rounded-xl shadow-xl md:mb-0 flex flex-col"
-                        >
-                            <div className="relative flex-1">
-
                             </div>
-                        </div>
-                    ))}
-                </motion.div>
+                        ))}
+                    </motion.div>
+                )}
+
             </div>
         </div>
     );

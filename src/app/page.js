@@ -153,12 +153,30 @@ export default function Home() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeInUp}
-                className="mt-8 flex items-center"
+                className="mt-8 space-y-[11px] md:space-y-0 md:space-x-0 flex flex-row justify-between md:items-center"
               >
-                <Link href="/about" className="flex items-center gap-2 space-x-2 text-blue-500 text-lg font-bold">
+                <motion.a
+                  href="https://drive.google.com/file/d/1OjQ2DZ_cnXwE6_hrau-N7mDEV8uSFT-w/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="order-1 md:order-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="mx-auto flex md:items-center md:justify-center">
+                    <div className="relative z-10 flex cursor-pointer items-center overflow-hidden rounded-xl border border-slate-800 p-[1.5px]">
+                      <div className="absolute inset-0 h-full w-full animate-rotate rounded-full bg-[conic-gradient(#0ea5e9_20deg,transparent_120deg)] blur-sm"></div>
+                      <div className="relative z-20 flex w-full rounded-[0.60rem] bg-slate-800 p-2">
+                        <span className="relative z-50 font-bold px-2 md:px-8 block rounded-lg text-center text-md md:text-lg text-slate-300 after:bg-slate-900"> My Resume </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.a>
+
+                <Link href="/about" className="flex items-start order-2 md:order-1 gap-2 space-x-2 text-blue-500 text-md md:text-lg font-bold">
                   <span>More about me</span>
                   <motion.span
-                    className="text-2xl "
+                    className="text-xl "
                     animate={{
                       x: [0, 10, 0], // Moves the arrow from 0px to 10px to 0px
                     }}
@@ -173,6 +191,7 @@ export default function Home() {
                   </motion.span>
                 </Link>
               </motion.div>
+
 
               <motion.div
                 initial="hidden"

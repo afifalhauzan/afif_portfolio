@@ -232,7 +232,7 @@ export default function Home() {
                                         <div className="w-full p-4 text-left text-slate-700 dark:text-slate-200 md:mr-16">
                                             <h3 className="text-2xl font-bold">Raion Community</h3>
                                             <div className="flex space-x-3 mb-2">
-                                                <h3 className="text-lg">Vice Head UI/UX Designer</h3>
+                                                <h3 className="text-lg">Co Lead of UI/UX Designer Apps</h3>
                                                 <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
                                             </div>
 

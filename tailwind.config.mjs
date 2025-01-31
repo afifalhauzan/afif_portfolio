@@ -116,6 +116,11 @@ export default {
 					'0%': { opacity: '1' },
 					'100%': { opacity: '0' },
 				},
+				rotate: {
+					'0%': { transform: 'rotate(0deg) scale(10)' },
+					'50%': { transform: 'rotate(-180deg) scale(10)' },
+					'100%': { transform: 'rotate(-360deg) scale(10)' },
+				},
 			},
 			backgroundSize: {
 				'300%': '300%'
@@ -127,6 +132,7 @@ export default {
 				'slide-in': 'slideIn 0.5s ease-in-out',
 				'slide-out': 'slideOut 0.5s ease-in-out',
 				'fade-in-out': 'fadeInOut 1s ease-in-out',
+				rotate: 'rotate 4s linear infinite',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
