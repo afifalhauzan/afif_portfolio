@@ -156,7 +156,7 @@ export default function Home() {
                 className="mt-8 space-y-[10px] md:space-y-0 md:space-x-0 flex flex-row justify-between md:items-center"
               >
                 <motion.a
-                  href="https://drive.google.com/file/d/176uAmaB1nNX9ZJul31acTqNEWUHcQgu_/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1e0JY9LYWJ7gIIFhjwBWRdrXY3RN-AsQj/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="order-1 md:order-2"

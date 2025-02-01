@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -25,30 +27,44 @@ const CategorySelector = () => {
     const [moreOpenId, setMoreOpenId] = useState(null);
     const tabsRef = useRef([]);
 
-    const [activeProjectId, setActiveProjectId] = useState(null); // Tracks which project is active
-    const activeProject = projectData[selectedCategory].find((p) => p.id === activeProjectId);
-
-    const handleClose = () => setActiveProjectId(null); // Close sliding tab
-    const handleOpen = (id) => setActiveProjectId(id); // Open sliding tab
-
-    const [loading, setLoading] = useState(true);
-
+    const searchParams = useSearchParams();
+    const [activeProjectId, setActiveProjectId] = useState(null); // Tracks active project
+    
     useEffect(() => {
-        setLoading(true); // Set loading when category changes
-        // Randomly choose a loading delay from the array [150, 200, 300]
-        const randomDelay = [100, 200, 300, 350][Math.floor(Math.random() * 4)];
-        const timeout = setTimeout(() => setLoading(false), randomDelay); // Simulate loading delay with random value
+        // Extract project ID from the URL
+        const id = searchParams.get("id");
+        const category = searchParams.get("category");
 
-        return () => clearTimeout(timeout);
-    }, [selectedCategory]); // Runs whenever selectedCategory changes
+        console.log("Extracted ID:", id); // ✅ Logs correct value from URL
+        console.log("Extracted Category:", category); // ✅ Logs category from URL
+
+        setActiveProjectId(id ? Number(id) : null);
+        setSelectedCategory(category || 'UI/UX');
+    }, [searchParams]); // ✅ Updates when URL changes
+    
+    // ✅ Track activeProjectId updates separately
+        console.log("Updated activeProjectId:", activeProjectId);
+    
+    const handleClose = () => {
+        setActiveProjectId(null); // Close sliding tab
+        window.history.pushState(null, "", `/projects?category=${selectedCategory}`);
+    }
+
+    const handleOpen = (id) => {
+        setActiveProjectId(id);
+        window.history.pushState(null, "", `/projects?id=${id}&category=${selectedCategory}`);
+    };
+    
+    // ✅ Find the active project AFTER state updates
+    const activeProject = projectData[selectedCategory]?.find((p) => p.id === activeProjectId);
+    console.log("Active Project:", activeProjectId); // ✅ Should log correctly after state updates
 
     // Function to handle category selection
     const handleCategoryClick = (category, index) => {
         handleClose(); // Call the second function
-
         setTimeout(() => {
             setSelectedCategory(category);
-
+            window.history.pushState(null, "", `/projects?category=${selectedCategory}`);
             const currentTab = tabsRef.current[index];
             setUnderlineLeft(currentTab?.offsetLeft ?? 0);
             setUnderlineWidth(currentTab?.clientWidth ?? 0);
@@ -64,6 +80,18 @@ const CategorySelector = () => {
             setUnderlineWidth(currentTab.clientWidth);
         }
     }, []);
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true); // Set loading when category changes
+        // Randomly choose a loading delay from the array [150, 200, 300]
+        const randomDelay = [100, 200, 300, 350][Math.floor(Math.random() * 4)];
+        const timeout = setTimeout(() => setLoading(false), randomDelay); // Simulate loading delay with random value
+        window.history.pushState(null, "", `/projects?category=${selectedCategory}`);
+
+        return () => clearTimeout(timeout);
+    }, [selectedCategory]); // Runs whenever selectedCategory changes
 
     return (
         <div className="flex flex-col justify-center md:items-center mt-4 overflow-x-auto overflow-y-hidden">
