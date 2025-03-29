@@ -276,8 +276,8 @@ const CategorySelector = () => {
                         exit={{ opacity: 0, y: -50 }} // Exit state: hidden and slightly up
                         transition={transition}
                     >
-                        <div className="flex flex-col items-center justify-start h-80 text-center">
-                            <div className="w-[350px] h-[150px] justify-center items-center">
+                        <div className="flex flex-col max-w-sm md:max-w-xl items-center justify-start h-80 text-center ">
+                            <div className="w-[220px] h-[150px] justify-center items-center">
                                 <DotLottieReact
                                     src="https://lottie.host/2b79a098-36b1-4809-9cbb-b80d916a0c0c/UotKwvW0ws.lottie"
                                     loop
@@ -285,7 +285,7 @@ const CategorySelector = () => {
                                 />
                             </div>
                             <h1 className="text-2xl font-bold text-slate-700 dark:text-slate-300 mb-2">Coming soon!</h1>
-                            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl">
+                            <p className="text-md md:text-lg text-slate-600 dark:text-slate-400">
                                 The projects are chillin’ somewhere on my hard drive. I just need to stop procrastinating and upload them 😅 Check back soon!
                             </p>
                         </div>
