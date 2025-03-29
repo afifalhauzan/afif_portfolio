@@ -123,7 +123,7 @@ export default function Home() {
                   </h1>
                 </div>
 
-                <p className="text-xl mt-4 text-left w-full md:text-xl text-slate-500 dark:text-bluetextdefault">
+                <p className="text-xl mt-4 text-left w-full md:text-xl text-slate-700 dark:text-bluetextdefault">
                   IT Education Student at Brawijaya University
                 </p>
               </motion.div>
@@ -135,10 +135,10 @@ export default function Home() {
                 variants={fadeInUp}
                 className="mt-8 flex flex-col gap-2 items-start w-full"
               >
-                <p className="text-base md:text-lg text-justify w-full text-slate-500 dark:text-bluetextdefault">
-                  Passionate about <strong className="font-bold">graphic design, videography, and creating visually engaging user experiences</strong>. <br></br>By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
+                <p className="text-base md:text-lg text-justify w-full text-slate-600 dark:text-bluetextdefault">
+                  Passionate about <strong className="font-bold">graphic design, webdev, and creating visually engaging user experiences</strong> <br></br>By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
                 </p>
-                <p className="text-base md:text-lg text-justify w-full text-slate-500 dark:text-bluetextdefault">
+                <p className="text-base md:text-lg text-justify w-full text-slate-600 dark:text-bluetextdefault">
                   I'm sharpening my skills in
                   <FaPenNib className="inline mx-[5px] ml-3 mb-[3px]" />
                   <strong className="font-bold">UI/UX design</strong> and exploring

@@ -119,7 +119,7 @@ export const projectData = {
             team: ["Afiif Al Hauzaan (me)", "Yusuf Whisnu T. W.", "Zahwa Naurah P."],
             image: "/blog.png",
             tags: ["Lavavel", "MySQL", "Tailwind"],
-            
+
             github: "https://github.com/afifalhauzan/Blog-Beginner-group-7",
         },
     ],
@@ -184,4 +184,15 @@ export const projectData = {
             videoLink: "https://youtu.be/8ZS_ld4OwLY?si=IIym9qrw3XhNa7pD",
         },
     ],
+    "Motion Graphics": [
+        {
+            id: 21,
+            title: "Eftychia",
+            isFeatured: true,
+            description: "Class of 2023 SMAN 1 Pontianak's Farewell. It's a 6 minute aftermovie that showcases our graduation party, took 1 month for editing this.",
+            image: "/efty.png",
+            tags: ["School", "Aftermovie"],
+            videoLink: "https://www.instagram.com/p/C81OsVYsLfu/",
+        },
+    ]
 };

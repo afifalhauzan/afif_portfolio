@@ -132,6 +132,7 @@ export default function Home() {
                              xl:text-6xl font-bold text-left w-full text-slate-700 dark:text-white ">
                                 About me
                             </h1>
+                            
 
                             <div className="flex flex-col md:flex-row justify-between mt-4 md:mt-0 items-center">
                                 <div className="p-8">
@@ -244,6 +245,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </motion.div>
+                        
 
                         <motion.div
                             initial="hidden"
@@ -313,7 +315,59 @@ export default function Home() {
                                         </div>
 
                                         <p className="text-md text-slate-600 dark:text-slate-300 text-justify">
-                                            Lead a team of 13 people in brainstorming graphic designs and directing videography content. Ensure all visual content aligns with our event's objectives and branding as an IT Seminar & Competition event, enhancing the overall aesthetic.</p>
+                                        Led a 13-member team to create design and videography content, ensuring all visuals matched the IT seminar and competition’s branding and enhanced its overall aesthetic.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                        
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible" // Animation triggers when the component is in view
+                            viewport={{ amount: 0.2 }}
+                            variants={fadeInUpV2}
+                            className=""
+                        >
+                            <div className="space-y-6 mt-4 md:mt-0 md:space-x-0">
+                                <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 ">
+                                    {/* Image Section */}
+                                    <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-4 md:order-2">
+                                        {/* ReactSwipe Carousel */}
+                                        <ReactSwipe
+                                            className="carousel "
+                                            swipeOptions={{ continuous: true }}
+                                            ref={reactSwipeEl1}
+                                        >
+                                            {/* First Image */}
+                                            <div className="flex justify-center py-2">
+                                                <div className="flex-shrink-0 shadow-lg">
+                                                    <Image
+                                                        src="/kbm1.jpeg"
+                                                        width={230}
+                                                        height={230}
+                                                        quality={100}
+                                                        alt="Picture of the author"
+                                                        className="rounded-xl"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </ReactSwipe>
+                                    </div>
+
+
+                                    {/* Text Section */}
+                                    <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
+                                        <div className="w-full p-4 text-left text-slate-700 dark:text-slate-200 md:mr-8">
+                                            <h3 className="text-2xl font-bold">KBMDSI UB</h3>
+                                            <div className="flex space-x-3 mb-2">
+                                                <h3 className="text-lg">Information Technology Staff</h3>
+                                                <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
+                                            </div>
+
+                                            <p className="text-md text-slate-600 dark:text-slate-300 text-justify"> 
+                                                As part of the Front-End & UI/UX team, i collaborated with front-end, back-end and admin to maintain and develop projects within KBMDSI
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

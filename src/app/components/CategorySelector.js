@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
@@ -12,12 +12,16 @@ import { FaGithub } from "react-icons/fa";
 import { RiGlobalLine } from "react-icons/ri";
 import { FaPenNib } from "react-icons/fa6";
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 import { projectData } from "@/app/components/projectData";
 
 const transition = {
     duration: 0.4,
     ease: [0, 0.5, 0.8, 1.01],
+    delay: 0.3,
 }
+
 
 const CategorySelector = () => {
     const [selectedCategory, setSelectedCategory] = useState("UI/UX");
@@ -29,7 +33,7 @@ const CategorySelector = () => {
 
     const searchParams = useSearchParams();
     const [activeProjectId, setActiveProjectId] = useState(null); // Tracks active project
-    
+
     useEffect(() => {
         // Extract project ID from the URL
         const id = searchParams.get("id");
@@ -41,10 +45,20 @@ const CategorySelector = () => {
         setActiveProjectId(id ? Number(id) : null);
         setSelectedCategory(category || 'UI/UX');
     }, [searchParams]); // ✅ Updates when URL changes
-    
+
+    useEffect(() => {
+        // Initialize underline position for the default category
+        const defaultIndex = ["UI/UX", "Graphic Design", "Websites", "Videography", "Motion Graphics"].indexOf(selectedCategory);
+        if (tabsRef.current[defaultIndex]) {
+            const currentTab = tabsRef.current[defaultIndex];
+            setUnderlineLeft(currentTab.offsetLeft);
+            setUnderlineWidth(currentTab.clientWidth);
+        }
+    }, []);
+
     // ✅ Track activeProjectId updates separately
-        console.log("Updated activeProjectId:", activeProjectId);
-    
+    console.log("Updated activeProjectId:", activeProjectId);
+
     const handleClose = () => {
         setActiveProjectId(null); // Close sliding tab
         window.history.pushState(null, "", `/projects?category=${selectedCategory}`);
@@ -54,7 +68,7 @@ const CategorySelector = () => {
         setActiveProjectId(id);
         window.history.pushState(null, "", `/projects?id=${id}&category=${selectedCategory}`);
     };
-    
+
     // ✅ Find the active project AFTER state updates
     const activeProject = projectData[selectedCategory]?.find((p) => p.id === activeProjectId);
     console.log("Active Project:", activeProjectId); // ✅ Should log correctly after state updates
@@ -65,26 +79,24 @@ const CategorySelector = () => {
         setTimeout(() => {
             setSelectedCategory(category);
             window.history.pushState(null, "", `/projects?category=${selectedCategory}`);
+            //weird placement but it works tbh i didnt really understand react state changes lol
             const currentTab = tabsRef.current[index];
             setUnderlineLeft(currentTab?.offsetLeft ?? 0);
             setUnderlineWidth(currentTab?.clientWidth ?? 0);
         }, 0); // Delay ensures state changes propagate properly
     };
 
-    useEffect(() => {
-        // Initialize underline position for the default category
-        const defaultIndex = ["UI/UX", "Graphic Design", "Websites", "Videography"].indexOf(selectedCategory);
-        if (tabsRef.current[defaultIndex]) {
-            const currentTab = tabsRef.current[defaultIndex];
-            setUnderlineLeft(currentTab.offsetLeft);
-            setUnderlineWidth(currentTab.clientWidth);
-        }
-    }, []);
-
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true); // Set loading when category changes
+
+        // Special case: skip loading if Motion Graphics
+        if (selectedCategory === "Motion Graphics") {
+            setLoading(false);
+            return;
+        }
+
         // Randomly choose a loading delay from the array [150, 200, 300]
         const randomDelay = [100, 200, 300, 350][Math.floor(Math.random() * 4)];
         const timeout = setTimeout(() => setLoading(false), randomDelay); // Simulate loading delay with random value
@@ -97,7 +109,7 @@ const CategorySelector = () => {
         <div className="flex flex-col justify-center md:items-center mt-4 overflow-x-auto overflow-y-hidden">
             <div className="relative flex flex-col md:flex-row space-y-4 md:space-y-0 mt-6 p-2 rounded-2xl md:rounded-3xl overflow-x-auto">
                 <ul className="flex z-10 whitespace-nowrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-                    {["UI/UX", "Graphic Design", "Websites", "Videography"].map((category, index) => (
+                    {["UI/UX", "Graphic Design", "Websites", "Videography", "Motion Graphics"].map((category, index) => (
                         <li className="me-2" key={category}>
                             <button
                                 ref={(el) => (tabsRef.current[index] = el)}
@@ -256,17 +268,41 @@ const CategorySelector = () => {
 
             {/* Content area displaying the project cards */}
             <div className="mt-4">
-                {loading ? (
-                    <div className="flex justify-center items-center h-60">
+                {selectedCategory === "Motion Graphics" ? (
+                    <motion.div
+                        key={selectedCategory} // Triggers reanimation when category changes
+                        initial={{ opacity: 0, y: 20, scale: 0.95 }} // Initial state: hidden and slightly down
+                        animate={{ opacity: 1, y: 0, scale: 1 }} // Final state: fully visible and in normal position
+                        exit={{ opacity: 0, y: -50 }} // Exit state: hidden and slightly up
+                        transition={transition}
+                    >
+                        <div className="flex flex-col items-center justify-start h-80 text-center">
+                            <div className="w-[350px] h-[150px] justify-center items-center">
+                                <DotLottieReact
+                                    src="https://lottie.host/2b79a098-36b1-4809-9cbb-b80d916a0c0c/UotKwvW0ws.lottie"
+                                    loop
+                                    autoplay
+                                />
+                            </div>
+                            <h1 className="text-2xl font-bold text-slate-300 mb-2">Coming soon!</h1>
+                            <p className="text-lg text-slate-400 max-w-xl">
+                                The projects are chillin’ somewhere on my hard drive. I just need to stop procrastinating and upload them 😅 Check back soon!
+                            </p>
+                        </div>
+
+                    </motion.div>
+                ) : loading ? (
+                    <div className="flex justify-center items-start h-60 min-h-screen">
                         <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-slate-400"></div>
                     </div>
                 ) : (
                     <motion.div
                         key={selectedCategory} // Triggers reanimation when category changes
-                        initial={{ opacity: 0, y: 40, scale: 0.95 }} // Initial state: hidden and slightly down
+                        initial={{ opacity: 0, y: 50, scale: 0.95 }} // Initial state: hidden and slightly down
                         animate={{ opacity: 1, y: 0, scale: 1 }} // Final state: fully visible and in normal position
                         exit={{ opacity: 0, y: -50 }} // Exit state: hidden and slightly up
                         transition={transition}
+                        className="min-h-[400px]"
                     >
                         <ResponsiveMasonry
                             columnsCountBreakPoints={{ 350: 1, 750: 2 }}
@@ -349,4 +385,13 @@ const CategorySelector = () => {
     );
 };
 
-export default CategorySelector;
+function CategorySelectorMain() {
+    return (
+        // You could have a loading skeleton as the `fallback` too
+        <Suspense>
+            <CategorySelector />
+        </Suspense>
+    )
+}
+
+export default CategorySelectorMain;
