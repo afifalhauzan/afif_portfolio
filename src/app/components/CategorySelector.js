@@ -284,8 +284,8 @@ const CategorySelector = () => {
                                     autoplay
                                 />
                             </div>
-                            <h1 className="text-2xl font-bold text-slate-300 mb-2">Coming soon!</h1>
-                            <p className="text-lg text-slate-400 max-w-xl">
+                            <h1 className="text-2xl font-bold text-slate-700 dark:text-slate-300 mb-2">Coming soon!</h1>
+                            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl">
                                 The projects are chillin’ somewhere on my hard drive. I just need to stop procrastinating and upload them 😅 Check back soon!
                             </p>
                         </div>
