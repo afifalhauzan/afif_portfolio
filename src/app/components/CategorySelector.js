@@ -342,7 +342,7 @@ const CategorySelector = () => {
                                             )}
 
                                             {/* Overlay */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-50% rounded-xl flex flex-col justify-end p-4">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#292F44] to-60% rounded-xl flex flex-col justify-end p-4">
                                                 <h3 className="text-2xl font-semibold text-white pb-1">{project.title}</h3>
                                                 {/* <p className="text-md text-gray-300 mb-2">{project.description}</p> */}
                                                 {project.story ? (

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaPenNib } from "react-icons/fa6";
 import { RiGlobalLine } from "react-icons/ri";
+import { BsStars } from "react-icons/bs";
 import useClientSideLocalStorage from "./useClientSideLocalStorage";
 
 import Navbar from '@/app/components/Navbar';
@@ -26,27 +27,6 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false); // Default to dark mode
   const [cursorVisible, setCursorVisible] = useState(false);
   const [isSwiping, setIsSwiping] = useState(false);
-
-  // useEffect(() => {
-  //   // Ensure this code runs only in the browser
-  //   if (typeof window !== 'undefined' && window.localStorage) {
-  //     // Check if the user has already seen the overlay
-  //     const hasSeenOverlay = window.localStorage.getItem("hasSeenOverlay");
-
-  //     if (!hasSeenOverlay) {
-  //       // If not, show the overlay
-  //       setShowOverlay(true);
-
-  //       // Set "hasSeenOverlay" in localStorage to true
-  //       localStorage.setItem("hasSeenOverlay", "true");
-
-  //       // Hide the overlay after 900ms
-  //       setTimeout(() => {
-  //         setShowOverlay(false);
-  //       }, 900);
-  //     }
-  //   }
-  // }, []);
 
 
   if (typeof window !== 'undefined' && window.localStorage) {
@@ -77,16 +57,6 @@ export default function Home() {
   });
   return (
     <div className="relative min-h-screen">
-      {/* Full-screen blue overlay */}
-      {/* {showOverlay && (
-        <div
-          className={`absolute inset-0 bg-gray-50 z-50 ${showOverlay ? 'animate-fade-in-out' : ''}`}
-          style={{
-            backgroundColor: showOverlay ? "white" : "rgb(37, 99, 235)", // bg-blue-800 in RGB format
-          }}
-        ></div>
-      )} */}
-
       {/* SwipeTransition and other content */}
       <SwipeTransition>
         <div className="relative">
@@ -105,6 +75,12 @@ export default function Home() {
               className="absolute pointer-events-none z-50 blur-3xl"
             />
           )}
+          <div className="top-0 z-50 bg-blue-800 overflow-hidden h-10">
+            <div className="whitespace-nowrap animate-marquee text-blue-200 text-sm py-2 px-4">
+              <strong>Happy Eid al-Fitr 1446 H! </strong>Wishing you joy, blessings, and peace always. Please forgive my mistakes🌙✨🙏
+            </div>
+          </div>
+
           <div className="min-h-screen flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-6 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
             <Navbar />
             <div className="w-full max-w-4xl mx-auto px-2 md:px-4 m-2">
@@ -136,14 +112,15 @@ export default function Home() {
                 className="mt-8 flex flex-col gap-2 items-start w-full"
               >
                 <p className="text-base md:text-lg text-justify w-full text-slate-600 dark:text-bluetextdefault">
-                  Passionate about <strong className="font-bold">graphic design, webdev, and creating visually engaging user experiences</strong> <br></br>By blending technical IT expertise with creativity, I craft impactful and meaningful designs.
+                  Passionate about <strong className="font-bold">graphic design, web development, and creating visually engaging user experiences.</strong> I blend technical IT expertise with creativity to craft impactful and meaningful designs.
                 </p>
                 <p className="text-base md:text-lg text-justify w-full text-slate-600 dark:text-bluetextdefault">
-                  I'm sharpening my skills in
+                  Currently sharpening my skills in
                   <FaPenNib className="inline mx-[5px] ml-3 mb-[3px]" />
                   <strong className="font-bold">UI/UX design</strong> and exploring
                   <RiGlobalLine className="inline mx-[5px] ml-[9px] mb-[3px]" />
-                  <strong className="font-bold">front-end development</strong> to bring ideas to life.
+                  <strong className="font-bold">front-end development</strong> to bring ideas to life
+                  <BsStars className="inline ml-[6px] mb-[3px]"/>
                 </p>
 
               </motion.div>

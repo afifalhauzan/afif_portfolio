@@ -121,6 +121,10 @@ export default {
 					'50%': { transform: 'rotate(-180deg) scale(10)' },
 					'100%': { transform: 'rotate(-360deg) scale(10)' },
 				},
+				marquee: {
+					'0%': { transform: 'translateX(100%)' },
+					'100%': { transform: 'translateX(-100%)' },
+				},
 			},
 			backgroundSize: {
 				'300%': '300%'
@@ -133,6 +137,7 @@ export default {
 				'slide-out': 'slideOut 0.5s ease-in-out',
 				'fade-in-out': 'fadeInOut 1s ease-in-out',
 				rotate: 'rotate 4s linear infinite',
+				marquee: 'marquee 30s linear infinite',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
