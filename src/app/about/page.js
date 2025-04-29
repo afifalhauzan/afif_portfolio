@@ -150,7 +150,7 @@ export default function Home() {
                                         <h2 className="text-2xl font-bold text-slate-700 dark:text-white mb-1">Afiif Al Hauzaan Alfian</h2>
                                         <h2 className="text-lg italic text-slate-600 dark:text-slate-300 mb-4">/pip/</h2>
                                         <h2 className="text-md text-slate-700 dark:text-white text-justify">
-                                            I've been interested at Visual, Multimedia, and IT field for the past 4 years
+                                            I've been interested at Visual Design, Multimedia, and IT field for the past 4 years
                                         </h2>
                                         <h2 className="text-md text-slate-700 dark:text-white text-justify">
                                             I believe that great products are built on the foundation of thoughtful design, where user experience meets innovation. Through my work, I aim to bring ideas to life with clarity, creativity, and impact.

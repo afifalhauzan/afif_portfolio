@@ -75,11 +75,11 @@ export default function Home() {
               className="absolute pointer-events-none z-50 blur-3xl"
             />
           )}
-          <div className="top-0 z-50 bg-blue-800 overflow-hidden h-10">
+          {/* <div className="top-0 z-50 bg-blue-800 overflow-hidden h-10">
             <div className="whitespace-nowrap animate-marquee text-blue-200 text-sm py-2 px-4">
               <strong>Happy Eid al-Fitr 1446 H! </strong>Wishing you joy, blessings, and peace always. Please forgive my mistakes🌙✨🙏
             </div>
-          </div>
+          </div> */}
 
           <div className="min-h-screen flex flex-col font-jakarta bg-backgroundlight dark:bg-bluedefault items-center justify-normal overflow-auto px-6 md:px-10 space-y-14 pt-8 transition-all duration-500 ease-in-out">
             <Navbar />
@@ -120,7 +120,7 @@ export default function Home() {
                   <strong className="font-bold">UI/UX design</strong> and exploring
                   <RiGlobalLine className="inline mx-[5px] ml-[9px] mb-[3px]" />
                   <strong className="font-bold">front-end development</strong> to bring ideas to life
-                  <BsStars className="inline ml-[6px] mb-[3px]"/>
+                  <BsStars className="inline ml-[6px] mb-[3px]" />
                 </p>
 
               </motion.div>
@@ -133,7 +133,7 @@ export default function Home() {
                 className="mt-8 space-y-[10px] md:space-y-0 md:space-x-0 flex flex-row justify-between md:items-center"
               >
                 <motion.a
-                  href="https://drive.google.com/file/d/1e0JY9LYWJ7gIIFhjwBWRdrXY3RN-AsQj/view?usp=sharing"
+                  href="https://drive.google.com/file/d/10X96UmHE40l-6HyZO04M20ORq7MLNgln/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="order-1 md:order-2"
