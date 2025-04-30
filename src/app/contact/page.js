@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 import { FC } from 'react';
 import Image from "next/image";
 import { useForm } from 'react-hook-form';
@@ -10,11 +10,11 @@ import { motion } from "framer-motion";
 import { ThreeDot } from 'react-loading-indicators'
 import toast, { Toaster } from 'react-hot-toast';
 import Socials from '@/app/components/Socials';
-import React from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Link from "next/link";
 import Navbar from '../components/Navbar';
 import SwipeTransition from "../swipeTransition";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const CURSOR_SIZE = 100;
 const DELAY_TIME = 300;
@@ -57,6 +57,35 @@ export default function Home() {
             }, DELAY_TIME); // Delay to show the cursor
         }
     });
+
+    const recaptchaRef = useRef(null);
+    const [isVerified, setIsVerified] = useState(false);
+
+    async function handleCaptchaSubmission(token) {
+        try {
+            if (token) {
+                await fetch("/api/captcha/", {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ token }),
+                });
+                setIsVerified(true);
+            }
+        } catch (e) {
+            setIsVerified(false);
+        }
+    }
+
+    const handleChange = (token) => {
+        handleCaptchaSubmission(token);
+    };
+
+    function handleExpired() {
+        setIsVerified(false);
+    }
 
     return (
         <SwipeTransition>
@@ -176,11 +205,20 @@ export default function Home() {
                                             ></textarea>
                                         </div>
 
+                                        <ReCAPTCHA
+                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                                            ref={recaptchaRef}
+                                            onChange={handleChange}
+                                            onExpired={handleExpired}
+                                        >
+                                        </ReCAPTCHA>
+
                                         {/* Submit Button */}
                                         <div>
                                             <button
                                                 type="submit"
-                                                className="w-full bg-indigo-500 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
+                                                className="w-full bg-indigo-500 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 disabled:bg-slate-700 disabled:text-slate-400 transition duration-300"
+                                                disabled={!isVerified}
                                             >
                                                 Send Message
                                             </button>
