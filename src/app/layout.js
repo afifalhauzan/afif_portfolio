@@ -1,6 +1,6 @@
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -17,7 +17,7 @@ export const metadata = {
   description: "Welcome!",
 };
 
-export default function RootLayout({ children }) {  
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <link
@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
         className={`font-jakarta antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

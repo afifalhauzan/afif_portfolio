@@ -71,7 +71,7 @@ export default function Home() {
                 translateX: x.value,
                 translateY: y.value,
                 opacity: "45%",
-              }}
+              }}s
               className="absolute pointer-events-none z-50 blur-3xl"
             />
           )}
