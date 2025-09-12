@@ -135,7 +135,7 @@ export default function Home() {
                 <motion.a
                   href="https://drive.google.com/file/d/10X96UmHE40l-6HyZO04M20ORq7MLNgln/view?usp=sharing"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="order-1 md:order-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
