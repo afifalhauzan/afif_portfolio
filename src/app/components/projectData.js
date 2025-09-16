@@ -34,7 +34,7 @@ export const projectData = {
             title: "EchoSleep",
             description: "An app designed to enhance your sleep quality by providing real-time sleep monitoring, personalized tips, and insightful statistics. EchoSleep helps track your sleep patterns, identifies disturbances, and offers tailored recommendations for a more restful night. Whether you're dealing with sleep apnea or simply struggling to get better rest, the app connects you with sleep specialists for consultations. With EchoSleep, you can take control of your sleep health, improve your overall well-being, and wake up refreshed every day.",
             image: "/echosl.png", // Image source for the project
-            team: ["M. Ridwan Novriansyah", "Afiif Al Hauzaan (me)", "Alexander Imanuel W."],
+            team: ["Alexander Imanuel W.", "M. Ridwan Novriansyah", "Afiif Al Hauzaan (me)"],
             figma: "https://www.figma.com/proto/TXwj2drey3LphUHEepd4L4/EchoSleep?page-id=25%3A3822&node-id=150-11929&p=f&viewport=62%2C-5670%2C0.24&t=PT4MrPsii8SRYYKy-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=150%3A11970&show-proto-sidebar=1",
             tags: ["SDGs 3", "UI/UX"]
         },
