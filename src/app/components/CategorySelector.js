@@ -24,7 +24,7 @@ const transition = {
 
 
 const CategorySelector = () => {
-    const [selectedCategory, setSelectedCategory] = useState("UI/UX");
+    const [selectedCategory, setSelectedCategory] = useState("Websites");
     const [underlineWidth, setUnderlineWidth] = useState(0);
     const [underlineLeft, setUnderlineLeft] = useState(0);
     const [isMoreOpen, setIsMoreOpen] = useState(false);
@@ -43,12 +43,12 @@ const CategorySelector = () => {
         console.log("Extracted Category:", category); // ✅ Logs category from URL
 
         setActiveProjectId(id ? Number(id) : null);
-        setSelectedCategory(category || 'UI/UX');
+        setSelectedCategory(category || 'Websites');
     }, [searchParams]); // ✅ Updates when URL changes
 
     useEffect(() => {
         // Initialize underline position for the default category
-        const defaultIndex = ["UI/UX", "Graphic Design", "Websites", "Videography", "Motion Graphics"].indexOf(selectedCategory);
+        const defaultIndex = ["Websites", "UI/UX", "Graphic Design", "Videography", "Motion Graphics"].indexOf(selectedCategory);
         if (tabsRef.current[defaultIndex]) {
             const currentTab = tabsRef.current[defaultIndex];
             setUnderlineLeft(currentTab.offsetLeft);
@@ -109,7 +109,7 @@ const CategorySelector = () => {
         <div className="flex flex-col justify-center md:items-center mt-4 overflow-x-auto overflow-y-hidden">
             <div className="relative flex flex-col md:flex-row space-y-4 md:space-y-0 mt-6 p-2 rounded-2xl md:rounded-3xl overflow-x-auto">
                 <ul className="flex z-10 whitespace-nowrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-                    {["UI/UX", "Graphic Design", "Websites", "Videography", "Motion Graphics"].map((category, index) => (
+                    {["Websites", "UI/UX", "Graphic Design", "Videography", "Motion Graphics"].map((category, index) => (
                         <li className="me-2" key={category}>
                             <button
                                 ref={(el) => (tabsRef.current[index] = el)}
@@ -286,7 +286,7 @@ const CategorySelector = () => {
                             </div>
                             <h1 className="text-2xl font-bold text-slate-700 dark:text-slate-300 mb-2">Coming soon!</h1>
                             <p className="text-md md:text-lg text-slate-600 dark:text-slate-400">
-                                The projects are chillin’ somewhere on my hard drive. I just need to stop procrastinating and upload them 😅 Check back soon!
+                                The projects are chillin somewhere on my hard drive. I just need to stop procrastinating and upload them 😅 Check back soon!
                             </p>
                         </div>
 

@@ -2,6 +2,25 @@ export const projectData = {
     "UI/UX": [
         {
             id: 1,
+            title: "KBMDSI 2025",
+            description: "External website design for student organization in Faculty of Computer Science Brawijaya University (Instagram : @kbmdsi_ub)",
+            image: "/kbmdsi.png",
+            isFeatured: true,
+            video: "/kbmdsi_video.mp4",
+            team: ["Afiif Al Hauzaan (me), Sabitha Marsyarira N, Shananda Putri A."],
+            tags: ["UI/UX", "Figma"]
+        },
+        {
+            id: 2,
+            title: "RAJA Brawijaya 2025",
+            description: "Designed a high-fidelity digital dashboard for the university's largest annual orientation, serving 16,000+ active users. Optimized information architecture to handle peak-hour traffic for attendance and assignment management with zero learning curve.",
+            image: "/rajabrawijaya.png",
+            team: ["Afiif Al Hauzaan (me)", "UI/UX Team"],
+            website: "https://rajabrawijaya.ub.ac.id/",
+            tags: ["UI/UX", "Design System", "Figma"]
+        },
+        {
+            id: 3,
             title: "Greventure",
             description: "A map-based social media platform designed to reconnect people with their surroundings. It helps users discover local places and activities, especially those related to urban sustainability. Greventure encourages young people to bring their cities to life digitally while fostering connections with the environment and promoting efforts to care for it",
             video: "/greventure.mp4",
@@ -10,7 +29,7 @@ export const projectData = {
             tags: ["SDGs 11", "UI/UX"]
         },
         {
-            id: 2,
+            id: 4,
             title: "EcoWardrobe",
             description: "An app for tackling fast fashion waste by enabling users to sell, buy, and donate pre-loved clothes, while promoting sustainable fashion through innovative features like a camera scanning tool to personalize shopping experiences",
             image: "/ecoward.png",
@@ -21,7 +40,7 @@ export const projectData = {
             tags: ["SDGs 12", "UI/UX"]
         },
         {
-            id: 3,
+            id: 5,
             title: "Mentorify",
             description: "Mentorify is a mobile-based application that provides essential information about tutors and additional resources in the education field. With Mentorify, users can find tutors that match their specific needs and learning styles, making the learning process more effective and enjoyable. The app also offers features that make it easier to search for and access details about tutor schedules and experience, helping users select the best match for their educational goals.",
             image: "/mentorify.png",
@@ -30,7 +49,7 @@ export const projectData = {
             tags: ["SDGs 4", "UI/UX"]
         },
         {
-            id: 4,
+            id: 6,
             title: "EchoSleep",
             description: "An app designed to enhance your sleep quality by providing real-time sleep monitoring, personalized tips, and insightful statistics. EchoSleep helps track your sleep patterns, identifies disturbances, and offers tailored recommendations for a more restful night. Whether you're dealing with sleep apnea or simply struggling to get better rest, the app connects you with sleep specialists for consultations. With EchoSleep, you can take control of your sleep health, improve your overall well-being, and wake up refreshed every day.",
             image: "/echosl.png", // Image source for the project
@@ -39,7 +58,7 @@ export const projectData = {
             tags: ["SDGs 3", "UI/UX"]
         },
         {
-            id: 5,
+            id: 7,
             title: "PetCare",
             description: "An app designed to help pet owners, particularly those with dogs and cats, manage the health and well-being of their pets. It provides comprehensive solutions, including information on pet care and online consultations with veterinarians at affordable prices. Users can share experiences and receive support, fostering a community that cares for animal health. With PetCare, pet owners can easily maintain the health of their pets while ensuring their safety, addressing issues such as rabies, infections, parasites, and metabolic disorders.",
             image: "/petcare.png",
@@ -50,7 +69,7 @@ export const projectData = {
     ],
     "Graphic Design": [
         {
-            id: 6,
+            id: 8,
             title: "HOLOGY 7.0",
             description: "One of my works in HOLOGY 7.0 is this competition poster. It's the biggest technology event in Brawijaya University hosting seminar and competition.",
             image: "/hologi.png",
@@ -59,7 +78,7 @@ export const projectData = {
             design: "https://www.instagram.com/hology_ub/",
         },
         {
-            id: 7,
+            id: 9,
             title: "Rantau Ngalam Kuy",
             description: "A campus expo & roadshow for introducing Brawijaya University in Pontianak, West Kalimantan (my city)",
             image: "/rnk.png",
@@ -68,7 +87,7 @@ export const projectData = {
             design: "https://drive.google.com/file/d/1yUk1gG_Ja1So-F_OKPiWMrEzg3TK1olz/view?usp=sharing",
         },
         {
-            id: 8,
+            id: 10,
             title: "Mobile JKN",
             description: "Submission for 4C Competition FILKOM UB. Mobile JKN is an real app by Ministry of Health Indonesia to fasilitate health administrations. The infographic describes its functions and encouraging people to use it.",
             image: "/4c.png",
@@ -77,7 +96,7 @@ export const projectData = {
             design: "https://drive.google.com/file/d/1-Dj43PT3H7w_5q7XXQAoJBFU-J-o3pyE/view?usp=sharing",
         },
         {
-            id: 9,
+            id: 11,
             title: "MPLS",
             description: "MPLS (Masa Pengenalan Lingkungan Sekolah) is a welcoming event in my previous high school SMAN 1 Pontianak. I personally really like this design",
             image: "/mpls.png",
@@ -87,7 +106,47 @@ export const projectData = {
     ],
     "Websites": [
         {
-            id: 10,
+            id: 12,
+            title: "Kak Sarah",
+            description: "AI-powered Socratic tutoring platform utilizing React (Inertia.js) and Laravel. Tested with 35+ concurrent students in a live classroom setting with zero errors, rate-limits, or server constraints.",
+            image: "/kaksarah.png",
+            isFeatured: true,
+            team: ["Afiif Al Hauzaan (me)", "Arif Ammar S.", "Naila Rahma N.", "Achmad Hasbil W.", "Ghefira Addien M.", "Shananda Putri A."],
+            tags: ["React", "Laravel", "Inertia.js", "OpenAI"],
+            github: "https://github.com/afifalhauzan/kelassarah_web"
+        },
+        {
+            id: 13,
+            title: "SMKN 5 Malang",
+            description: "Fullstack school assessment and gallery platform serving 1,000+ users. Implemented Next.js 14 (App Router) and Laravel, utilizing SWR for optimized client-side data fetching and caching.",
+            image: "/smkn5.png",
+            isFeatured: true,
+            team: ["Afiif Al Hauzaan (me)"],
+            tags: ["Next.js 14", "Laravel", "SWR", "Docker"],
+            github: "https://github.com/afifalhauzan/galerismkn5_web"
+        },
+        {
+            id: 14,
+            title: "IT FEST 2025",
+            description: "National-scale competition platform that handled 15,000+ views. Successfully sliced the design and integrated a Next.js frontend with a Golang-based backend API using a feature-based architecture and GitHub PR workflow.",
+            image: "/itfest.png",
+            isFeatured: true,
+            team: ["Muhammad Syauqi I.", "Alfi Tsani", "Ketut Bagus Wedanta A. M.", "Afiif Al Hauzaan (me)", "Azmi Al Ghifari Rahman", "Achmad Hasbil W."],
+            tags: ["Next.js", "Golang API", "Tailwind CSS"],
+            website: "https://itfest-filkom.com/"
+        },
+        {
+            id: 15,
+            title: "AsistenKita",
+            description: "Domestic worker marketplace built with Next.js and TypeScript. Implements TanStack Query for efficient server state management including caching, pagination, and filtering.",
+            image: "/asistenkita.png",
+            isFeatured: true,
+            team: ["Afiif Al Hauzaan (me)", "Atha Azzahra K. N.", "Elvira Rosa K."],
+            tags: ["Next.js 14", "TypeScript", "TanStack Query", "Appwrite Backend"],
+            website: "https://asistenkita.vercel.app/"
+        },
+        {
+            id: 16,
             title: "Xhiexplore",
             description: "A virtual art exhibition by Scienta SMANSA (Class of 2020-2023, SMA Negeri 1 Pontianak) showcasing over 40 creative works. Hosted using Spatial",
             image: "/xhiexplore.png",
@@ -97,15 +156,15 @@ export const projectData = {
             website: "https://afifalhauzan.github.io/xhiexplore-site/",
         },
         {
-            id: 11,
-            title: "Past Portofolio",
+            id: 17,
+            title: "Past Portfolio",
             description: "My first portfolio website, showcasing many types of projects.",
             image: "/framer.png",
             tags: ["Framer", "Website"],
             website: "https://afifalhauzan.framer.website/",
         },
         {
-            id: 12,
+            id: 18,
             title: "PortalMABA",
             description: "A backend-focused website for welcoming and managing freshman students. The feature includes attendance, activity notebook, managing groups, and assignment",
             image: "/portalmaba.png",
@@ -113,19 +172,18 @@ export const projectData = {
             github: "https://github.com/afifalhauzan/pkkmb_admin_pweb",
         },
         {
-            id: 13,
+            id: 19,
             title: "Simple Blog Site",
             description: "A Technology Blog website for learning Laravel + Blade + Tailwind.",
             team: ["Afiif Al Hauzaan (me)", "Yusuf Whisnu T. W.", "Zahwa Naurah P."],
             image: "/blog.png",
             tags: ["Lavavel", "MySQL", "Tailwind"],
-
             github: "https://github.com/afifalhauzan/Blog-Beginner-group-7",
         },
     ],
     "Videography": [
         {
-            id: 14,
+            id: 20,
             title: "Eftychia",
             isFeatured: true,
             description: "Class of 2023 SMAN 1 Pontianak's Farewell. It's a 6 minute aftermovie that showcases our graduation party, took 1 month for editing this.",
@@ -134,7 +192,7 @@ export const projectData = {
             videoLink: "https://www.instagram.com/p/C81OsVYsLfu/",
         },
         {
-            id: 15,
+            id: 21,
             title: "HOLOGY 7.0 Trailer",
             isFeatured: true,
             description: "A promotion for HOLOGY 7.0. Showcases many visual effects created in After Effects.",
@@ -143,7 +201,7 @@ export const projectData = {
             videoLink: "https://www.instagram.com/reel/C99lsqzyDS-/",
         },
         {
-            id: 16,
+            id: 22,
             title: "Makrab PTI 23",
             description: "Captures the solidarity of PTI'23 FILKOM UB.",
             image: "/makrab.png",
@@ -151,7 +209,7 @@ export const projectData = {
             videoLink: "https://www.instagram.com/reel/C58SGYlSDS-/",
         },
         {
-            id: 17,
+            id: 23,
             title: "Schotival",
             description: "An Aftermovie for a scholarship event in FILKOM UB. Themed around superhero, we add many motion graphics and animations",
             image: "/scho.png",
@@ -160,7 +218,7 @@ export const projectData = {
             videoLink: "https://www.instagram.com/reel/DECg9FSyb8w/",
         },
         {
-            id: 18,
+            id: 24,
             title: "Pusoko",
             description: "A 17-minute short film about culture of Indonesia. It's a big project involving 35 of the Scienta class. As an video editor and VFX editor.",
             image: "/pusoko.png",
@@ -168,7 +226,7 @@ export const projectData = {
             videoLink: "https://www.instagram.com/p/CSs6HZ_h7Yu/",
         },
         {
-            id: 19,
+            id: 25,
             title: "Synergy of Symphony",
             description: "The usual Aftermovie around an event in FILKOM UB.",
             image: "/sos.png",
@@ -176,7 +234,7 @@ export const projectData = {
             videoLink: "https://www.instagram.com/p/DDd9cPLprQi/",
         },
         {
-            id: 20,
+            id: 26,
             title: "Sebelah Mata",
             description: "Short film about honesty themed around highschool. Got into national finalists from KPK",
             image: "/sebelahm.png",
@@ -186,7 +244,7 @@ export const projectData = {
     ],
     "Motion Graphics": [
         {
-            id: 21,
+            id: 27,
             title: "Eftychia",
             isFeatured: true,
             description: "Class of 2023 SMAN 1 Pontianak's Farewell. It's a 6 minute aftermovie that showcases our graduation party, took 1 month for editing this.",

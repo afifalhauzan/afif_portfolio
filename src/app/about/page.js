@@ -132,7 +132,7 @@ export default function Home() {
                              xl:text-6xl font-bold text-left w-full text-slate-700 dark:text-white ">
                                 About me
                             </h1>
-                            
+
 
                             <div className="flex flex-col md:flex-row justify-between mt-4 md:mt-0 items-center">
                                 <div className="p-8">
@@ -150,10 +150,10 @@ export default function Home() {
                                         <h2 className="text-2xl font-bold text-slate-700 dark:text-white mb-1">Afiif Al Hauzaan Alfian</h2>
                                         <h2 className="text-lg italic text-slate-600 dark:text-slate-300 mb-4">/pip/</h2>
                                         <h2 className="text-md text-slate-700 dark:text-white text-justify">
-                                            I've been interested at Visual Design, Multimedia, and IT field for the past 4 years
+                                            I’ve been exploring the intersection of visual design and technology for the past four years.
                                         </h2>
                                         <h2 className="text-md text-slate-700 dark:text-white text-justify">
-                                            I believe that great products are built on the foundation of thoughtful design, where user experience meets innovation. Through my work, I aim to bring ideas to life with clarity, creativity, and impact.
+                                            My works blends creative multimedia edge to build engaging digital products. From designing for 16,000+ users to building local classroom tools, I create functional products that are accessible and visually good.
                                         </h2>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </motion.div>
-                        
+
 
                         <motion.div
                             initial="hidden"
@@ -315,12 +315,12 @@ export default function Home() {
                                         </div>
 
                                         <p className="text-md text-slate-600 dark:text-slate-300 text-justify">
-                                        Led a 13-member team to create design and videography content, ensuring all visuals matched the IT seminar and competition’s branding and enhanced its overall aesthetic.</p>
+                                            Led a 13-member team to create design and videography content, ensuring all visuals matched the IT seminar and competition’s branding and enhanced its overall aesthetic.</p>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
-                        
+
                         <motion.div
                             initial="hidden"
                             whileInView="visible" // Animation triggers when the component is in view
@@ -364,7 +364,7 @@ export default function Home() {
                                                 <h3 className="text-lg text-slate-400 mb-2">(2025)</h3>
                                             </div>
 
-                                            <p className="text-md text-slate-600 dark:text-slate-300 text-justify"> 
+                                            <p className="text-md text-slate-600 dark:text-slate-300 text-justify">
                                                 As part of the Front-End & UI/UX team, i collaborated with front-end, back-end and admin to maintain and develop projects within KBMDSI
                                             </p>
                                         </div>
