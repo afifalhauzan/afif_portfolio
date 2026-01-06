@@ -23,6 +23,7 @@ export default {
 					'serif'
 				],
 				jakarta: [
+					'var(--font-jakarta)',
 					'Plus Jakarta Sans',
 					'sans-serif'
 				],
