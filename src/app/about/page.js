@@ -42,6 +42,8 @@ export default function Home() {
     const reactSwipeEl1 = useRef(null);
     const reactSwipeEl2 = useRef(null);
     const reactSwipeEl3 = useRef(null);
+    const reactSwipeEl4 = useRef(null);
+    const reactSwipeEl5 = useRef(null);
 
     useEffect(() => {
         // Delayed start for each carousel
@@ -50,7 +52,7 @@ export default function Home() {
                 if (reactSwipeEl1.current) {
                     reactSwipeEl1.current.next();
                 }
-            }, 5500);
+            }, 3500);
             // Store interval for cleanup
             reactSwipeEl1.current.interval = interval1;
         }, 0); // Delay for the first carousel
@@ -60,7 +62,7 @@ export default function Home() {
                 if (reactSwipeEl2.current) {
                     reactSwipeEl2.current.next();
                 }
-            }, 7000);
+            }, 4000);
             reactSwipeEl2.current.interval = interval2;
         }, 500); // Delay for the second carousel
 
@@ -69,18 +71,40 @@ export default function Home() {
                 if (reactSwipeEl3.current) {
                     reactSwipeEl3.current.next();
                 }
-            }, 5000);
+            }, 4300);
             reactSwipeEl3.current.interval = interval3;
-        }, 3000); // Delay for the third carousel
+        }, 1500); // Delay for the third carousel
+
+        const delay4 = setTimeout(() => {
+            const interval4 = setInterval(() => {
+                if (reactSwipeEl4.current) {
+                    reactSwipeEl4.current.next();
+                }
+            }, 2000);
+            reactSwipeEl4.current.interval = interval4;
+        }, 3000); // Delay for the fourth carousel
+        
+        const delay5 = setTimeout(() => {
+            const interval5 = setInterval(() => {
+                if (reactSwipeEl5.current) {
+                    reactSwipeEl5.current.next();
+                }
+            }, 4000);
+            reactSwipeEl5.current.interval = interval5;
+        }, 3500); // Delay for the fifth carousel
 
         // Cleanup timeouts and intervals on component unmount
         return () => {
             clearTimeout(delay1);
             clearTimeout(delay2);
             clearTimeout(delay3);
+            clearTimeout(delay4);
+            clearTimeout(delay5);
             if (reactSwipeEl1.current?.interval) clearInterval(reactSwipeEl1.current.interval);
             if (reactSwipeEl2.current?.interval) clearInterval(reactSwipeEl2.current.interval);
             if (reactSwipeEl3.current?.interval) clearInterval(reactSwipeEl3.current.interval);
+            if (reactSwipeEl4.current?.interval) clearInterval(reactSwipeEl4.current.interval);
+            if (reactSwipeEl5.current?.interval) clearInterval(reactSwipeEl5.current.interval);
         };
     }, []);
 
@@ -150,7 +174,7 @@ export default function Home() {
                                         <h2 className="text-2xl font-bold text-slate-700 dark:text-white mb-1">Afiif Al Hauzaan Alfian</h2>
                                         <h2 className="text-lg italic text-slate-600 dark:text-slate-300 mb-4">/pip/</h2>
                                         <h2 className="text-md text-slate-700 dark:text-white text-justify">
-                                            I’ve been exploring the intersection of visual design and technology for the past four years.
+                                            I've been exploring the intersection of visual design and technology for the past four years.
                                         </h2>
                                         <h2 className="text-md text-slate-700 dark:text-white text-justify">
                                             My works blends creative multimedia edge to build engaging digital products. From designing for 16,000+ users to building local classroom tools, I create functional products that are accessible and visually good.
@@ -163,7 +187,7 @@ export default function Home() {
                         <motion.div
                             initial="hidden"
                             whileInView="visible" // Animation triggers when the component is in view
-                            viewport={{ amount: 0.2 }}
+                            viewport={{ amount: 0.2, once: true }}
                             variants={fadeInUpV2}
                             className=""
                         >
@@ -173,6 +197,83 @@ export default function Home() {
                                 </div>
                             </div>
 
+                        </motion.div>
+
+
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible" // Animation triggers when the component is in view
+                            viewport={{ amount: 0.2 }}
+                            variants={fadeInUpV2}
+                            className=""
+                        >
+                            <div className="space-y-6 mt-4 md:mt-0 md:space-x-0">
+                                <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 ">
+                                    {/* Image Section */}
+                                    <div className="w-full h-auto md:h-auto overflow-x-hidden text-left text-slate-200 relative order-1 ml-0 md:order-2">
+                                        {/* ReactSwipe Carousel */}
+                                        <ReactSwipe
+                                            className="carousel"
+                                            swipeOptions={{ continuous: true }}
+                                            ref={reactSwipeEl1}
+                                        >
+                                            {/* First Image */}
+                                            <div className="flex justify-center py-2">
+                                                <div className="flex-shrink-0 shadow-lg">
+                                                    <Image
+                                                        src="/jalin1.jpg"
+                                                        width={280}
+                                                        height={280}
+                                                        quality={100}
+                                                        alt="Picture of the author"
+                                                        className="rounded-xl"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            {/* Second Image */}
+                                            <div className="flex justify-center py-2">
+                                                <div className="flex-shrink-0 shadow-lg">
+                                                    <Image
+                                                        src="/jalin2.jpg"
+                                                        quality={100}
+                                                        width={280}
+                                                        height={280}
+                                                        alt="Picture of the author"
+                                                        className="rounded-xl mt-4"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                        </ReactSwipe>
+                                    </div>
+
+
+                                    {/* Text Section */}
+                                    <div className="flex items-center justify-center max-w-lg order-2 md:order-1">
+                                        <div className="w-full p-4 text-left text-slate-700 dark:text-slate-200 md:mr-16">
+                                            <h3 className="text-2xl font-bold">Jalin Mayantara</h3>
+                                            <div className="flex space-x-3 mb-2">
+                                                <h3 className="text-lg">Frontend Engineer Intern</h3>
+                                                <h3 className="text-lg text-slate-400 mb-2">(2026)</h3>
+                                            </div>
+
+                                            <p className="text-md text-slate-600 dark:text-slate-300 text-justify">
+                                                Building internal web products with a focus on AI-powered experiences, using React, Next.js, and Vercel AI SDK. Collaborating with AI/ML engineers to integrate APIs and design responsive interfaces that handle streaming data and real-time feedback.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible" // Animation triggers when the component is in view
+                            viewport={{ amount: 0.2 }}
+                            variants={fadeInUpV2}
+                            className=""
+                        >
                             <div className="space-y-6 mt-4 md:mt-0 md:space-x-0">
                                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:space-y-0 ">
                                     {/* Image Section */}
@@ -181,7 +282,7 @@ export default function Home() {
                                         <ReactSwipe
                                             className="carousel "
                                             swipeOptions={{ continuous: true }}
-                                            ref={reactSwipeEl1}
+                                            ref={reactSwipeEl2}
                                         >
                                             {/* First Image */}
                                             <div className="flex justify-center py-2">
@@ -261,7 +362,7 @@ export default function Home() {
                                     <ReactSwipe
                                         className="carousel"
                                         swipeOptions={{ continuous: true }}
-                                        ref={reactSwipeEl2}
+                                        ref={reactSwipeEl3}
                                     >
                                         {/* First Image */}
                                         <div className="flex justify-center py-2">
@@ -336,7 +437,7 @@ export default function Home() {
                                         <ReactSwipe
                                             className="carousel "
                                             swipeOptions={{ continuous: true }}
-                                            ref={reactSwipeEl1}
+                                            ref={reactSwipeEl4}
                                         >
                                             {/* First Image */}
                                             <div className="flex justify-center py-2">
@@ -387,7 +488,7 @@ export default function Home() {
                                     <ReactSwipe
                                         className="carousel"
                                         swipeOptions={{ continuous: true }}
-                                        ref={reactSwipeEl3}
+                                        ref={reactSwipeEl5}
                                     >
                                         {/* First Image */}
                                         <div className="flex justify-center py-2">

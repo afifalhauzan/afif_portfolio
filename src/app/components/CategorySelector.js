@@ -14,7 +14,7 @@ import { FaPenNib } from "react-icons/fa6";
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-import { projectData } from "@/app/components/projectData";
+import { projectData } from "@/app/projectData";
 
 const transition = {
     duration: 0.4,
