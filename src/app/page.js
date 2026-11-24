@@ -131,7 +131,7 @@ export default function Home() {
                   className="mt-8 space-y-[10px] md:space-y-0 md:space-x-0 flex flex-row justify-between md:items-center"
                 >
                   <m.a
-                    href="https://drive.google.com/file/d/1fv24-kh7zmmF1YjMEnpwp8bEicG9tqCv/view?usp=sharing"
+                    href="https://drive.google.com/file/d/12pNiiG4z19KfBIjt9lYj-RY8RFqYZbOt/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="order-1 md:order-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900 rounded-xl"
